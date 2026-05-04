@@ -816,64 +816,66 @@
 
   <!-- VOCABULARY -->
   <section id="sec-vocabulary" class="section">
-    <div class="section-title">My <span>Vocabulary</span></div>
-    <div class="section-sub">Manage and add technical terminology</div>
-
     <div class="form-card">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:18px;">
-        + Add New Word
-      </div>
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Word / Term</label>
-          <input type="text" id="inp-word" placeholder="e.g. Perforating gun" />
-        </div>
-        <div class="form-group">
-          <label>Phonetic Pronunciation</label>
-          <input type="text" id="inp-phonetic" placeholder="e.g. /per.fo.ray.ting gun/" />
-        </div>
-        <div class="form-group">
-          <label>Category</label>
-          <select id="inp-category">
-            <option value="Wireline">Wireline</option>
-            <option value="Drilling">Drilling</option>
-            <option value="Completions">Completions</option>
-            <option value="Reservoir">Reservoir</option>
-            <option value="Production">Production</option>
-            <option value="HSE">HSE</option>
-            <option value="General">General Engineering</option>
-            <option value="Custom">Custom</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Difficulty</label>
-          <select id="inp-difficulty">
-            <option value="Advanced">Advanced</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Expert">Expert / Specialized</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label>Definition / Meaning</label>
-          <input type="text" id="inp-def" placeholder="Technical definition in English" />
-        </div>
-        <div class="form-group full">
-          <label>Example Sentence (in the field context)</label>
-          <textarea id="inp-sentence" placeholder='e.g. "The perforating gun was run into the wellbore on wireline to create channels into the formation."'></textarea>
-        </div>
-      </div>
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-amber" onclick="addWord()">Add to Vocabulary</button>
-        <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
-      </div>
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:18px;">
+    + Add New Word
+  </div>
+  
+  <!-- Campo simplificado: solo la palabra -->
+  <div class="form-group full" style="margin-bottom:16px;">
+    <label>Word / Term <span style="color:var(--amber-dim);font-size:0.6rem;">(type and press "Search")</span></label>
+    <div style="display:flex;gap:8px;">
+      <input type="text" id="inp-word" placeholder="e.g. Perforating gun" onkeypress="if(event.key==='Enter'){addWord();}" />
+      <button class="btn btn-amber" onclick="addWord()" style="white-space:nowrap;">🔍 Search</button>
     </div>
-
-    <div class="search-row">
-      <input type="text" id="search-input" placeholder="Search terms..." oninput="renderVocabList()" />
+  </div>
+  
+  <!-- Campos editables (se auto-completan si la API encuentra datos) -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Phonetic <span style="color:var(--text-faint);font-weight:300;">(optional)</span></label>
+      <input type="text" id="inp-phonetic" placeholder="/per.fo.ray.ting gun/" />
     </div>
-    <div class="filter-chips" id="filter-chips" style="margin-bottom:16px;"></div>
-
-    <div class="vocab-list" id="vocab-list"></div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="inp-category">
+        <option value="Wireline">Wireline</option>
+        <option value="Drilling">Drilling</option>
+        <option value="Completions">Completions</option>
+        <option value="Reservoir">Reservoir</option>
+        <option value="Production">Production</option>
+        <option value="HSE">HSE</option>
+        <option value="General">General Engineering</option>
+        <option value="Custom">Custom</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Difficulty</label>
+      <select id="inp-difficulty">
+        <option value="Advanced">Advanced</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Expert">Expert / Specialized</option>
+      </select>
+    </div>
+    <div class="form-group full">
+      <label>Definition / Meaning <span style="color:var(--amber-dim);font-size:0.6rem;">(required)</span></label>
+      <input type="text" id="inp-def" placeholder="Technical definition in English" />
+    </div>
+    <div class="form-group full">
+      <label>Example Sentence <span style="color:var(--text-faint);font-size:0.6rem;">(optional)</span></label>
+      <textarea id="inp-sentence" placeholder='e.g. "The perforating gun was run into the wellbore..."' style="min-height:60px;"></textarea>
+    </div>
+  </div>
+  
+  <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+    <button class="btn btn-green" onclick="confirmAndSaveWord()">✓ Confirm & Save</button>
+    <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
+  </div>
+  
+  <div style="margin-top:12px;font-size:0.7rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">
+    💡 Tip: Escribe una palabra y presiona "Search". Si es un término general en inglés, se auto-completará. Si es jerga petrolera especializada, completa los campos manualmente.
+  </div>
+</div>
   </section>
 
   <!-- FLASHCARDS -->
@@ -991,54 +993,24 @@
 
   <!-- SETTINGS -->
   <section id="sec-settings" class="section">
-    <div class="section-title">App <span>Settings</span></div>
-    <div class="section-sub">Personalize your learning experience</div>
-
-    <div class="form-card">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Auto-pronounce on Flashcard</div>
-          <div class="s-desc">Automatically speaks the word when a card is revealed</div>
-        </div>
-        <label class="toggle">
-          <input type="checkbox" id="set-auto-speak" checked />
-          <div class="toggle-track"></div>
-          <div class="toggle-thumb"></div>
-        </label>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Include Built-in Vocabulary</div>
-          <div class="s-desc">Show pre-loaded oilfield terms in flashcards and quiz</div>
-        </div>
-        <label class="toggle">
-          <input type="checkbox" id="set-include-builtin" checked onchange="initFlashcards();renderVocabList();" />
-          <div class="toggle-track"></div>
-          <div class="toggle-thumb"></div>
-        </label>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Voice Language</div>
-          <div class="s-desc">Select the English accent for text-to-speech</div>
-        </div>
-        <select id="set-voice" style="width:180px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:8px 10px;background:var(--bg4);border:1px solid var(--border);color:var(--text);border-radius:4px;outline:none;"></select>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Reset All Progress</div>
-          <div class="s-desc">Clear mastered/difficult markings (keeps vocabulary)</div>
-        </div>
-        <button class="btn btn-red btn-sm" onclick="resetProgress()">Reset</button>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Delete Custom Words</div>
-          <div class="s-desc">Remove all words you have manually added</div>
-        </div>
-        <button class="btn btn-red btn-sm" onclick="deleteCustomWords()">Delete All Custom</button>
-      </div>
-    </div>
+    <div class="divider"></div>
+<div class="form-card">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:16px;">
+    ☁️ Cloud Sync (JSONBin)
+  </div>
+  <div class="form-group" style="margin-bottom:12px;">
+    <label>Bin ID</label>
+    <input type="text" id="jsonbin-id" placeholder="67abc123def456" />
+  </div>
+  <div class="form-group" style="margin-bottom:16px;">
+    <label>Master Key</label>
+    <input type="password" id="jsonbin-key" placeholder="$2b$10$..." />
+  </div>
+  <button class="btn btn-amber" onclick="saveJsonBinConfig()">Save & Sync</button>
+  <div style="margin-top:10px;font-size:0.65rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">
+    Tus palabras se guardarán en la nube y se sincronizarán en todos tus dispositivos.
+  </div>
+</div>
   </section>
 
 </main>
@@ -1046,6 +1018,14 @@
 <div id="toast"></div>
 
 <script>
+// ============================================================
+// CONFIGURACIÓN - JSONBIN SYNC (¡EDITA ESTO!)
+// ============================================================
+const JSONBIN_CONFIG = {
+  binId: 'TU_BIN_ID_AQUI',        // ← Reemplaza con tu Bin ID
+  masterKey: 'TU_MASTER_KEY_AQUI' // ← Reemplaza con tu Master Key
+};
+
 // ============================================================
 // DATA — BUILT-IN PETROLEUM / WIRELINE VOCABULARY
 // ============================================================
@@ -1077,7 +1057,7 @@ const BUILT_IN = [
 // ============================================================
 // STATE
 // ============================================================
-let customWords = JSON.parse(localStorage.getItem('fs_custom') || '[]');
+let customWords = [];
 let progress = JSON.parse(localStorage.getItem('fs_progress') || '{}');
 let streak = parseInt(localStorage.getItem('fs_streak') || '0');
 let lastDate = localStorage.getItem('fs_lastdate') || '';
@@ -1090,24 +1070,157 @@ let quizQ = [];
 let quizIndex = 0;
 let quizScore = 0;
 let activeFilter = 'all';
+let isSyncing = false;
 
 // ============================================================
-// HELPERS
+// JSONBIN SYNC FUNCTIONS
 // ============================================================
-function saveCustom() { localStorage.setItem('fs_custom', JSON.stringify(customWords)); }
+async function syncWordsFromCloud() {
+  if (!JSONBIN_CONFIG.binId || !JSONBIN_CONFIG.masterKey) return;
+  if (isSyncing) return;
+  isSyncing = true;
+  
+  try {
+    const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`, {
+      headers: { 'X-Master-Key': JSONBIN_CONFIG.masterKey }
+    });
+    if (response.ok) {
+      const data = await response.json();
+      const cloudWords = data.record.customWords || [];
+      
+      // Merge: keep newer entries from cloud, preserve local progress
+      const localMap = new Map(customWords.map(w => [w.word.toLowerCase(), w]));
+      for (const cw of cloudWords) {
+        const key = cw.word.toLowerCase();
+        if (!localMap.has(key)) {
+          customWords.push({ ...cw, custom: true });
+        }
+      }
+      saveCustomLocal();
+      showToast('✓ Palabras sincronizadas desde la nube');
+    }
+  } catch (e) {
+    console.warn('Sync read failed:', e);
+    // Fallback: use local storage
+    customWords = JSON.parse(localStorage.getItem('fs_custom') || '[]');
+  } finally {
+    isSyncing = false;
+  }
+}
+
+async function syncWordsToCloud() {
+  if (!JSONBIN_CONFIG.binId || !JSONBIN_CONFIG.masterKey) return;
+  if (isSyncing) return;
+  isSyncing = true;
+  
+  try {
+    await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`, {
+      method: 'PUT',
+      headers: {
+        'X-Master-Key': JSONBIN_CONFIG.masterKey,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ customWords, lastSync: new Date().toISOString() })
+    });
+    showToast('✓ Cambios guardados en la nube');
+  } catch (e) {
+    console.warn('Sync write failed:', e);
+    showToast('⚠️ No se pudo sincronizar con la nube');
+  } finally {
+    isSyncing = false;
+  }
+}
+
+function saveCustomLocal() {
+  localStorage.setItem('fs_custom', JSON.stringify(customWords));
+}
 function saveProgress() { localStorage.setItem('fs_progress', JSON.stringify(progress)); }
+
+// ============================================================
+// DICTIONARY API - AUTO-FETCH WORD DATA
+// ============================================================
+async function fetchWordData(word) {
+  try {
+    // Usamos Dictionary API gratuito
+    const response = await fetch(`https://dictionaryapi.dev/api/v3/entries/en/${encodeURIComponent(word.toLowerCase())}`);
+    
+    if (!response.ok) throw new Error('Not found');
+    
+    const data = await response.json();
+    const entry = data[0];
+    
+    // Extraer fonética
+    let phonetic = '';
+    if (entry.phonetics) {
+      const withAudio = entry.phonetics.find(p => p.text && p.text.startsWith('/'));
+      if (withAudio) phonetic = withAudio.text;
+    }
+    
+    // Extraer definición (priorizar sustantivo/verbo)
+    let definition = '';
+    let example = '';
+    
+    for (const meaning of entry.meanings || []) {
+      if (['noun', 'verb'].includes(meaning.partOfSpeech)) {
+        if (meaning.definitions[0]?.definition) {
+          definition = meaning.definitions[0].definition;
+          example = meaning.definitions[0].example || '';
+          break;
+        }
+      }
+    }
+    
+    // Fallback si no se encontró definición específica
+    if (!definition && entry.meanings?.[0]?.definitions?.[0]?.definition) {
+      definition = entry.meanings[0].definitions[0].definition;
+      example = entry.meanings[0].definitions[0].example || '';
+    }
+    
+    // Categorización automática básica (se puede mejorar)
+    const oilfieldKeywords = ['well', 'drill', 'pipe', 'casing', 'pressure', 'reservoir', 'formation', 'logging', 'wireline', 'perforat', 'tubing', 'cement', 'mud', 'pump', 'valve', 'flow', 'production', 'completion', 'fractur'];
+    const lowerWord = word.toLowerCase();
+    const lowerDef = (definition || '').toLowerCase();
+    
+    let category = 'General';
+    if (oilfieldKeywords.some(k => lowerWord.includes(k) || lowerDef.includes(k))) {
+      category = 'Wireline'; // Por defecto petrolero, el usuario puede cambiar
+    }
+    
+    return {
+      success: true,
+      data: {
+        word: entry.word || word,
+        phonetic: phonetic || '',
+        category: category,
+        difficulty: 'Advanced',
+        definition: definition || `Technical term related to "${word}"`,
+        sentence: example ? `"${example}"` : '',
+        custom: true,
+        source: 'api'
+      }
+    };
+    
+  } catch (error) {
+    console.log('Dictionary API fallback:', error);
+    return { success: false, message: 'Término no encontrado en diccionario general' };
+  }
+}
+
+// ============================================================
+// UI HELPERS
+// ============================================================
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2800);
 }
+function shuffle(arr) { return arr.map(a => ({ a, r: Math.random() })).sort((a,b) => a.r - b.r).map(a => a.a); }
 function getVocab() {
   const includeBuiltin = document.getElementById('set-include-builtin') ? document.getElementById('set-include-builtin').checked : true;
   if (includeBuiltin) return [...BUILT_IN, ...customWords];
   return [...customWords];
 }
-function shuffle(arr) { return arr.map(a => ({ a, r: Math.random() })).sort((a,b) => a.r - b.r).map(a => a.a); }
 
 // ============================================================
 // NAVIGATION
@@ -1116,9 +1229,13 @@ function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById('sec-' + id).classList.add('active');
-  document.querySelectorAll('nav button').forEach(b => {
-    if (b.textContent.toLowerCase().includes(id.split('-')[0].slice(0,5))) b.classList.add('active');
-  });
+  
+  // Highlight active nav button
+  const navMap = { 'dashboard':0, 'vocabulary':1, 'flashcards':2, 'quiz':3, 'pronunciation':4, 'settings':5 };
+  if (navMap[id] !== undefined) {
+    document.querySelectorAll('nav button')[navMap[id]].classList.add('active');
+  }
+  
   if (id === 'dashboard') updateDashboard();
   if (id === 'vocabulary') { renderVocabList(); populateFilters(); }
   if (id === 'flashcards') { populateFcFilter(); initFlashcards(); }
@@ -1147,7 +1264,7 @@ function updateDashboard() {
   }
   document.getElementById('stat-streak').textContent = streak;
 
-  const wod = vocab[Math.floor(new Date().getDate() % vocab.length)];
+  const wod = vocab.length > 0 ? vocab[Math.floor(new Date().getDate() % vocab.length)] : BUILT_IN[0];
   const wodEl = document.getElementById('wod-container');
   wodEl.innerHTML = `
     <div class="wod-word">${wod.word}</div>
@@ -1159,61 +1276,141 @@ function updateDashboard() {
         <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
         Hear Word
       </button>
-      <button class="speak-btn" onclick="speakText('${wod.sentence.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
+      <button class="speak-btn" onclick="speakText('${(wod.sentence||wod.definition).replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
         <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
         Hear Sentence
       </button>
-      <span class="tag built-in">${wod.category}</span>
+      <span class="tag ${wod.custom?'custom':'built-in'}">${wod.category}</span>
     </div>
   `;
 }
 
 // ============================================================
-// VOCABULARY
+// VOCABULARY - MODIFIED FOR AUTO-FETCH
 // ============================================================
-function addWord() {
+let isFetching = false;
+
+async function addWord() {
+  const word = document.getElementById('inp-word').value.trim();
+  if (!word) { showToast('Ingresa una palabra'); return; }
+  
+  // Verificar si ya existe
+  const allWords = getVocab();
+  if (allWords.some(w => w.word.toLowerCase() === word.toLowerCase())) {
+    showToast('Esta palabra ya existe en tu vocabulario');
+    return;
+  }
+  
+  // Mostrar estado de búsqueda
+  const addBtn = document.querySelector('.form-card .btn-amber');
+  const originalText = addBtn.textContent;
+  
+  if (!isFetching) {
+    isFetching = true;
+    addBtn.disabled = true;
+    addBtn.textContent = '🔍 Buscando...';
+    
+    try {
+      // Intentar obtener datos automáticamente
+      const result = await fetchWordData(word);
+      
+      if (result.success && result.data) {
+        // Auto-completar formulario con datos encontrados
+        document.getElementById('inp-phonetic').value = result.data.phonetic;
+        document.getElementById('inp-def').value = result.data.definition;
+        document.getElementById('inp-sentence').value = result.data.sentence;
+        document.getElementById('inp-category').value = result.data.category;
+        showToast('✓ Datos encontrados. Revisa y confirma.');
+        // Enfocar en definición para que usuario verifique
+        document.getElementById('inp-def').focus();
+      } else {
+        // Fallback: formulario manual
+        showToast('⚠️ Término especializado. Completa los datos manualmente.');
+        document.getElementById('inp-phonetic').value = '';
+        document.getElementById('inp-def').value = '';
+        document.getElementById('inp-sentence').value = '';
+        document.getElementById('inp-def').focus();
+      }
+    } catch (e) {
+      console.error('Fetch error:', e);
+      showToast('Error de conexión. Completa manualmente.');
+    } finally {
+      isFetching = false;
+      addBtn.disabled = false;
+      addBtn.textContent = originalText;
+    }
+  }
+}
+
+function confirmAndSaveWord() {
   const word = document.getElementById('inp-word').value.trim();
   const phonetic = document.getElementById('inp-phonetic').value.trim();
   const category = document.getElementById('inp-category').value;
   const difficulty = document.getElementById('inp-difficulty').value;
   const definition = document.getElementById('inp-def').value.trim();
   const sentence = document.getElementById('inp-sentence').value.trim();
-  if (!word || !definition) { showToast('Word and definition are required.'); return; }
-  const existing = customWords.find(w => w.word.toLowerCase() === word.toLowerCase());
-  if (existing) { showToast('This word already exists.'); return; }
-  customWords.push({ word, phonetic, category, difficulty, definition, sentence, custom: true });
-  saveCustom();
+  
+  if (!word || !definition) { showToast('Palabra y definición son obligatorias'); return; }
+  
+  const newWord = { word, phonetic, category, difficulty, definition, sentence, custom: true, dateAdded: new Date().toISOString() };
+  customWords.push(newWord);
+  
+  // Guardar local y en la nube
+  saveCustomLocal();
+  syncWordsToCloud();
+  
   clearForm();
   renderVocabList();
-  showToast('Word added: ' + word);
+  showToast('✓ Palabra agregada: ' + word);
 }
+
 function clearForm() {
-  ['inp-word','inp-phonetic','inp-def','inp-sentence'].forEach(id => document.getElementById(id).value = '');
+  ['inp-word','inp-phonetic','inp-def','inp-sentence'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('inp-category').value = 'Wireline';
+  document.getElementById('inp-difficulty').value = 'Advanced';
 }
+
 function deleteWord(word) {
+  if (!confirm(`¿Eliminar "${word}"?`)) return;
   customWords = customWords.filter(w => w.word !== word);
-  saveCustom();
+  saveCustomLocal();
+  syncWordsToCloud();
   renderVocabList();
-  showToast('Deleted: ' + word);
+  showToast('✓ Eliminado: ' + word);
 }
+
 function populateFilters() {
   const cats = ['all', ...new Set(getVocab().map(w => w.category))];
   const el = document.getElementById('filter-chips');
+  if (!el) return;
   el.innerHTML = cats.map(c => `<div class="chip ${c===activeFilter?'active':''}" onclick="filterBy('${c}')">${c==='all'?'All':c}</div>`).join('');
 }
+
 function filterBy(cat) {
   activeFilter = cat;
   populateFilters();
   renderVocabList();
 }
+
 function renderVocabList() {
   const query = (document.getElementById('search-input')?.value || '').toLowerCase();
   const includeBuiltin = document.getElementById('set-include-builtin')?.checked ?? true;
   let list = includeBuiltin ? [...BUILT_IN, ...customWords] : [...customWords];
+  
   if (activeFilter !== 'all') list = list.filter(w => w.category === activeFilter);
   if (query) list = list.filter(w => w.word.toLowerCase().includes(query) || w.definition.toLowerCase().includes(query));
+  
   const el = document.getElementById('vocab-list');
-  if (!list.length) { el.innerHTML = '<div class="empty-state"><span class="es-big">NONE</span>No words found</div>'; return; }
+  if (!el) return;
+  
+  if (!list.length) { 
+    el.innerHTML = '<div class="empty-state"><span class="es-big">NONE</span>No words found</div>'; 
+    return; 
+  }
+  
   el.innerHTML = list.map(w => `
     <div class="vocab-item">
       <div>
@@ -1239,12 +1436,16 @@ function renderVocabList() {
 function populateFcFilter() {
   const cats = ['all', ...new Set(getVocab().map(w => w.category))];
   const el = document.getElementById('fc-filter');
+  if (!el) return;
   el.innerHTML = cats.map(c => `<option value="${c}">${c==='all'?'All Categories':c}</option>`).join('');
 }
+
 function initFlashcards() {
   const filter = document.getElementById('fc-filter')?.value || 'all';
   let deck = getVocab();
   if (filter !== 'all') deck = deck.filter(w => w.category === filter);
+  if (!deck.length) { showToast('Agrega palabras primero'); return; }
+  
   fcDeck = shuffle(deck);
   fcIndex = 0;
   fcSessionScore = 0;
@@ -1254,11 +1455,13 @@ function initFlashcards() {
   document.getElementById('fc-actions').style.display = 'none';
   loadFlashcard();
 }
+
 function loadFlashcard() {
   if (!fcDeck.length) return;
   const card = fcDeck[fcIndex];
   const flashcard = document.getElementById('flashcard');
   flashcard.classList.remove('revealed');
+  
   document.getElementById('fc-word').textContent = card.word;
   document.getElementById('fc-word-back').textContent = card.word;
   document.getElementById('fc-phonetic').textContent = card.phonetic || '';
@@ -1268,6 +1471,7 @@ function loadFlashcard() {
   document.getElementById('fc-actions').style.display = 'none';
   updateFcProgress();
 }
+
 function revealCard() {
   const flashcard = document.getElementById('flashcard');
   if (flashcard.classList.contains('revealed')) return;
@@ -1276,11 +1480,13 @@ function revealCard() {
   const autoSpeak = document.getElementById('set-auto-speak')?.checked ?? true;
   if (autoSpeak) speakCard();
 }
+
 function speakCard() {
   const card = fcDeck[fcIndex];
   if (!card) return;
   speakText(card.word + '. ' + card.definition + '. Example: ' + (card.sentence || ''));
 }
+
 function rateCard(rating) {
   const card = fcDeck[fcIndex];
   progress[card.word] = (progress[card.word] || 0) + rating;
@@ -1296,6 +1502,7 @@ function rateCard(rating) {
     loadFlashcard();
   }
 }
+
 function updateFcProgress() {
   const total = fcDeck.length;
   const pct = total > 0 ? ((fcIndex / total) * 100).toFixed(0) : 0;
@@ -1309,13 +1516,16 @@ function updateFcProgress() {
 function populateQuizFilter() {
   const cats = ['all', ...new Set(getVocab().map(w => w.category))];
   const el = document.getElementById('quiz-filter');
+  if (!el) return;
   el.innerHTML = cats.map(c => `<option value="${c}">${c==='all'?'All Categories':c}</option>`).join('');
 }
+
 function startQuiz() {
   const filter = document.getElementById('quiz-filter').value;
   let pool = getVocab();
   if (filter !== 'all') pool = pool.filter(w => w.category === filter);
-  if (pool.length < 4) { showToast('Need at least 4 words in category for quiz.'); return; }
+  if (pool.length < 4) { showToast('Necesitas al menos 4 palabras para el quiz'); return; }
+  
   quizQ = shuffle(pool).slice(0, Math.min(pool.length, 15));
   quizIndex = 0;
   quizScore = 0;
@@ -1323,6 +1533,7 @@ function startQuiz() {
   document.getElementById('quiz-next-row').style.display = 'none';
   renderQuestion();
 }
+
 function renderQuestion() {
   if (quizIndex >= quizQ.length) {
     document.getElementById('quiz-card').innerHTML = `
@@ -1349,6 +1560,7 @@ function renderQuestion() {
   `;
   document.getElementById('quiz-next-row').style.display = 'none';
 }
+
 function checkAnswer(btn, selected, correct, word, sentence) {
   document.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
   const fb = document.getElementById('quiz-fb');
@@ -1368,6 +1580,7 @@ function checkAnswer(btn, selected, correct, word, sentence) {
   document.getElementById('quiz-next-row').style.display = 'block';
   speakText(word);
 }
+
 function nextQuestion() {
   document.getElementById('quiz-next-row').style.display = 'none';
   renderQuestion();
@@ -1379,17 +1592,23 @@ function nextQuestion() {
 function loadVoices() {
   const sel = document.getElementById('set-voice');
   if (!sel) return;
-  const voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
-  sel.innerHTML = voices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
-  sel.onchange = () => { activeVoice = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'))[parseInt(sel.value)]; };
+  const populate = () => {
+    const voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+    sel.innerHTML = voices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
+    sel.onchange = () => { activeVoice = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'))[parseInt(sel.value)]; };
+  };
+  populate();
+  speechSynthesis.onvoiceschanged = populate;
 }
+
 function setSpeed(rate, btn) {
   speechRate = rate;
   document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
+
 function speakText(text, slow = false) {
-  if (!window.speechSynthesis) { showToast('Speech not supported in this browser.'); return; }
+  if (!window.speechSynthesis) { showToast('Speech not supported'); return; }
   speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(text);
   utter.rate = slow ? 0.6 : speechRate;
@@ -1397,9 +1616,11 @@ function speakText(text, slow = false) {
   if (activeVoice) utter.voice = activeVoice;
   speechSynthesis.speak(utter);
 }
+
 function renderPronunList() {
   const vocab = getVocab();
   const el = document.getElementById('pronun-list');
+  if (!el) return;
   el.innerHTML = vocab.map(w => `
     <div class="pronun-card" style="padding:16px 20px;margin-bottom:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
       <div style="flex:1;min-width:160px;">
@@ -1419,27 +1640,68 @@ function renderPronunList() {
 // SETTINGS
 // ============================================================
 function resetProgress() {
+  if (!confirm('¿Resetear progreso de flashcards y quiz?')) return;
   progress = {};
   saveProgress();
-  showToast('Progress has been reset.');
+  showToast('✓ Progreso reiniciado');
 }
+
 function deleteCustomWords() {
-  if (!customWords.length) { showToast('No custom words to delete.'); return; }
+  if (!customWords.length) { showToast('No hay palabras personalizadas'); return; }
+  if (!confirm(`¿Eliminar ${customWords.length} palabras personalizadas?`)) return;
   customWords = [];
-  saveCustom();
+  saveCustomLocal();
+  syncWordsToCloud();
   renderVocabList();
-  showToast('All custom words deleted.');
+  showToast('✓ Todas las palabras personalizadas eliminadas');
+}
+
+function saveJsonBinConfig() {
+  const binId = document.getElementById('jsonbin-id').value.trim();
+  const masterKey = document.getElementById('jsonbin-key').value.trim();
+  
+  if (!binId || !masterKey) { showToast('Ingresa Bin ID y Master Key'); return; }
+  
+  JSONBIN_CONFIG.binId = binId;
+  JSONBIN_CONFIG.masterKey = masterKey;
+  
+  // Guardar en localStorage para persistencia
+  localStorage.setItem('fs_jsonbin', JSON.stringify(JSONBIN_CONFIG));
+  
+  showToast('✓ Configuración guardada. Sincronizando...');
+  syncWordsFromCloud();
+}
+
+function loadJsonBinConfig() {
+  const saved = localStorage.getItem('fs_jsonbin');
+  if (saved) {
+    try {
+      const config = JSON.parse(saved);
+      JSONBIN_CONFIG.binId = config.binId;
+      JSONBIN_CONFIG.masterKey = config.masterKey;
+    } catch(e) {}
+  }
 }
 
 // ============================================================
 // INIT
 // ============================================================
 window.addEventListener('load', () => {
+  // Cargar configuración JSONBin si existe
+  loadJsonBinConfig();
+  
+  // Cargar palabras locales primero
+  customWords = JSON.parse(localStorage.getItem('fs_custom') || '[]');
+  
+  // Intentar sincronizar con la nube
+  if (JSONBIN_CONFIG.binId && JSONBIN_CONFIG.masterKey) {
+    syncWordsFromCloud();
+  }
+  
   updateDashboard();
   renderVocabList();
   populateFilters();
   setTimeout(loadVoices, 500);
-  speechSynthesis.onvoiceschanged = loadVoices;
   initFlashcards();
 });
 </script>
