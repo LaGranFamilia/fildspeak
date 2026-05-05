@@ -29,13 +29,21 @@
   .pronun-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px}.speak-btn{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:var(--radius);padding:10px 18px;cursor:pointer;background:var(--bg4);color:var(--text-dim);border:1px solid var(--border);transition:all 0.2s}.speak-btn:hover{border-color:var(--amber-dim);color:var(--amber)}.speak-btn.playing{border-color:var(--amber);color:var(--amber);animation:pulse 1s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.2)}50%{box-shadow:0 0 0 6px rgba(245,158,11,0)}}.speaker-icon{width:16px;height:16px;fill:currentColor}.speed-selector{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:12px}.speed-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}.speed-btn.active{border-color:var(--amber-dim);color:var(--amber)}.speed-btn:hover{border-color:var(--steel);color:var(--text)}
   
   /* === Playback Controls === */
-  .playback-bar{background:var(--bg3);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--radius);padding:16px;margin:20px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.playback-info{flex:1;min-width:200px}.playback-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em}.playback-status{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em}.playback-controls{display:flex;gap:8px;align-items:center}.playback-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--amber);background:var(--bg4);color:var(--amber);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:1.2rem}.playback-btn:hover{background:var(--amber);color:#000}.playback-btn:disabled{opacity:0.5;cursor:not-allowed}.playback-btn.playing{background:var(--amber);color:#000;animation:pulse 1.5s infinite}.playback-btn.stop{border-color:var(--red);color:var(--red)}.playback-btn.stop:hover{background:var(--red);color:#fff}.playback-progress{width:100%;height:4px;background:var(--bg4);border-radius:2px;margin-top:12px;overflow:hidden}.playback-progress-fill{height:100%;background:var(--amber);transition:width 0.3s ease}
+  .playback-bar{background:var(--bg3);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--radius);padding:16px;margin:20px 0 12px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.playback-info{flex:1;min-width:200px}.playback-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em}.playback-status{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em}.playback-controls{display:flex;gap:8px;align-items:center}.playback-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--amber);background:var(--bg4);color:var(--amber);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:1.2rem}.playback-btn:hover{background:var(--amber);color:#000}.playback-btn:disabled{opacity:0.5;cursor:not-allowed}.playback-btn.playing{background:var(--amber);color:#000;animation:pulse 1.5s infinite}.playback-btn.stop{border-color:var(--red);color:var(--red)}.playback-btn.stop:hover{background:var(--red);color:#fff}.playback-progress{width:100%;height:4px;background:var(--bg4);border-radius:2px;margin-top:12px;overflow:hidden}.playback-progress-fill{height:100%;background:var(--amber);transition:width 0.3s ease}
+  
+  /* === Playback Display (Lectura Sincronizada) === */
+  .playback-display{background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--amber);border-radius:var(--radius);padding:24px;margin:16px 0;animation:fadeUp 0.3s ease}
+  .pd-word{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:900;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;line-height:1;margin-bottom:4px}
+  .pd-phonetic{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--text-dim);margin-bottom:8px}
+  .pd-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .pd-def{font-size:0.95rem;color:var(--text);line-height:1.6;margin-bottom:12px}
+  .pd-sentence{background:var(--bg4);border-left:3px solid var(--amber-dim);padding:10px 14px;font-size:0.85rem;color:var(--text-dim);font-style:italic;border-radius:0 var(--radius) var(--radius) 0;margin-top:8px;display:none}
   
   .divider{height:1px;background:var(--border);margin:24px 0}.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase}.empty-state .es-big{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--bg3);letter-spacing:0.1em;display:block;margin-bottom:8px}
   #toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--amber-dim);border-left:3px solid var(--amber);border-radius:var(--radius);padding:12px 18px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;z-index:999;transform:translateX(120%);transition:transform 0.3s ease;max-width:280px}#toast.show{transform:translateX(0)}
   .setting-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}.setting-row:last-child{border-bottom:none}.setting-info .s-title{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--text)}.setting-info .s-desc{font-size:0.78rem;color:var(--text-dim);margin-top:2px}
   .toggle{position:relative;width:42px;height:22px;cursor:pointer}.toggle input{display:none}.toggle-track{width:100%;height:100%;background:var(--bg4);border:1px solid var(--border);border-radius:11px;transition:all 0.2s}.toggle input:checked+.toggle-track{background:var(--amber-dim);border-color:var(--amber)}.toggle-thumb{position:absolute;top:3px;left:3px;width:14px;height:14px;background:var(--text-dim);border-radius:50%;transition:all 0.2s}.toggle input:checked~.toggle-thumb{left:23px;background:var(--amber)}
-  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.fc-word{font-size:2.5rem}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}.playback-bar{flex-direction:column;align-items:flex-start}.playback-controls{width:100%;justify-content:center}}
+  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.fc-word{font-size:2.5rem}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}.playback-bar{flex-direction:column;align-items:flex-start}.playback-controls{width:100%;justify-content:center}.pd-word{font-size:2rem}}
 </style>
 </head>
 <body>
@@ -116,6 +124,16 @@
       </div>
       <div class="playback-progress"><div class="playback-progress-fill" id="playback-progress" style="width:0%"></div></div>
     </div>
+    
+    <!-- === Playback Display (Lectura Sincronizada) === -->
+    <div id="playback-display" class="playback-display" style="display:none;">
+      <div class="pd-word" id="pd-word">---</div>
+      <div class="pd-phonetic" id="pd-phonetic"></div>
+      <div class="pd-meta" id="pd-meta"></div>
+      <div class="pd-def" id="pd-def"></div>
+      <div class="pd-sentence" id="pd-sentence"></div>
+    </div>
+
     <div style="text-align:right;margin-bottom:12px;">
       <button class="btn btn-amber btn-sm" id="btn-start-playback" onclick="startVocabPlayback()">▶ Play Todo el Vocabulario</button>
     </div>
@@ -180,43 +198,45 @@ let playback = {
   utterance: null
 };
 
+function updatePlaybackDisplay(item) {
+  const display = document.getElementById('playback-display');
+  if (!item) { display.style.display = 'none'; return; }
+  display.style.display = 'block';
+  document.getElementById('pd-word').textContent = item.word;
+  document.getElementById('pd-phonetic').textContent = item.phonetic || '';
+  document.getElementById('pd-meta').innerHTML = `<span class="tag ${item.custom?'custom':'built-in'}">${item.category}</span> <span class="tag">${item.difficulty}</span>`;
+  document.getElementById('pd-def').textContent = item.definition;
+  const sentEl = document.getElementById('pd-sentence');
+  if (item.sentence) {
+    sentEl.textContent = item.sentence.replace(/^"|"$/g, '');
+    sentEl.style.display = 'block';
+  } else {
+    sentEl.style.display = 'none';
+  }
+}
+
 async function requestWakeLock() {
   if ('wakeLock' in navigator) {
     try {
       playback.wakeLock = await navigator.wakeLock.request('screen');
       playback.wakeLock.addEventListener('release', () => console.log('Wake Lock released'));
-      console.log('✅ Wake Lock activo');
-    } catch (err) {
-      console.warn('⚠️ Wake Lock no disponible:', err);
-    }
+    } catch (err) { console.warn('⚠️ Wake Lock no disponible:', err); }
   }
 }
-
 async function releaseWakeLock() {
-  if (playback.wakeLock) {
-    await playback.wakeLock.release();
-    playback.wakeLock = null;
-  }
+  if (playback.wakeLock) { await playback.wakeLock.release(); playback.wakeLock = null; }
 }
-
 function preparePlaylist() {
   const vocab = getVocab().filter(w => w.word && w.definition);
   playback.currentIndex = Math.min(playback.lastPosition, Math.max(0, vocab.length - 1));
   playback.playlist = vocab;
   return vocab.length;
 }
-
 async function startVocabPlayback() {
-  if (!window.speechSynthesis) {
-    showToast('❌ Tu navegador no soporta síntesis de voz');
-    return;
-  }
+  if (!window.speechSynthesis) { showToast('❌ Tu navegador no soporta síntesis de voz'); return; }
   speechSynthesis.cancel();
   const total = preparePlaylist();
-  if (total === 0) {
-    showToast('⚠️ Agrega palabras primero');
-    return;
-  }
+  if (total === 0) { showToast('⚠️ Agrega palabras primero'); return; }
   document.getElementById('playback-bar').style.display = 'flex';
   document.getElementById('btn-start-playback').style.display = 'none';
   await requestWakeLock();
@@ -225,16 +245,14 @@ async function startVocabPlayback() {
   speakCurrentWord();
   localStorage.setItem('fs_playback_pos', playback.currentIndex);
 }
-
 function speakCurrentWord() {
-  if (!playback.isPlaying || playback.currentIndex >= playback.playlist.length) {
-    handlePlaybackComplete();
-    return;
-  }
+  if (!playback.isPlaying || playback.currentIndex >= playback.playlist.length) { handlePlaybackComplete(); return; }
   const item = playback.playlist[playback.currentIndex];
+  updatePlaybackDisplay(item);
   const status = document.getElementById('playback-status');
-  status.textContent = `${playback.currentIndex + 1}/${playback.playlist.length}: ${item.word}`;
+  status.textContent = `${playback.currentIndex + 1} / ${playback.playlist.length}`;
   document.getElementById('playback-progress').style.width = `${((playback.currentIndex) / playback.playlist.length) * 100}%`;
+  
   const textToSpeak = `${item.word}. ${item.phonetic ? 'Phonetic: ' + item.phonetic + '.' : ''} ${item.definition}. ${item.sentence ? 'Example: ' + item.sentence : ''}`;
   playback.utterance = new SpeechSynthesisUtterance(textToSpeak);
   playback.utterance.rate = speechRate;
@@ -249,88 +267,52 @@ function speakCurrentWord() {
   };
   playback.utterance.onerror = (e) => {
     console.warn('Speech error:', e);
-    if (playback.isPlaying) {
-      playback.currentIndex++;
-      setTimeout(() => speakCurrentWord(), 500);
-    }
+    if (playback.isPlaying) { playback.currentIndex++; setTimeout(() => speakCurrentWord(), 500); }
   };
   speechSynthesis.speak(playback.utterance);
 }
-
 function togglePlayback() {
   if (!playback.playlist.length) return;
   if (playback.isPlaying) {
-    playback.isPlaying = false;
-    speechSynthesis.pause();
-    releaseWakeLock();
+    playback.isPlaying = false; speechSynthesis.pause(); releaseWakeLock();
   } else {
-    playback.isPlaying = true;
-    speechSynthesis.resume();
-    requestWakeLock();
-    if (playback.currentIndex >= playback.playlist.length) {
-      playback.currentIndex = 0;
-    }
+    playback.isPlaying = true; speechSynthesis.resume(); requestWakeLock();
+    if (playback.currentIndex >= playback.playlist.length) playback.currentIndex = 0;
     speakCurrentWord();
   }
   updatePlaybackUI();
 }
-
 function playbackNext() {
   if (!playback.playlist.length) return;
-  speechSynthesis.cancel();
-  playback.currentIndex = Math.min(playback.currentIndex + 1, playback.playlist.length);
-  localStorage.setItem('fs_playback_pos', playback.currentIndex);
-  if (playback.isPlaying) speakCurrentWord();
-  updatePlaybackUI();
+  speechSynthesis.cancel(); playback.currentIndex = Math.min(playback.currentIndex + 1, playback.playlist.length);
+  localStorage.setItem('fs_playback_pos', playback.currentIndex); if (playback.isPlaying) speakCurrentWord(); updatePlaybackUI();
 }
-
 function playbackPrev() {
   if (!playback.playlist.length) return;
-  speechSynthesis.cancel();
-  playback.currentIndex = Math.max(playback.currentIndex - 1, 0);
-  localStorage.setItem('fs_playback_pos', playback.currentIndex);
-  if (playback.isPlaying) speakCurrentWord();
-  updatePlaybackUI();
+  speechSynthesis.cancel(); playback.currentIndex = Math.max(playback.currentIndex - 1, 0);
+  localStorage.setItem('fs_playback_pos', playback.currentIndex); if (playback.isPlaying) speakCurrentWord(); updatePlaybackUI();
 }
-
 function stopPlayback() {
-  playback.isPlaying = false;
-  speechSynthesis.cancel();
-  releaseWakeLock();
-  playback.currentIndex = 0;
-  localStorage.setItem('fs_playback_pos', '0');
+  playback.isPlaying = false; speechSynthesis.cancel(); releaseWakeLock();
+  playback.currentIndex = 0; localStorage.setItem('fs_playback_pos', '0');
   document.getElementById('playback-bar').style.display = 'none';
   document.getElementById('btn-start-playback').style.display = 'inline-flex';
-  updatePlaybackUI();
+  updatePlaybackDisplay(null); updatePlaybackUI();
 }
-
 function handlePlaybackComplete() {
-  playback.isPlaying = false;
-  releaseWakeLock();
+  playback.isPlaying = false; releaseWakeLock();
   showToast('✅ Reproducción completada');
   document.getElementById('playback-status').textContent = '✔ Completado';
   document.getElementById('btn-playback-toggle').classList.remove('playing');
 }
-
 function updatePlaybackUI() {
   const btn = document.getElementById('btn-playback-toggle');
-  if (playback.isPlaying) {
-    btn.textContent = '⏸';
-    btn.classList.add('playing');
-    btn.title = 'Pausar';
-  } else {
-    btn.textContent = '▶';
-    btn.classList.remove('playing');
-    btn.title = 'Reanudar';
-  }
+  if (playback.isPlaying) { btn.textContent = '⏸'; btn.classList.add('playing'); btn.title = 'Pausar'; }
+  else { btn.textContent = '▶'; btn.classList.remove('playing'); btn.title = 'Reanudar'; }
 }
-
 document.addEventListener('visibilitychange', async () => {
-  if (document.visibilityState === 'hidden' && playback.isPlaying) {
-    console.log('🔄 Página en background, manteniendo reproducción...');
-  } else if (document.visibilityState === 'visible' && playback.isPlaying) {
-    if ('wakeLock' in navigator) await requestWakeLock();
-  }
+  if (document.visibilityState === 'hidden' && playback.isPlaying) console.log('🔄 Página en background, manteniendo reproducción...');
+  else if (document.visibilityState === 'visible' && playback.isPlaying && 'wakeLock' in navigator) await requestWakeLock();
 });
 
 async function syncWordsFromCloud() { if(isSyncing)return; isSyncing=true; try{ const r=await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`,{headers:{'X-Master-Key':JSONBIN_CONFIG.masterKey}}); if(r.ok){ const d=await r.json(); const cw=d.record.customWords||[]; const lm=new Map(customWords.map(w=>[w.word.toLowerCase(),w])); for(const w of cw) if(!lm.has(w.word.toLowerCase())) customWords.push({...w,custom:true}); saveCustomLocal(); showToast('☁️ Palabras sincronizadas'); } }catch(e){console.warn(e)} finally{isSyncing=false} }
