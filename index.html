@@ -362,13 +362,13 @@ let activeFilter = 'all';
 let isSyncing = false;
 let isFetching = false;
 
-// --- NUEVAS VARIABLES PARA PLAY ALL ---
-let playAllInterval = null;
-let currentPlayIndex = 0;
+// --- VARIABLES GLOBALES PARA PLAY ALL ---
+let currentUtterance = null;
 let isPlayingAll = false;
+let currentPlayIndex = 0;
 let wakeLock = null;
 
-// Función para activar el wake lock (evitar que la pantalla se apague)
+// Función para activar el wake lock
 async function requestWakeLock() {
   try {
     if ('wakeLock' in navigator) {
@@ -393,17 +393,15 @@ function releaseWakeLock() {
 
 // Función para hablar una palabra completa (palabra + definición + ejemplo)
 function speakWord(index) {
-  if (index >= customWords.length + BUILT_IN.length) {
+  if (index >= getVocab().length) {
     stopPlayAll();
     return;
   }
+
+  // Cancelar cualquier reproducción en curso
+  speechSynthesis.cancel();
 
   const vocab = getVocab();
-  if (index >= vocab.length) {
-    stopPlayAll();
-    return;
-  }
-
   const wordObj = vocab[index];
   const textToSpeak = `${wordObj.word}. ${wordObj.definition}. ${wordObj.sentence || ''}`;
 
@@ -411,8 +409,36 @@ function speakWord(index) {
   document.getElementById('playbackInfo').textContent = `Playing: ${wordObj.word} (${index + 1}/${vocab.length})`;
   document.getElementById('playbackProgress').style.width = `${((index + 1) / vocab.length) * 100}%`;
 
-  // Hablar el texto
-  speakText(textToSpeak);
+  // Crear el utterance
+  const utterance = new SpeechSynthesisUtterance(textToSpeak);
+  utterance.rate = speechRate;
+  utterance.lang = 'en-US';
+  if (activeVoice) utterance.voice = activeVoice;
+
+  // Configurar el evento onend para pasar a la siguiente palabra
+  utterance.onend = () => {
+    if (isPlayingAll) {
+      // Pequeña pausa antes de la siguiente palabra (0.5 segundos)
+      setTimeout(() => {
+        currentPlayIndex++;
+        speakWord(currentPlayIndex);
+      }, 500);
+    }
+  };
+
+  utterance.onerror = (event) => {
+    console.error('Error en la reproducción:', event);
+    if (isPlayingAll) {
+      setTimeout(() => {
+        currentPlayIndex++;
+        speakWord(currentPlayIndex);
+      }, 500);
+    }
+  };
+
+  // Guardar el utterance actual y reproducir
+  currentUtterance = utterance;
+  speechSynthesis.speak(utterance);
 
   // Guardar el progreso en localStorage
   localStorage.setItem('playAllIndex', index);
@@ -427,10 +453,6 @@ function togglePlayAll() {
     return;
   }
 
-  // Cargar el estado guardado
-  const savedIndex = parseInt(localStorage.getItem('playAllIndex') || '0');
-  const savedIsPlaying = localStorage.getItem('playAllIsPlaying') === 'true';
-
   if (isPlayingAll) {
     // Pausar
     pausePlayAll();
@@ -440,22 +462,15 @@ function togglePlayAll() {
     document.getElementById('playAllIcon').textContent = '⏸️';
     document.getElementById('playAllBtn').textContent = ' Pause All';
 
-    // Iniciar desde el índice guardado o desde 0
-    currentPlayIndex = savedIsPlaying ? savedIndex : 0;
+    // Cargar el índice guardado o empezar desde 0
+    const savedIndex = parseInt(localStorage.getItem('playAllIndex') || '0');
+    currentPlayIndex = savedIndex >= vocab.length ? 0 : savedIndex;
 
     // Activar wake lock
     requestWakeLock();
 
     // Iniciar la reproducción
     speakWord(currentPlayIndex);
-
-    // Configurar el intervalo para la siguiente palabra (después de 5 segundos)
-    playAllInterval = setInterval(() => {
-      if (isPlayingAll) {
-        currentPlayIndex++;
-        speakWord(currentPlayIndex);
-      }
-    }, 5000); // 5 segundos entre palabras
   }
 }
 
@@ -465,10 +480,8 @@ function pausePlayAll() {
   document.getElementById('playAllIcon').textContent = '▶️';
   document.getElementById('playAllBtn').textContent = ' Play All';
 
-  if (playAllInterval) {
-    clearInterval(playAllInterval);
-    playAllInterval = null;
-  }
+  // Cancelar la reproducción actual
+  speechSynthesis.cancel();
 
   // Liberar wake lock
   releaseWakeLock();
@@ -488,9 +501,7 @@ function stopPlayAll() {
   showToast('Playback stopped');
 }
 
-// --- FIN DE NUEVAS FUNCIONES ---
-
-// Funciones existentes (modificadas para integrar el nuevo estado)
+// Funciones existentes
 async function syncWordsFromCloud() {
   if (isSyncing) return;
   isSyncing = true;
@@ -562,7 +573,6 @@ function getVocab() {
   return i ? [...BUILT_IN, ...customWords] : [...customWords];
 }
 
-// Función corregida para buscar en el diccionario
 async function fetchWordData(word) {
   try {
     const cleanWord = word.toLowerCase().trim();
