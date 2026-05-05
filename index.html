@@ -24,16 +24,18 @@
   .tag{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:var(--bg4);color:var(--text-faint);border:1px solid var(--border);margin-top:4px;display:inline-block}.tag.custom{color:var(--amber-dim);border-color:var(--amber-dim)}.tag.built-in{color:var(--steel);border-color:var(--steel2)}
   .search-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.search-row input{flex:1;min-width:200px}.filter-chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);border-radius:2px;cursor:pointer;background:var(--bg4);color:var(--text-faint);transition:all 0.2s}.chip.active{background:var(--amber-dim);border-color:var(--amber-dim);color:#000}.chip:hover{border-color:var(--steel);color:var(--text)}
   .flashcard-container{display:flex;flex-direction:column;align-items:center;gap:24px}.flashcard-progress{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);letter-spacing:0.1em;text-transform:uppercase;width:100%;display:flex;justify-content:space-between;align-items:center}.progress-bar{width:100%;height:3px;background:var(--bg4);border-radius:2px;margin:6px 0 0 0}.progress-fill{height:100%;background:var(--amber);border-radius:2px;transition:width 0.4s ease}
-  .flashcard{width:100%;max-width:600px;min-height:320px;background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--amber);border-radius:var(--radius);padding:36px 32px;cursor:pointer;perspective:1000px;position:relative;transition:transform 0.15s,box-shadow 0.2s;user-select:none}.flashcard:hover{box-shadow:0 8px 40px rgba(245,158,11,0.08)}.card-front,.card-back{position:absolute;inset:0;padding:36px 32px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;transition:opacity 0.3s}.card-back{display:none}.flashcard.revealed .card-front{display:none}.flashcard.revealed .card-back{display:flex}.fc-label{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px}.fc-word{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;line-height:1;margin-bottom:10px}.fc-phonetic{font-family:'IBM Plex Mono',monospace;font-size:0.85rem;color:var(--text-dim);margin-bottom:16px}.fc-hint{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);text-align:center;position:absolute;bottom:16px;left:0;right:0;letter-spacing:0.1em}.fc-def{font-size:1rem;color:var(--text);line-height:1.6;margin-bottom:14px}.fc-sentence{background:var(--bg4);border-left:3px solid var(--amber-dim);padding:10px 14px;font-size:0.85rem;color:var(--text-dim);font-style:italic;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:10px}.fc-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .flashcard{width:100%;max-width:600px;min-height:320px;background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--amber);border-radius:var(--radius);padding:36px 32px;cursor:pointer;perspective:1000px;position:relative;transition:transform 0.15s,box-shadow 0.2s;user-select:none}.flashcard:hover{box-shadow:0 8px 40px rgba(245,158,11,0.08)}.card-front,.card-back{position:absolute;inset:0;padding:36px 32px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;transition:opacity 0.3s}.card-back{display:none}.flashcard.revealed .card-front{display:none}.flashcard.revealed .card-back{display:flex}.fc-label{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px}.fc-word{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;line-height:1;margin-bottom:10px}.fc-phonetic{font-family:'IBM Plex Mono',monospace;font-size:0.85rem;color:var(--text-faint);margin-bottom:16px}.fc-hint{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);text-align:center;position:absolute;bottom:16px;left:0;right:0;letter-spacing:0.1em}.fc-def{font-size:1rem;color:var(--text);line-height:1.6;margin-bottom:14px}.fc-sentence{background:var(--bg4);border-left:3px solid var(--amber-dim);padding:10px 14px;font-size:0.85rem;color:var(--text-dim);font-style:italic;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:10px}.fc-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .quiz-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:640px;margin:0 auto}.quiz-question{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.4;letter-spacing:0.02em}.quiz-question span{color:var(--amber)}.quiz-options{display:flex;flex-direction:column;gap:10px}.quiz-option{background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;font-size:0.9rem;color:var(--text);cursor:pointer;transition:all 0.2s;text-align:left;font-family:'Barlow',sans-serif}.quiz-option:hover:not(:disabled){border-color:var(--amber-dim);color:var(--amber)}.quiz-option.correct{border-color:var(--green);background:rgba(34,197,94,0.1);color:var(--green)}.quiz-option.wrong{border-color:var(--red);background:rgba(239,68,68,0.1);color:var(--red)}.quiz-option:disabled{cursor:default}.quiz-feedback{margin-top:18px;padding:14px;border-radius:var(--radius);font-size:0.88rem;line-height:1.6;display:none}.quiz-feedback.show{display:block}.quiz-feedback.correct-fb{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:var(--green)}.quiz-feedback.wrong-fb{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:var(--red)}.quiz-score{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase}.quiz-score span{color:var(--amber);font-weight:700;font-size:1.3rem}
-  .pronun-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px}.speak-btn{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:var(--radius);padding:10px 18px;cursor:pointer;background:var(--bg4);color:var(--text-dim);border:1px solid var(--border);transition:all 0.2s}.speak-btn:hover{border-color:var(--amber-dim);color:var(--amber)}.speak-btn.playing{border-color:var(--amber);color:var(--amber);animation:pulse 1s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.2)}50%{box-shadow:0 0 0 6px rgba(245,158,11,0)}} .speaker-icon{width:16px;height:16px;fill:currentColor}.speed-selector{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:12px}.speed-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}.speed-btn.active{border-color:var(--amber-dim);color:var(--amber)}.speed-btn:hover{border-color:var(--steel);color:var(--text)}
+  .pronun-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px}.speak-btn{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:var(--radius);padding:10px 18px;cursor:pointer;background:var(--bg4);color:var(--text-dim);border:1px solid var(--border);transition:all 0.2s}.speak-btn:hover{border-color:var(--amber-dim);color:var(--amber)}.speak-btn.playing{border-color:var(--amber);color:var(--amber);animation:pulse 1s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.2)}50%{box-shadow:0 0 0 6px rgba(245,158,11,0)}}.speaker-icon{width:16px;height:16px;fill:currentColor}.speed-selector{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:12px}.speed-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}.speed-btn.active{border-color:var(--amber-dim);color:var(--amber)}.speed-btn:hover{border-color:var(--steel);color:var(--text)}
+  
+  /* === Playback Controls === */
+  .playback-bar{background:var(--bg3);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--radius);padding:16px;margin:20px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.playback-info{flex:1;min-width:200px}.playback-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em}.playback-status{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em}.playback-controls{display:flex;gap:8px;align-items:center}.playback-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--amber);background:var(--bg4);color:var(--amber);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:1.2rem}.playback-btn:hover{background:var(--amber);color:#000}.playback-btn:disabled{opacity:0.5;cursor:not-allowed}.playback-btn.playing{background:var(--amber);color:#000;animation:pulse 1.5s infinite}.playback-btn.stop{border-color:var(--red);color:var(--red)}.playback-btn.stop:hover{background:var(--red);color:#fff}.playback-progress{width:100%;height:4px;background:var(--bg4);border-radius:2px;margin-top:12px;overflow:hidden}.playback-progress-fill{height:100%;background:var(--amber);transition:width 0.3s ease}
+  
   .divider{height:1px;background:var(--border);margin:24px 0}.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase}.empty-state .es-big{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--bg3);letter-spacing:0.1em;display:block;margin-bottom:8px}
   #toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--amber-dim);border-left:3px solid var(--amber);border-radius:var(--radius);padding:12px 18px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;z-index:999;transform:translateX(120%);transition:transform 0.3s ease;max-width:280px}#toast.show{transform:translateX(0)}
   .setting-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}.setting-row:last-child{border-bottom:none}.setting-info .s-title{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--text)}.setting-info .s-desc{font-size:0.78rem;color:var(--text-dim);margin-top:2px}
   .toggle{position:relative;width:42px;height:22px;cursor:pointer}.toggle input{display:none}.toggle-track{width:100%;height:100%;background:var(--bg4);border:1px solid var(--border);border-radius:11px;transition:all 0.2s}.toggle input:checked+.toggle-track{background:var(--amber-dim);border-color:var(--amber)}.toggle-thumb{position:absolute;top:3px;left:3px;width:14px;height:14px;background:var(--text-dim);border-radius:50%;transition:all 0.2s}.toggle input:checked~.toggle-thumb{left:23px;background:var(--amber)}
-  .playback-controls { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
-  .playback-info { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; }
-  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.fc-word{font-size:2.5rem}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}}}
+  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.fc-word{font-size:2.5rem}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}.playback-bar{flex-direction:column;align-items:flex-start}.playback-controls{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -52,274 +54,96 @@
 <main>
   <section id="sec-dashboard" class="section active">
     <div class="section-title">Field <span>Command</span></div><div class="section-sub">Your English training at a glance</div>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="val" id="stat-total">0</div><div class="lbl">Total Words</div></div>
-      <div class="stat-card"><div class="val" id="stat-custom">0</div><div class="lbl">Custom Words</div></div>
-      <div class="stat-card"><div class="val" id="stat-mastered">0</div><div class="lbl">Mastered</div></div>
-      <div class="stat-card"><div class="val" id="stat-streak">0</div><div class="lbl">Day Streak</div></div>
-    </div>
-    <div class="wod-card" id="wod-container"></div>
-    <div class="divider"></div>
+    <div class="stats-grid"><div class="stat-card"><div class="val" id="stat-total">0</div><div class="lbl">Total Words</div></div><div class="stat-card"><div class="val" id="stat-custom">0</div><div class="lbl">Custom Words</div></div><div class="stat-card"><div class="val" id="stat-mastered">0</div><div class="lbl">Mastered</div></div><div class="stat-card"><div class="val" id="stat-streak">0</div><div class="lbl">Day Streak</div></div></div>
+    <div class="wod-card" id="wod-container"></div><div class="divider"></div>
     <div class="quick-grid">
-      <button class="quick-btn" onclick="showSection('flashcards')">
-        <div class="qb-icon">FC</div>
-        <div class="qb-title">Flashcards</div>
-        <div class="qb-desc">Review all your vocabulary with spaced repetition</div>
-      </button>
-      <button class="quick-btn" onclick="showSection('quiz')">
-        <div class="qb-icon">QZ</div>
-        <div class="qb-title">Quick Quiz</div>
-        <div class="qb-desc">Test your knowledge with multiple choice</div>
-      </button>
-      <button class="quick-btn" onclick="showSection('pronunciation')">
-        <div class="qb-icon">PR</div>
-        <div class="qb-title">Pronunciation</div>
-        <div class="qb-desc">Listen and practice technical pronunciation</div>
-      </button>
-      <button class="quick-btn" onclick="showSection('vocabulary')">
-        <div class="qb-icon">+W</div>
-        <div class="qb-title">Add Words</div>
-        <div class="qb-desc">Input your own field terminology</div>
-      </button>
-    </div>
-    <!-- Controles de reproducción en el Dashboard -->
-    <div class="playback-controls">
-      <button class="btn btn-amber" id="playAllBtn" onclick="togglePlayAll()">
-        <span id="playAllIcon">▶️</span> Play All
-      </button>
-      <button class="btn btn-ghost" onclick="stopPlayAll()" id="stopPlayBtn">⏹️ Stop</button>
-      <div class="playback-info" id="playbackInfo">Ready to play</div>
-    </div>
-    <div class="progress-bar" style="margin-top: 10px;">
-      <div class="progress-fill" id="playbackProgress" style="width: 0%;"></div>
+      <button class="quick-btn" onclick="showSection('flashcards')"><div class="qb-icon">FC</div><div class="qb-title">Flashcards</div><div class="qb-desc">Review all your vocabulary with spaced repetition</div></button>
+      <button class="quick-btn" onclick="showSection('quiz')"><div class="qb-icon">QZ</div><div class="qb-title">Quick Quiz</div><div class="qb-desc">Test your knowledge with multiple choice</div></button>
+      <button class="quick-btn" onclick="showSection('pronunciation')"><div class="qb-icon">PR</div><div class="qb-title">Pronunciation</div><div class="qb-desc">Listen and practice technical pronunciation</div></button>
+      <button class="quick-btn" onclick="showSection('vocabulary')"><div class="qb-icon">+W</div><div class="qb-title">Add Words</div><div class="qb-desc">Input your own field terminology</div></button>
     </div>
   </section>
-
   <section id="sec-vocabulary" class="section">
     <div class="section-title">My <span>Vocabulary</span></div><div class="section-sub">Manage and add technical terminology</div>
     <div class="form-card">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:18px;">+ Add New Word</div>
-      <div class="form-group full" style="margin-bottom:16px;">
-        <label>Word / Term <span style="color:var(--amber-dim);font-size:0.6rem;">(type and press "Search")</span></label>
-        <div style="display:flex;gap:8px;">
-          <input type="text" id="inp-word" placeholder="e.g. Perforating gun" onkeypress="if(event.key==='Enter'){addWord();}" />
-          <button class="btn btn-amber" onclick="addWord()" style="white-space:nowrap;" id="btn-search">🔍 Search</button>
-        </div>
-      </div>
+      <div class="form-group full" style="margin-bottom:16px;"><label>Word / Term <span style="color:var(--amber-dim);font-size:0.6rem;">(type and press "Search")</span></label><div style="display:flex;gap:8px;"><input type="text" id="inp-word" placeholder="e.g. Perforating gun" onkeypress="if(event.key==='Enter'){addWord();}" /><button class="btn btn-amber" onclick="addWord()" style="white-space:nowrap;" id="btn-search">🔍 Search</button></div></div>
       <div class="form-grid">
-        <div class="form-group">
-          <label>Phonetic <span style="color:var(--text-faint);font-weight:300;">(optional)</span></label>
-          <input type="text" id="inp-phonetic" placeholder="/per.fo.ray.ting gun/" />
-        </div>
-        <div class="form-group">
-          <label>Category</label>
-          <select id="inp-category">
-            <option value="Wireline">Wireline</option>
-            <option value="Drilling">Drilling</option>
-            <option value="Completions">Completions</option>
-            <option value="Reservoir">Reservoir</option>
-            <option value="Production">Production</option>
-            <option value="HSE">HSE</option>
-            <option value="General">General Engineering</option>
-            <option value="Custom">Custom</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Difficulty</label>
-          <select id="inp-difficulty">
-            <option value="Advanced">Advanced</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Expert">Expert / Specialized</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label>Definition / Meaning <span style="color:var(--amber-dim);font-size:0.6rem;">(required)</span></label>
-          <input type="text" id="inp-def" placeholder="Technical definition in English" />
-        </div>
-        <div class="form-group full">
-          <label>Example Sentence <span style="color:var(--text-faint);font-size:0.6rem;">(optional)</span></label>
-          <textarea id="inp-sentence" placeholder='e.g. "The perforating gun was run into the wellbore..."' style="min-height:60px;"></textarea>
-        </div>
+        <div class="form-group"><label>Phonetic <span style="color:var(--text-faint);font-weight:300;">(optional)</span></label><input type="text" id="inp-phonetic" placeholder="/per.fo.ray.ting gun/" /></div>
+        <div class="form-group"><label>Category</label><select id="inp-category"><option value="Wireline">Wireline</option><option value="Drilling">Drilling</option><option value="Completions">Completions</option><option value="Reservoir">Reservoir</option><option value="Production">Production</option><option value="HSE">HSE</option><option value="General">General Engineering</option><option value="Custom">Custom</option></select></div>
+        <div class="form-group"><label>Difficulty</label><select id="inp-difficulty"><option value="Advanced">Advanced</option><option value="Intermediate">Intermediate</option><option value="Expert">Expert / Specialized</option></select></div>
+        <div class="form-group full"><label>Definition / Meaning <span style="color:var(--amber-dim);font-size:0.6rem;">(required)</span></label><input type="text" id="inp-def" placeholder="Technical definition in English" /></div>
+        <div class="form-group full"><label>Example Sentence <span style="color:var(--text-faint);font-size:0.6rem;">(optional)</span></label><textarea id="inp-sentence" placeholder='e.g. "The perforating gun was run into the wellbore..."' style="min-height:60px;"></textarea></div>
       </div>
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-green" onclick="confirmAndSaveWord()">✓ Confirm & Save</button>
-        <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
-      </div>
-      <div style="margin-top:12px;font-size:0.7rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">
-        💡 Tip: Escribe una palabra y presiona "Search". Si es un término general en inglés, se auto-completará.
-      </div>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;"><button class="btn btn-green" onclick="confirmAndSaveWord()">✓ Confirm & Save</button><button class="btn btn-ghost" onclick="clearForm()">Clear</button></div>
+      <div style="margin-top:12px;font-size:0.7rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">💡 Tip: Escribe una palabra y presiona "Search". Si es un término general en inglés, se auto-completará.</div>
     </div>
-    <div class="search-row">
-      <input type="text" id="search-input" placeholder="Search terms..." oninput="renderVocabList()" />
-    </div>
+    <div class="search-row"><input type="text" id="search-input" placeholder="Search terms..." oninput="renderVocabList()" /></div>
     <div class="filter-chips" id="filter-chips" style="margin-bottom:16px;"></div>
     <div class="vocab-list" id="vocab-list"></div>
   </section>
-
   <section id="sec-flashcards" class="section">
     <div class="section-title">Flash<span>Cards</span></div><div class="section-sub">Tap card to reveal — rate your confidence</div>
-    <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;">
-      <select id="fc-filter" class="btn btn-ghost" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;" onchange="initFlashcards()">
-        <option value="all">All Categories</option>
-      </select>
-      <button class="btn btn-outline" onclick="initFlashcards()">Shuffle</button>
-    </div>
+    <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;"><select id="fc-filter" class="btn btn-ghost" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;" onchange="initFlashcards()"><option value="all">All Categories</option></select><button class="btn btn-outline" onclick="initFlashcards()">Shuffle</button></div>
     <div class="flashcard-container">
-      <div style="width:100%;max-width:600px;">
-        <div class="flashcard-progress">
-          <span id="fc-progress-text">Card 1 of 1</span>
-          <div class="quiz-score">Score: <span id="fc-score-disp">0</span></div>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="fc-progress-bar" style="width:0%"></div>
-        </div>
-      </div>
-      <div class="flashcard" id="flashcard" onclick="revealCard()">
-        <div class="card-front">
-          <div class="fc-label">Tap to reveal definition</div>
-          <div class="fc-word" id="fc-word">---</div>
-          <div class="fc-phonetic" id="fc-phonetic"></div>
-          <div class="tag" id="fc-tag" style="margin-top:8px;"></div>
-          <div class="fc-hint">[ TAP TO REVEAL ]</div>
-        </div>
-        <div class="card-back">
-          <div class="fc-label">Definition</div>
-          <div class="fc-word" id="fc-word-back" style="font-size:1.8rem;margin-bottom:10px;"></div>
-          <div class="fc-def" id="fc-def"></div>
-          <div class="fc-sentence" id="fc-sentence"></div>
-          <div style="margin-top:4px;">
-            <button class="speak-btn btn-sm" id="speak-card-btn" onclick="event.stopPropagation();speakCard()">
-              <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="fc-actions" id="fc-actions" style="display:none;">
-        <button class="btn btn-red" onclick="rateCard(0)">Hard</button>
-        <button class="btn btn-ghost" onclick="rateCard(1)">OK</button>
-        <button class="btn btn-green" onclick="rateCard(2)">Easy</button>
-      </div>
-      <div id="fc-done" style="display:none;text-align:center;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Session Complete</div>
-        <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;">Great work, engineer. Keep pushing.</div>
-        <button class="btn btn-amber" onclick="initFlashcards()">New Session</button>
-      </div>
+      <div style="width:100%;max-width:600px;"><div class="flashcard-progress"><span id="fc-progress-text">Card 1 of 1</span><div class="quiz-score">Score: <span id="fc-score-disp">0</span></div></div><div class="progress-bar"><div class="progress-fill" id="fc-progress-bar" style="width:0%"></div></div></div>
+      <div class="flashcard" id="flashcard" onclick="revealCard()"><div class="card-front"><div class="fc-label">Tap to reveal definition</div><div class="fc-word" id="fc-word">---</div><div class="fc-phonetic" id="fc-phonetic"></div><div class="tag" id="fc-tag" style="margin-top:8px;"></div><div class="fc-hint">[ TAP TO REVEAL ]</div></div><div class="card-back"><div class="fc-label">Definition</div><div class="fc-word" id="fc-word-back" style="font-size:1.8rem;margin-bottom:10px;"></div><div class="fc-def" id="fc-def"></div><div class="fc-sentence" id="fc-sentence"></div><div style="margin-top:4px;"><button class="speak-btn btn-sm" id="speak-card-btn" onclick="event.stopPropagation();speakCard()"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen</button></div></div></div>
+      <div class="fc-actions" id="fc-actions" style="display:none;"><button class="btn btn-red" onclick="rateCard(0)">Hard</button><button class="btn btn-ghost" onclick="rateCard(1)">OK</button><button class="btn btn-green" onclick="rateCard(2)">Easy</button></div>
+      <div id="fc-done" style="display:none;text-align:center;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Session Complete</div><div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;">Great work, engineer. Keep pushing.</div><button class="btn btn-amber" onclick="initFlashcards()">New Session</button></div>
     </div>
   </section>
-
   <section id="sec-quiz" class="section">
     <div class="section-title">Knowledge <span>Quiz</span></div><div class="section-sub">Multiple choice — petroleum & wireline terminology</div>
-    <div style="display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;align-items:center;">
-      <select id="quiz-filter" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;background:var(--bg4);border:1px solid var(--border);color:var(--text);outline:none;">
-        <option value="all">All Categories</option>
-      </select>
-      <button class="btn btn-amber" onclick="startQuiz()">Start New Quiz</button>
-      <div class="quiz-score" style="margin-left:auto;">Score: <span id="quiz-score-disp">0 / 0</span></div>
-    </div>
-    <div class="quiz-card" id="quiz-card">
-      <div style="text-align:center;padding:40px 0;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;">Press Start New Quiz to begin</div>
-    </div>
-    <div style="margin-top:16px;text-align:center;display:none;" id="quiz-next-row">
-      <button class="btn btn-amber" onclick="nextQuestion()">Next Question</button>
-    </div>
+    <div style="display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;align-items:center;"><select id="quiz-filter" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;background:var(--bg4);border:1px solid var(--border);color:var(--text);outline:none;"><option value="all">All Categories</option></select><button class="btn btn-amber" onclick="startQuiz()">Start New Quiz</button><div class="quiz-score" style="margin-left:auto;">Score: <span id="quiz-score-disp">0 / 0</span></div></div>
+    <div class="quiz-card" id="quiz-card"><div style="text-align:center;padding:40px 0;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;">Press Start New Quiz to begin</div></div>
+    <div style="margin-top:16px;text-align:center;display:none;" id="quiz-next-row"><button class="btn btn-amber" onclick="nextQuestion()">Next Question</button></div>
   </section>
-
   <section id="sec-pronunciation" class="section">
     <div class="section-title">Pro<span>nunciation</span></div><div class="section-sub">Listen and repeat — field engineering terms</div>
-    <div class="pronun-card">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:14px;">Speak Any Text</div>
-      <textarea id="pronun-input" placeholder="Type any word or sentence to hear it pronounced..." style="margin-bottom:12px;"></textarea>
-      <div class="speed-selector">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em;text-transform:uppercase;">Speed:</span>
-        <button class="speed-btn" onclick="setSpeed(0.6,this)">0.6x</button>
-        <button class="speed-btn active" onclick="setSpeed(0.9,this)">0.9x</button>
-        <button class="speed-btn" onclick="setSpeed(1.0,this)">1.0x</button>
-        <button class="speed-btn" onclick="setSpeed(1.2,this)">1.2x</button>
+    <div class="pronun-card"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:14px;">Speak Any Text</div><textarea id="pronun-input" placeholder="Type any word or sentence to hear it pronounced..." style="margin-bottom:12px;"></textarea><div class="speed-selector"><span style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em;text-transform:uppercase;">Speed:</span><button class="speed-btn" onclick="setSpeed(0.6,this)">0.6x</button><button class="speed-btn active" onclick="setSpeed(0.9,this)">0.9x</button><button class="speed-btn" onclick="setSpeed(1.0,this)">1.0x</button><button class="speed-btn" onclick="setSpeed(1.2,this)">1.2x</button></div><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;"><button class="speak-btn" id="main-speak-btn" onclick="speakText(document.getElementById('pronun-input').value)"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen</button><button class="speak-btn" onclick="speakText(document.getElementById('pronun-input').value, true)"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen Slow (0.6x)</button></div></div>
+    
+    <!-- === Playback Control Bar === -->
+    <div class="playback-bar" id="playback-bar" style="display:none;">
+      <div class="playback-info">
+        <div class="playback-title">🔊 Reproduciendo Vocabulario</div>
+        <div class="playback-status" id="playback-status">Preparando...</div>
       </div>
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="speak-btn" id="main-speak-btn" onclick="speakText(document.getElementById('pronun-input').value)">
-          <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen
-        </button>
-        <button class="speak-btn" onclick="speakText(document.getElementById('pronun-input').value, true)">
-          <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen Slow (0.6x)
-        </button>
+      <div class="playback-controls">
+        <button class="playback-btn" id="btn-playback-prev" onclick="playbackPrev()" title="Anterior">⏮</button>
+        <button class="playback-btn playing" id="btn-playback-toggle" onclick="togglePlayback()" title="Pausar/Reanudar">⏸</button>
+        <button class="playback-btn" id="btn-playback-next" onclick="playbackNext()" title="Siguiente">⏭</button>
+        <button class="playback-btn stop" id="btn-playback-stop" onclick="stopPlayback()" title="Detener">⏹</button>
       </div>
+      <div class="playback-progress"><div class="playback-progress-fill" id="playback-progress" style="width:0%"></div></div>
     </div>
-    <div class="divider"></div>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text);margin-bottom:16px;">All Vocabulary — Listen</div>
-    <div id="pronun-list"></div>
+    <div style="text-align:right;margin-bottom:12px;">
+      <button class="btn btn-amber btn-sm" id="btn-start-playback" onclick="startVocabPlayback()">▶ Play Todo el Vocabulario</button>
+    </div>
+    
+    <div class="divider"></div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text);margin-bottom:16px;">All Vocabulary — Listen</div><div id="pronun-list"></div>
   </section>
-
   <section id="sec-settings" class="section">
     <div class="section-title">App <span>Settings</span></div><div class="section-sub">Personalize your learning experience</div>
     <div class="form-card">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Auto-pronounce on Flashcard</div>
-          <div class="s-desc">Automatically speaks the word when a card is revealed</div>
-        </div>
-        <label class="toggle">
-          <input type="checkbox" id="set-auto-speak" checked />
-          <div class="toggle-track"></div>
-          <div class="toggle-thumb"></div>
-        </label>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Include Built-in Vocabulary</div>
-          <div class="s-desc">Show pre-loaded oilfield terms in flashcards and quiz</div>
-        </div>
-        <label class="toggle">
-          <input type="checkbox" id="set-include-builtin" checked onchange="initFlashcards();renderVocabList();" />
-          <div class="toggle-track"></div>
-          <div class="toggle-thumb"></div>
-        </label>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Voice Language</div>
-          <div class="s-desc">Select the English accent for text-to-speech</div>
-        </div>
-        <select id="set-voice" style="width:180px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:8px 10px;background:var(--bg4);border:1px solid var(--border);color:var(--text);border-radius:4px;outline:none;"></select>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Reset All Progress</div>
-          <div class="s-desc">Clear mastered/difficult markings (keeps vocabulary)</div>
-        </div>
-        <button class="btn btn-red btn-sm" onclick="resetProgress()">Reset</button>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="s-title">Delete Custom Words</div>
-          <div class="s-desc">Remove all words you have manually added</div>
-        </div>
-        <button class="btn btn-red btn-sm" onclick="deleteCustomWords()">Delete All Custom</button>
-      </div>
+      <div class="setting-row"><div class="setting-info"><div class="s-title">Auto-pronounce on Flashcard</div><div class="s-desc">Automatically speaks the word when a card is revealed</div></div><label class="toggle"><input type="checkbox" id="set-auto-speak" checked /><div class="toggle-track"></div><div class="toggle-thumb"></div></label></div>
+      <div class="setting-row"><div class="setting-info"><div class="s-title">Include Built-in Vocabulary</div><div class="s-desc">Show pre-loaded oilfield terms in flashcards and quiz</div></div><label class="toggle"><input type="checkbox" id="set-include-builtin" checked onchange="initFlashcards();renderVocabList();" /><div class="toggle-track"></div><div class="toggle-thumb"></div></label></div>
+      <div class="setting-row"><div class="setting-info"><div class="s-title">Voice Language</div><div class="s-desc">Select the English accent for text-to-speech</div></div><select id="set-voice" style="width:180px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:8px 10px;background:var(--bg4);border:1px solid var(--border);color:var(--text);border-radius:4px;outline:none;"></select></div>
+      <div class="setting-row"><div class="setting-info"><div class="s-title">Reset All Progress</div><div class="s-desc">Clear mastered/difficult markings (keeps vocabulary)</div></div><button class="btn btn-red btn-sm" onclick="resetProgress()">Reset</button></div>
+      <div class="setting-row"><div class="setting-info"><div class="s-title">Delete Custom Words</div><div class="s-desc">Remove all words you have manually added</div></div><button class="btn btn-red btn-sm" onclick="deleteCustomWords()">Delete All Custom</button></div>
     </div>
     <div class="divider"></div>
     <div class="form-card">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:16px;">☁️ Cloud Sync (JSONBin)</div>
-      <div class="form-group" style="margin-bottom:12px;">
-        <label>Bin ID</label>
-        <input type="text" id="jsonbin-id" placeholder="Auto-loaded from config" />
-      </div>
-      <div class="form-group" style="margin-bottom:16px;">
-        <label>Master Key</label>
-        <input type="password" id="jsonbin-key" placeholder="Auto-loaded from config" />
-      </div>
+      <div class="form-group" style="margin-bottom:12px;"><label>Bin ID</label><input type="text" id="jsonbin-id" placeholder="Auto-loaded from config" /></div>
+      <div class="form-group" style="margin-bottom:16px;"><label>Master Key</label><input type="password" id="jsonbin-key" placeholder="Auto-loaded from config" /></div>
       <button class="btn btn-amber" onclick="saveJsonBinConfig()">Save & Sync</button>
       <div style="margin-top:10px;font-size:0.65rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">Tus palabras se guardarán en la nube y se sincronizarán en todos tus dispositivos.</div>
     </div>
   </section>
 </main>
 <div id="toast"></div>
-
 <script>
-// Configuración inicial
 const JSONBIN_CONFIG = { binId: '69f7ee89856a682189a22230', masterKey: '$2a$10$JIVK37HzT1Dw5FHWXjc0MeCG8jaSqiqKdvDjBITZABekYzTk2gaW2' };
-
-// Vocabulario predefinido
 const BUILT_IN = [
   {word:"Wireline",phonetic:"/ˈwaɪər.laɪn/",category:"Wireline",difficulty:"Advanced",definition:"A cable-based system used in oil and gas wells to lower measurement and intervention tools into the wellbore.",sentence:"The wireline unit was rigged up overnight to run a suite of formation evaluation logs before the completion crew arrived.",custom:false},
   {word:"Perforating Gun",phonetic:"/ˌpɜr.fəˈreɪ.tɪŋ ɡʌn/",category:"Wireline",difficulty:"Advanced",definition:"A downhole tool loaded with shaped charges used to create perforations through casing and cement into the reservoir formation.",sentence:"We fired the perforating gun at the target interval to establish communication between the wellbore and the pay zone.",custom:false},
@@ -344,778 +168,253 @@ const BUILT_IN = [
   {word:"Trip Speed",phonetic:"/trɪp spiːd/",category:"Wireline",difficulty:"Intermediate",definition:"The rate at which the wireline tool string is run into or pulled out of the wellbore, measured in feet or meters per minute.",sentence:"We reduced trip speed to 100 ft/min through the casing shoe to avoid mechanical damage to the logging sensors.",custom:false},
   {word:"Log Quality Control",phonetic:"/lɒɡ ˈkwɒl.ɪ.ti kənˈtroʊl/",category:"Wireline",difficulty:"Advanced",definition:"The systematic process of verifying that acquired log data meets specified quality criteria before delivery to the client.",sentence:"LQC procedures were applied to all raw log data prior to depth shifting and merging with the final composite log.",custom:false}
 ];
+let customWords = [], progress = JSON.parse(localStorage.getItem('fs_progress')||'{}'), streak = parseInt(localStorage.getItem('fs_streak')||'0'), lastDate = localStorage.getItem('fs_lastdate')||'', speechRate = 0.9, activeVoice = null, fcDeck = [], fcIndex = 0, fcSessionScore = 0, quizQ = [], quizIndex = 0, quizScore = 0, activeFilter = 'all', isSyncing = false, isFetching = false;
 
-// Variables globales
-let customWords = [];
-let progress = JSON.parse(localStorage.getItem('fs_progress') || '{}');
-let streak = parseInt(localStorage.getItem('fs_streak') || '0');
-let lastDate = localStorage.getItem('fs_lastdate') || '';
-let speechRate = 0.9;
-let activeVoice = null;
-let fcDeck = [];
-let fcIndex = 0;
-let fcSessionScore = 0;
-let quizQ = [];
-let quizIndex = 0;
-let quizScore = 0;
-let activeFilter = 'all';
-let isSyncing = false;
-let isFetching = false;
+/* ===== VOCABULARY PLAYBACK SYSTEM ===== */
+let playback = {
+  isPlaying: false,
+  currentIndex: 0,
+  playlist: [],
+  wakeLock: null,
+  lastPosition: parseInt(localStorage.getItem('fs_playback_pos') || '0'),
+  utterance: null
+};
 
-// --- VARIABLES GLOBALES PARA PLAY ALL ---
-let currentUtterance = null;
-let isPlayingAll = false;
-let currentPlayIndex = 0;
-let wakeLock = null;
-
-// Función para activar el wake lock
 async function requestWakeLock() {
-  try {
-    if ('wakeLock' in navigator) {
-      wakeLock = await navigator.wakeLock.request('screen');
-      wakeLock.addEventListener('release', () => {
-        console.log('Wake Lock was released');
-      });
+  if ('wakeLock' in navigator) {
+    try {
+      playback.wakeLock = await navigator.wakeLock.request('screen');
+      playback.wakeLock.addEventListener('release', () => console.log('Wake Lock released'));
+      console.log('✅ Wake Lock activo');
+    } catch (err) {
+      console.warn('⚠️ Wake Lock no disponible:', err);
     }
-  } catch (err) {
-    console.error('Error al activar wake lock:', err);
   }
 }
 
-// Función para liberar el wake lock
-function releaseWakeLock() {
-  if (wakeLock !== null) {
-    wakeLock.release().then(() => {
-      wakeLock = null;
-    });
+async function releaseWakeLock() {
+  if (playback.wakeLock) {
+    await playback.wakeLock.release();
+    playback.wakeLock = null;
   }
 }
 
-// Función para hablar una palabra completa (palabra + definición + ejemplo)
-function speakWord(index) {
-  if (index >= getVocab().length) {
-    stopPlayAll();
+function preparePlaylist() {
+  const vocab = getVocab().filter(w => w.word && w.definition);
+  playback.currentIndex = Math.min(playback.lastPosition, Math.max(0, vocab.length - 1));
+  playback.playlist = vocab;
+  return vocab.length;
+}
+
+async function startVocabPlayback() {
+  if (!window.speechSynthesis) {
+    showToast('❌ Tu navegador no soporta síntesis de voz');
     return;
   }
-
-  // Cancelar cualquier reproducción en curso
   speechSynthesis.cancel();
-
-  const vocab = getVocab();
-  const wordObj = vocab[index];
-  const textToSpeak = `${wordObj.word}. ${wordObj.definition}. ${wordObj.sentence || ''}`;
-
-  // Actualizar la UI
-  document.getElementById('playbackInfo').textContent = `Playing: ${wordObj.word} (${index + 1}/${vocab.length})`;
-  document.getElementById('playbackProgress').style.width = `${((index + 1) / vocab.length) * 100}%`;
-
-  // Crear el utterance
-  const utterance = new SpeechSynthesisUtterance(textToSpeak);
-  utterance.rate = speechRate;
-  utterance.lang = 'en-US';
-  if (activeVoice) utterance.voice = activeVoice;
-
-  // Configurar el evento onend para pasar a la siguiente palabra
-  utterance.onend = () => {
-    if (isPlayingAll) {
-      // Pequeña pausa antes de la siguiente palabra (0.5 segundos)
-      setTimeout(() => {
-        currentPlayIndex++;
-        speakWord(currentPlayIndex);
-      }, 500);
-    }
-  };
-
-  utterance.onerror = (event) => {
-    console.error('Error en la reproducción:', event);
-    if (isPlayingAll) {
-      setTimeout(() => {
-        currentPlayIndex++;
-        speakWord(currentPlayIndex);
-      }, 500);
-    }
-  };
-
-  // Guardar el utterance actual y reproducir
-  currentUtterance = utterance;
-  speechSynthesis.speak(utterance);
-
-  // Guardar el progreso en localStorage
-  localStorage.setItem('playAllIndex', index);
-  localStorage.setItem('playAllIsPlaying', true);
-}
-
-// Función para iniciar/pausar la reproducción de todo el vocabulario
-function togglePlayAll() {
-  const vocab = getVocab();
-  if (vocab.length === 0) {
-    showToast('No words to play. Add some vocabulary first!');
+  const total = preparePlaylist();
+  if (total === 0) {
+    showToast('⚠️ Agrega palabras primero');
     return;
   }
+  document.getElementById('playback-bar').style.display = 'flex';
+  document.getElementById('btn-start-playback').style.display = 'none';
+  await requestWakeLock();
+  playback.isPlaying = true;
+  updatePlaybackUI();
+  speakCurrentWord();
+  localStorage.setItem('fs_playback_pos', playback.currentIndex);
+}
 
-  if (isPlayingAll) {
-    // Pausar
-    pausePlayAll();
+function speakCurrentWord() {
+  if (!playback.isPlaying || playback.currentIndex >= playback.playlist.length) {
+    handlePlaybackComplete();
+    return;
+  }
+  const item = playback.playlist[playback.currentIndex];
+  const status = document.getElementById('playback-status');
+  status.textContent = `${playback.currentIndex + 1}/${playback.playlist.length}: ${item.word}`;
+  document.getElementById('playback-progress').style.width = `${((playback.currentIndex) / playback.playlist.length) * 100}%`;
+  const textToSpeak = `${item.word}. ${item.phonetic ? 'Phonetic: ' + item.phonetic + '.' : ''} ${item.definition}. ${item.sentence ? 'Example: ' + item.sentence : ''}`;
+  playback.utterance = new SpeechSynthesisUtterance(textToSpeak);
+  playback.utterance.rate = speechRate;
+  playback.utterance.lang = 'en-US';
+  if (activeVoice) playback.utterance.voice = activeVoice;
+  playback.utterance.onend = () => {
+    if (playback.isPlaying) {
+      playback.currentIndex++;
+      localStorage.setItem('fs_playback_pos', playback.currentIndex);
+      setTimeout(() => speakCurrentWord(), 800);
+    }
+  };
+  playback.utterance.onerror = (e) => {
+    console.warn('Speech error:', e);
+    if (playback.isPlaying) {
+      playback.currentIndex++;
+      setTimeout(() => speakCurrentWord(), 500);
+    }
+  };
+  speechSynthesis.speak(playback.utterance);
+}
+
+function togglePlayback() {
+  if (!playback.playlist.length) return;
+  if (playback.isPlaying) {
+    playback.isPlaying = false;
+    speechSynthesis.pause();
+    releaseWakeLock();
   } else {
-    // Reanudar o iniciar
-    isPlayingAll = true;
-    document.getElementById('playAllIcon').textContent = '⏸️';
-    document.getElementById('playAllBtn').textContent = ' Pause All';
-
-    // Cargar el índice guardado o empezar desde 0
-    const savedIndex = parseInt(localStorage.getItem('playAllIndex') || '0');
-    currentPlayIndex = savedIndex >= vocab.length ? 0 : savedIndex;
-
-    // Activar wake lock
+    playback.isPlaying = true;
+    speechSynthesis.resume();
     requestWakeLock();
-
-    // Iniciar la reproducción
-    speakWord(currentPlayIndex);
-  }
-}
-
-// Función para pausar la reproducción
-function pausePlayAll() {
-  isPlayingAll = false;
-  document.getElementById('playAllIcon').textContent = '▶️';
-  document.getElementById('playAllBtn').textContent = ' Play All';
-
-  // Cancelar la reproducción actual
-  speechSynthesis.cancel();
-
-  // Liberar wake lock
-  releaseWakeLock();
-
-  // Guardar el estado
-  localStorage.setItem('playAllIsPlaying', false);
-}
-
-// Función para detener la reproducción
-function stopPlayAll() {
-  pausePlayAll();
-  currentPlayIndex = 0;
-  localStorage.removeItem('playAllIndex');
-  localStorage.removeItem('playAllIsPlaying');
-  document.getElementById('playbackInfo').textContent = 'Ready to play';
-  document.getElementById('playbackProgress').style.width = '0%';
-  showToast('Playback stopped');
-}
-
-// Funciones existentes
-async function syncWordsFromCloud() {
-  if (isSyncing) return;
-  isSyncing = true;
-  try {
-    const r = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`, {
-      headers: { 'X-Master-Key': JSONBIN_CONFIG.masterKey }
-    });
-    if (r.ok) {
-      const d = await r.json();
-      const cw = d.record.customWords || [];
-      const lm = new Map(customWords.map(w => [w.word.toLowerCase(), w]));
-      for (const w of cw) {
-        if (!lm.has(w.word.toLowerCase())) {
-          customWords.push({ ...w, custom: true });
-        }
-      }
-      saveCustomLocal();
-      showToast('☁️ Palabras sincronizadas');
+    if (playback.currentIndex >= playback.playlist.length) {
+      playback.currentIndex = 0;
     }
-  } catch (e) {
-    console.warn(e);
-  } finally {
-    isSyncing = false;
+    speakCurrentWord();
+  }
+  updatePlaybackUI();
+}
+
+function playbackNext() {
+  if (!playback.playlist.length) return;
+  speechSynthesis.cancel();
+  playback.currentIndex = Math.min(playback.currentIndex + 1, playback.playlist.length);
+  localStorage.setItem('fs_playback_pos', playback.currentIndex);
+  if (playback.isPlaying) speakCurrentWord();
+  updatePlaybackUI();
+}
+
+function playbackPrev() {
+  if (!playback.playlist.length) return;
+  speechSynthesis.cancel();
+  playback.currentIndex = Math.max(playback.currentIndex - 1, 0);
+  localStorage.setItem('fs_playback_pos', playback.currentIndex);
+  if (playback.isPlaying) speakCurrentWord();
+  updatePlaybackUI();
+}
+
+function stopPlayback() {
+  playback.isPlaying = false;
+  speechSynthesis.cancel();
+  releaseWakeLock();
+  playback.currentIndex = 0;
+  localStorage.setItem('fs_playback_pos', '0');
+  document.getElementById('playback-bar').style.display = 'none';
+  document.getElementById('btn-start-playback').style.display = 'inline-flex';
+  updatePlaybackUI();
+}
+
+function handlePlaybackComplete() {
+  playback.isPlaying = false;
+  releaseWakeLock();
+  showToast('✅ Reproducción completada');
+  document.getElementById('playback-status').textContent = '✔ Completado';
+  document.getElementById('btn-playback-toggle').classList.remove('playing');
+}
+
+function updatePlaybackUI() {
+  const btn = document.getElementById('btn-playback-toggle');
+  if (playback.isPlaying) {
+    btn.textContent = '⏸';
+    btn.classList.add('playing');
+    btn.title = 'Pausar';
+  } else {
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+    btn.title = 'Reanudar';
   }
 }
 
-async function syncWordsToCloud() {
-  if (isSyncing) return;
-  isSyncing = true;
-  try {
-    await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`, {
-      method: 'PUT',
-      headers: {
-        'X-Master-Key': JSONBIN_CONFIG.masterKey,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ customWords, lastSync: new Date().toISOString() })
-    });
-    showToast('✅ Guardado en la nube');
-  } catch (e) {
-    console.warn(e);
-    showToast('⚠️ Error al sincronizar');
-  } finally {
-    isSyncing = false;
+document.addEventListener('visibilitychange', async () => {
+  if (document.visibilityState === 'hidden' && playback.isPlaying) {
+    console.log('🔄 Página en background, manteniendo reproducción...');
+  } else if (document.visibilityState === 'visible' && playback.isPlaying) {
+    if ('wakeLock' in navigator) await requestWakeLock();
   }
-}
+});
 
-function saveCustomLocal() {
-  localStorage.setItem('fs_custom', JSON.stringify(customWords));
-}
-
-function saveProgress() {
-  localStorage.setItem('fs_progress', JSON.stringify(progress));
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-function shuffle(arr) {
-  return arr.map(a => ({ a, r: Math.random() })).sort((a, b) => a.r - b.r).map(a => a.a);
-}
-
-function getVocab() {
-  const i = document.getElementById('set-include-builtin')?.checked ?? true;
-  return i ? [...BUILT_IN, ...customWords] : [...customWords];
-}
+async function syncWordsFromCloud() { if(isSyncing)return; isSyncing=true; try{ const r=await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`,{headers:{'X-Master-Key':JSONBIN_CONFIG.masterKey}}); if(r.ok){ const d=await r.json(); const cw=d.record.customWords||[]; const lm=new Map(customWords.map(w=>[w.word.toLowerCase(),w])); for(const w of cw) if(!lm.has(w.word.toLowerCase())) customWords.push({...w,custom:true}); saveCustomLocal(); showToast('☁️ Palabras sincronizadas'); } }catch(e){console.warn(e)} finally{isSyncing=false} }
+async function syncWordsToCloud() { if(isSyncing)return; isSyncing=true; try{ await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`,{method:'PUT',headers:{'X-Master-Key':JSONBIN_CONFIG.masterKey,'Content-Type':'application/json'},body:JSON.stringify({customWords,lastSync:new Date().toISOString()})}); showToast('✅ Guardado en la nube'); }catch(e){console.warn(e);showToast('⚠️ Error al sincronizar')} finally{isSyncing=false} }
+function saveCustomLocal(){localStorage.setItem('fs_custom',JSON.stringify(customWords))} function saveProgress(){localStorage.setItem('fs_progress',JSON.stringify(progress))}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function shuffle(arr){return arr.map(a=>({a,r:Math.random()})).sort((a,b)=>a.r-b.r).map(a=>a.a)}
+function getVocab(){const i=document.getElementById('set-include-builtin')?.checked??true; return i?[...BUILT_IN,...customWords]:[...customWords]}
 
 async function fetchWordData(word) {
   try {
     const cleanWord = word.toLowerCase().trim();
     const response = await fetch(`https://dictionaryapi.dev/api/v3/entries/en/${encodeURIComponent(cleanWord)}`);
-
-    if (!response.ok) {
-      console.log(`❌ API returned ${response.status} for "${word}"`);
-      throw new Error('Not found in dictionary API');
-    }
-
+    if (!response.ok) { console.log(`❌ API returned ${response.status} for "${word}"`); throw new Error('Not found in dictionary API'); }
     const data = await response.json();
-    if (!Array.isArray(data) || data.length === 0) {
-      console.log('❌ No entries array in response');
-      throw new Error('Empty response');
-    }
-
+    if (!Array.isArray(data) || data.length === 0) { console.log('❌ No entries array in response'); throw new Error('Empty response'); }
     const entry = data[0];
     let phonetic = '';
     if (entry.phonetics && Array.isArray(entry.phonetics)) {
       const withSlashes = entry.phonetics.find(p => p.text && p.text.includes('/'));
-      if (withSlashes && withSlashes.text) {
-        phonetic = withSlashes.text;
-      } else if (entry.phonetics[0]?.text) {
-        phonetic = entry.phonetics[0].text;
-      }
+      if (withSlashes && withSlashes.text) { phonetic = withSlashes.text; }
+      else if (entry.phonetics[0]?.text) { phonetic = entry.phonetics[0].text; }
     }
-
     let definition = '', example = '';
     if (entry.meanings && Array.isArray(entry.meanings)) {
       for (const meaning of entry.meanings) {
         if (meaning.definitions && Array.isArray(meaning.definitions) && meaning.definitions.length > 0) {
           const def = meaning.definitions[0];
-          if (def.definition) {
-            definition = def.definition;
-            example = def.example || '';
-            break;
-          }
+          if (def.definition) { definition = def.definition; example = def.example || ''; break; }
         }
       }
     }
-
     if (!definition && entry.meanings?.[0]?.definitions?.[0]?.definition) {
       definition = entry.meanings[0].definitions[0].definition;
       example = entry.meanings[0].definitions[0].example || '';
     }
-
-    if (!definition) {
-      console.log(`⚠️ No definition found for "${word}", using fallback`);
-      definition = `See more at: ${entry.sourceUrls?.[0] || 'dictionaryapi.dev'}`;
-    }
-
+    if (!definition) { console.log(`⚠️ No definition found for "${word}", using fallback`); definition = `See more at: ${entry.sourceUrls?.[0] || 'dictionaryapi.dev'}`; }
     let category = 'General';
-    const oilKeywords = ['well', 'drill', 'pipe', 'casing', 'pressure', 'reservoir', 'formation', 'log', 'wireline'];
-    const textToCheck = (word + ' ' + definition + ' ' + (example || '')).toLowerCase();
-    if (oilKeywords.some(k => textToCheck.includes(k))) {
-      category = 'Wireline';
-    }
-
-    return {
-      success: true,
-      data: {
-        word: entry.word || word,
-        phonetic: phonetic,
-        category: category,
-        difficulty: 'Advanced',
-        definition: definition,
-        sentence: example ? `"${example}"` : '',
-        custom: true,
-        source: 'dictionary-api'
-      }
-    };
+    const oilKeywords = ['well','drill','pipe','casing','pressure','reservoir','formation','log','wireline','perforat','tubing','cement','mud','pump','valve','flow','production','completion','fractur','oil','gas','wellbore','bop','packer','choke','manifold','separator','blowout','kick','annulus','drillstring','bit','reamer','collar','sub','crossover','landing','nipple','profile','mandrel','sleeve','port','jet','nozzle','erosion','corrosion','scale','paraffin','asphaltene','emulsion','demulsifier','surfactant','inhibitor','scavenger','biocide','hydrate','wax','gel','fluid','brine','workover','intervention','slickline','coiled','snubbing','hydraulic','jacking','rig','derrick','mast','drawworks','kelly','topdrive','rotary','tricone','PDC','stabilizer','jar','accelerator','shock','absorber','subs','adapter','flange','hub','clamp','union','hammer','wing','nut','bolt','gasket','seal','o-ring','backup','ring','thread','compound','dope','torque','tension','compression','bending','fatigue','yield','ultimate','elongation','hardness','toughness','ductility','brittleness','fracture','crack','propagation','arrest','leak','seepage','migration','containment','barrier','primary','secondary','tertiary','cementing','squeezing','perforating','acidizing','stimulation','matrix','acid','diverting','temporary','permanent','isolation','plug','bridge','retainer','no-go','restrictor','orifice','bean','positive','adjustable','surface','subsurface','safety','valve','SSSV','SCSSV','DHSV','fail-safe','spring','loaded','pneumatic','electric','solenoid','actuator','positioner','transmitter','sensor','gauge','temperature','level','density','viscosity','conductivity','resistivity','gamma','neutron','sonic','caliper','image','microresistivity','dipole','monopole','array','spectral','photoelectric','capture','sigma','porosity','permeability','saturation','water','two-phase','three-phase','relative','absolute','effective','endpoint','hysteresis','capillary','threshold','entry','displacement','imbibition','drainage','wettability','contact','angle','interfacial','tension','polymer','foam','nitrogen','CO2','steam','hot','cyclic','continuous','injection','inflow','outflow','deliverability','productivity','index','PI','performance','relationship','IPR','VLP','TPR','nodal','analysis','system','optimization','artificial','lift','ESP','GL','rod','PCP','piston','plunger','gradient','traverse','correlation','holdup','slippage','regime','pattern','bubble','slug','churn','annular','mist','transition','map','Baker','Taitel','Dukler','Mukherjee','Brill','Beggs','Hagedorn','Brown','Poettmann','Carpenter','Fancher','Duns','Ros','Orkiszewski','Aziz','Govier','Fogarasi','Schmidt','Doty','vertical','horizontal','deviated','directional','extended','reach','multilateral','fishbone','pinnate','radial','lateral','toe','heel','upstream','midstream','downstream','gathering','processing','treatment','sweetening','dehydration','sweet','sour','H2S','mercury','nitrogen','helium','BTU','Wobbe','index','heating','value','calorific','LNG','LPG','NGL','C1','C2','C3','C4','C5+','methane','ethane','propane','butane','pentane','hexane','heptane','octane','nonane','decane','aromatics','benzene','toluene','xylene','BTX','naphtha','kerosene','diesel','jet','fuel','residual','asphalt','bitumen','heavy','extra','sands','shale','tight','unconventional','resource','play','basin','province','block','lease','concession','farm','farmout','farmee','operator','working','interest','WI','net','revenue','interest','NRI','royalty','overriding','ORRI','payment','carried','back','sharing','PSC','service','contract','risk','exploration','appraisal','development','abandonment','decommissioning','P&A','mechanical','cast','iron','composite','drillable','millable','dissolvable','magnesium','aluminum','activated','delayed','instant','setting','tool','e-line','work','string','test','logging','perforating','frac','cleanout','scale','removal','sand','cleanout','fish','recovery','junk','mill','overshot','spear','tap','die','repair','insert','restore','chase','clean','inspect','gauge','ring','plug','master','calibrate','certify','traceable','NIST','ISO','API','ANSI','ASME','ASTM','NACE','15156','MR0175','partial','ppH2S','pH','chloride','stress','cracking','SCC','sulfide','SSC','hydrogen','induced','HIC','stepwise','SWC','blistering','HB','SOHIC','oriented','galvanic','crevice','pitting','uniform','intergranular','dealloying','selective','leaching','dezincification','graphitization','embrittlement','HE','attack','HA','high','temperature','HTHA','Nelson','curve','941','material','selection','carbon','steel','low','alloy','stainless','duplex','super','nickel','alloy','inconel','monel','hastelloy','titanium','zirconium','clad','lined','coated','fusion','bonded','epoxy','FBE','polyurethane','polyethylene','PE','polypropylene','PP','PTFE','PFA','FEP','PVDF','ECTFE','ETFE','PCTFE'];
+    const textToCheck = (word + ' ' + definition + ' ' + (example||'')).toLowerCase();
+    if (oilKeywords.some(k => textToCheck.includes(k))) { category = 'Wireline'; }
+    return { success: true, data: { word: entry.word || word, phonetic: phonetic, category: category, difficulty: 'Advanced', definition: definition, sentence: example ? `"${example}"` : '', custom: true, source: 'dictionary-api' } };
   } catch (error) {
     console.warn('Dictionary API error:', error.message);
-    return {
-      success: false,
-      message: 'No encontrado en diccionario general. Completa manualmente.'
-    };
+    return { success: false, message: 'No encontrado en diccionario general. Completa manualmente.' };
   }
 }
 
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('sec-' + id).classList.add('active');
-  const i = ['dashboard', 'vocabulary', 'flashcards', 'quiz', 'pronunciation', 'settings'].indexOf(id);
-  if (i >= 0) document.querySelectorAll('nav button')[i].classList.add('active');
-  if (id === 'dashboard') updateDashboard();
-  if (id === 'vocabulary') {
-    renderVocabList();
-    populateFilters();
-  }
-  if (id === 'flashcards') {
-    populateFcFilter();
-    initFlashcards();
-  }
-  if (id === 'quiz') populateQuizFilter();
-  if (id === 'pronunciation') renderPronunList();
-  if (id === 'settings') loadVoices();
-}
+function showSection(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));document.getElementById('sec-'+id).classList.add('active');const i=['dashboard','vocabulary','flashcards','quiz','pronunciation','settings'].indexOf(id);if(i>=0)document.querySelectorAll('nav button')[i].classList.add('active');if(id==='dashboard')updateDashboard();if(id==='vocabulary'){renderVocabList();populateFilters()}if(id==='flashcards'){populateFcFilter();initFlashcards()}if(id==='quiz')populateQuizFilter();if(id==='pronunciation')renderPronunList();if(id==='settings')loadVoices()}
+function updateDashboard(){const v=getVocab();document.getElementById('stat-total').textContent=v.length;document.getElementById('stat-custom').textContent=customWords.length;document.getElementById('stat-mastered').textContent=Object.values(progress).filter(x=>x>=3).length;const t=new Date().toDateString();if(lastDate!==t){streak=lastDate===new Date(Date.now()-864e5).toDateString()?streak+1:1;lastDate=t;localStorage.setItem('fs_streak',streak);localStorage.setItem('fs_lastdate',t)}document.getElementById('stat-streak').textContent=streak;const w=v[Math.floor(new Date().getDate()%v.length)];document.getElementById('wod-container').innerHTML=`<div class="wod-word">${w.word}</div><div class="wod-phonetic">${w.phonetic||''}</div><div class="wod-def">${w.definition}</div><div class="wod-sentence">${w.sentence||''}</div><div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="speak-btn" onclick="speakText('${w.word.replace(/'/g,"\\'")}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Word</button><button class="speak-btn" onclick="speakText('${(w.sentence||w.definition).replace(/'/g,"\\'").replace(/"/g,'&quot;')}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Sentence</button><span class="tag ${w.custom?'custom':'built-in'}">${w.category}</span></div>`}
 
-function updateDashboard() {
-  const v = getVocab();
-  document.getElementById('stat-total').textContent = v.length;
-  document.getElementById('stat-custom').textContent = customWords.length;
-  document.getElementById('stat-mastered').textContent = Object.values(progress).filter(x => x >= 3).length;
-  const t = new Date().toDateString();
-  if (lastDate !== t) {
-    streak = lastDate === new Date(Date.now() - 864e5).toDateString() ? streak + 1 : 1;
-    lastDate = t;
-    localStorage.setItem('fs_streak', streak);
-    localStorage.setItem('fs_lastdate', t);
-  }
-  document.getElementById('stat-streak').textContent = streak;
-  const w = v[Math.floor(new Date().getDate() % v.length)];
-  if (w) {
-    document.getElementById('wod-container').innerHTML = `
-      <div class="wod-word">${w.word}</div>
-      <div class="wod-phonetic">${w.phonetic || ''}</div>
-      <div class="wod-def">${w.definition}</div>
-      <div class="wod-sentence">${w.sentence || ''}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button class="speak-btn" onclick="speakText('${w.word.replace(/'/g, "\\'")}')">
-          <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Word
-        </button>
-        <button class="speak-btn" onclick="speakText('${(w.sentence || w.definition).replace(/'/g, "\\'").replace(/"/g, '&quot;')}')">
-          <svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Sentence
-        </button>
-        <span class="tag ${w.custom ? 'custom' : 'built-in'}">${w.category}</span>
-      </div>
-    `;
-  }
-}
+async function addWord(){const w=document.getElementById('inp-word').value.trim();if(!w){showToast('Ingresa una palabra');return}if(getVocab().some(x=>x.word.toLowerCase()===w.toLowerCase())){showToast('Ya existe');return}const b=document.getElementById('btn-search');b.disabled=true;b.textContent='⏳ Buscando...';try{const r=await fetchWordData(w);if(r.success){document.getElementById('inp-phonetic').value=r.data.phonetic;document.getElementById('inp-def').value=r.data.definition;document.getElementById('inp-sentence').value=r.data.sentence;document.getElementById('inp-category').value=r.data.category;showToast('🔍 Datos encontrados. Revisa y confirma.')}else{clearForm();document.getElementById('inp-word').value=w;showToast('⚠️ '+r.message)}}catch(e){showToast('Error de conexión')}finally{b.disabled=false;b.textContent='🔍 Search'}}
+function confirmAndSaveWord(){const w=document.getElementById('inp-word').value.trim(),d=document.getElementById('inp-def').value.trim();if(!w||!d){showToast('Palabra y definición obligatorias');return}customWords.push({word:w,phonetic:document.getElementById('inp-phonetic').value.trim(),category:document.getElementById('inp-category').value,difficulty:document.getElementById('inp-difficulty').value,definition:d,sentence:document.getElementById('inp-sentence').value.trim(),custom:true,dateAdded:new Date().toISOString()});saveCustomLocal();syncWordsToCloud();clearForm();renderVocabList();showToast('✅ Agregada: '+w)}
+function clearForm(){['inp-word','inp-phonetic','inp-def','inp-sentence'].forEach(i=>document.getElementById(i).value='');document.getElementById('inp-category').value='Wireline';document.getElementById('inp-difficulty').value='Advanced'}
+function deleteWord(w){if(!confirm(`¿Eliminar "${w}"?`))return;customWords=customWords.filter(x=>x.word!==w);saveCustomLocal();syncWordsToCloud();renderVocabList();showToast('🗑️ Eliminada')}
+function populateFilters(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('filter-chips').innerHTML=c.map(x=>`<div class="chip ${x===activeFilter?'active':''}" onclick="filterBy('${x}')">${x==='all'?'All':x}</div>`).join('')}
+function filterBy(c){activeFilter=c;populateFilters();renderVocabList()}
+function renderVocabList(){const q=(document.getElementById('search-input')?.value||'').toLowerCase(),ib=document.getElementById('set-include-builtin')?.checked??true;let l=ib?[...BUILT_IN,...customWords]:[...customWords];if(activeFilter!=='all')l=l.filter(w=>w.category===activeFilter);if(q)l=l.filter(w=>w.word.toLowerCase().includes(q)||w.definition.toLowerCase().includes(q));const e=document.getElementById('vocab-list');if(!l.length){e.innerHTML='<div class="empty-state"><span class="es-big">NONE</span>No words found</div>';return}e.innerHTML=l.map(w=>`<div class="vocab-item"><div><div class="vi-word">${w.word}</div><div class="vi-phonetic">${w.phonetic||''}</div><span class="tag ${w.custom?'custom':'built-in'}">${w.category}</span><span class="tag" style="margin-left:4px">${w.difficulty}</span></div><div class="vi-def">${w.definition}<br/><span style="color:var(--text-faint);font-style:italic;font-size:0.78rem">${w.sentence||''}</span></div><div class="vi-actions"><button class="btn btn-ghost btn-sm speak-btn" onclick="speakText('${w.word.replace(/'/g,"\\'")}')"><svg class="speaker-icon" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>${w.custom?`<button class="btn btn-red btn-sm" onclick="deleteWord('${w.word.replace(/'/g,"\\'")}')">Del</button>`:''}</div></div>`).join('')}
 
-async function addWord() {
-  const w = document.getElementById('inp-word').value.trim();
-  if (!w) {
-    showToast('Ingresa una palabra');
-    return;
-  }
-  if (getVocab().some(x => x.word.toLowerCase() === w.toLowerCase())) {
-    showToast('Ya existe');
-    return;
-  }
-  const b = document.getElementById('btn-search');
-  b.disabled = true;
-  b.textContent = '⏳ Buscando...';
-  try {
-    const r = await fetchWordData(w);
-    if (r.success) {
-      document.getElementById('inp-phonetic').value = r.data.phonetic;
-      document.getElementById('inp-def').value = r.data.definition;
-      document.getElementById('inp-sentence').value = r.data.sentence;
-      document.getElementById('inp-category').value = r.data.category;
-      showToast('🔍 Datos encontrados. Revisa y confirma.');
-    } else {
-      clearForm();
-      document.getElementById('inp-word').value = w;
-      showToast('⚠️ ' + r.message);
-    }
-  } catch (e) {
-    showToast('Error de conexión');
-  } finally {
-    b.disabled = false;
-    b.textContent = '🔍 Search';
-  }
-}
+function populateFcFilter(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('fc-filter').innerHTML=c.map(x=>`<option value="${x}">${x==='all'?'All Categories':x}</option>`).join('')}
+function initFlashcards(){const f=document.getElementById('fc-filter')?.value||'all';let d=getVocab();if(f!=='all')d=d.filter(w=>w.category===f);if(!d.length){showToast('Agrega palabras primero');return}fcDeck=shuffle(d);fcIndex=0;fcSessionScore=0;document.getElementById('fc-score-disp').textContent=0;document.getElementById('fc-done').style.display='none';document.getElementById('flashcard').style.display='flex';document.getElementById('fc-actions').style.display='none';loadFlashcard()}
+function loadFlashcard(){if(!fcDeck.length)return;const c=fcDeck[fcIndex],fc=document.getElementById('flashcard');fc.classList.remove('revealed');document.getElementById('fc-word').textContent=c.word;document.getElementById('fc-word-back').textContent=c.word;document.getElementById('fc-phonetic').textContent=c.phonetic||'';document.getElementById('fc-tag').textContent=c.category;document.getElementById('fc-def').textContent=c.definition;document.getElementById('fc-sentence').textContent=c.sentence||'';document.getElementById('fc-actions').style.display='none';updateFcProgress()}
+function revealCard(){if(document.getElementById('flashcard').classList.contains('revealed'))return;document.getElementById('flashcard').classList.add('revealed');document.getElementById('fc-actions').style.display='flex';if(document.getElementById('set-auto-speak')?.checked)speakCard()}
+function speakCard(){const c=fcDeck[fcIndex];if(c)speakText(c.word+'. '+c.definition+'. Example: '+(c.sentence||''))}
+function rateCard(r){const c=fcDeck[fcIndex];progress[c.word]=(progress[c.word]||0)+r;saveProgress();if(r>=1)fcSessionScore++;document.getElementById('fc-score-disp').textContent=fcSessionScore;fcIndex++;if(fcIndex>=fcDeck.length){document.getElementById('flashcard').style.display='none';document.getElementById('fc-actions').style.display='none';document.getElementById('fc-done').style.display='block'}else loadFlashcard()}
+function updateFcProgress(){const t=fcDeck.length;document.getElementById('fc-progress-text').textContent=`Card ${fcIndex+1} of ${t}`;document.getElementById('fc-progress-bar').style.width=(t?((fcIndex/t)*100).toFixed(0):0)+'%'}
 
-function confirmAndSaveWord() {
-  const w = document.getElementById('inp-word').value.trim();
-  const d = document.getElementById('inp-def').value.trim();
-  if (!w || !d) {
-    showToast('Palabra y definición obligatorias');
-    return;
-  }
-  customWords.push({
-    word: w,
-    phonetic: document.getElementById('inp-phonetic').value.trim(),
-    category: document.getElementById('inp-category').value,
-    difficulty: document.getElementById('inp-difficulty').value,
-    definition: d,
-    sentence: document.getElementById('inp-sentence').value.trim(),
-    custom: true,
-    dateAdded: new Date().toISOString()
-  });
-  saveCustomLocal();
-  syncWordsToCloud();
-  clearForm();
-  renderVocabList();
-  showToast('✅ Agregada: ' + w);
-}
+function populateQuizFilter(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('quiz-filter').innerHTML=c.map(x=>`<option value="${x}">${x==='all'?'All Categories':x}</option>`).join('')}
+function startQuiz(){const f=document.getElementById('quiz-filter').value;let p=getVocab();if(f!=='all')p=p.filter(w=>w.category===f);if(p.length<4){showToast('Necesitas al menos 4 palabras');return}quizQ=shuffle(p).slice(0,Math.min(p.length,15));quizIndex=0;quizScore=0;document.getElementById('quiz-score-disp').textContent='0 / '+quizQ.length;document.getElementById('quiz-next-row').style.display='none';renderQuestion()}
+function renderQuestion(){if(quizIndex>=quizQ.length){document.getElementById('quiz-card').innerHTML=`<div style="text-align:center;padding:40px 20px;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--amber);text-transform:uppercase;">${quizScore} / ${quizQ.length}</div><div style="font-size:0.85rem;color:var(--text-dim);margin:8px 0 20px">${quizScore>=quizQ.length*0.8?'Outstanding performance, engineer.':quizScore>=quizQ.length*0.5?'Good effort. Keep drilling.':'Keep studying — you will get there.'}</div><button class="btn btn-amber" onclick="startQuiz()">Retry Quiz</button></div>`;document.getElementById('quiz-next-row').style.display='none';return}const q=quizQ[quizIndex],o=getVocab().filter(w=>w.word!==q.word),w=shuffle(o).slice(0,3).map(x=>x.definition),opts=shuffle([q.definition,...w]);document.getElementById('quiz-card').innerHTML=`<div class="quiz-question">What is <span>${q.word}</span>?</div><div class="quiz-options">${opts.map(x=>`<button class="quiz-option" onclick="checkAnswer(this,'${x.replace(/'/g,"\\'")}','${q.definition.replace(/'/g,"\\'")}','${q.word.replace(/'/g,"\\'")}','${(q.sentence||'').replace(/'/g,"\\'")}')">${x}</button>`).join('')}</div><div class="quiz-feedback" id="quiz-fb"></div>`;document.getElementById('quiz-next-row').style.display='none'}
+function checkAnswer(b,sel,cor,w,s){document.querySelectorAll('.quiz-option').forEach(x=>x.disabled=true);const f=document.getElementById('quiz-fb');if(sel===cor){b.classList.add('correct');quizScore++;f.className='quiz-feedback show correct-fb';f.innerHTML=`Correct!<br/><em>${s}</em>`}else{b.classList.add('wrong');document.querySelectorAll('.quiz-option').forEach(x=>{if(x.textContent===cor)x.classList.add('correct')});f.className='quiz-feedback show wrong-fb';f.innerHTML=`Not quite. Correct: <strong>${cor}</strong>`}quizIndex++;document.getElementById('quiz-score-disp').textContent=quizScore+' / '+quizQ.length;document.getElementById('quiz-next-row').style.display='block';speakText(w)}
+function nextQuestion(){document.getElementById('quiz-next-row').style.display='none';renderQuestion()}
 
-function clearForm() {
-  ['inp-word', 'inp-phonetic', 'inp-def', 'inp-sentence'].forEach(i => document.getElementById(i).value = '');
-  document.getElementById('inp-category').value = 'Wireline';
-  document.getElementById('inp-difficulty').value = 'Advanced';
-}
+function loadVoices(){const s=document.getElementById('set-voice');const p=()=>{const v=speechSynthesis.getVoices().filter(x=>x.lang.startsWith('en'));s.innerHTML=v.map((x,i)=>`<option value="${i}">${x.name} (${x.lang})</option>`).join('');s.onchange=()=>{activeVoice=speechSynthesis.getVoices().filter(x=>x.lang.startsWith('en'))[parseInt(s.value)]}};p();speechSynthesis.onvoiceschanged=p}
+function setSpeed(r,b){speechRate=r;document.querySelectorAll('.speed-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+function speakText(t,slow=false){if(!window.speechSynthesis){showToast('Speech not supported');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=slow?0.6:speechRate;u.lang='en-US';if(activeVoice)u.voice=activeVoice;speechSynthesis.speak(u)}
+function renderPronunList(){const v=getVocab();document.getElementById('pronun-list').innerHTML=v.map(w=>`<div class="pronun-card" style="padding:16px 20px;margin-bottom:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><div style="flex:1;min-width:160px"><div style="font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--amber);text-transform:uppercase">${w.word}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint)">${w.phonetic||''}</div></div><div style="flex:2;font-size:0.8rem;color:var(--text-dim);min-width:160px">${w.definition}</div><div style="display:flex;gap:6px"><button class="speak-btn btn-sm" onclick="speakText('${w.word.replace(/'/g,"\\'")}')">Word</button><button class="speak-btn btn-sm" onclick="speakText('${(w.sentence||w.definition).replace(/'/g,"\\'")}')">Sentence</button></div></div>`).join('')}
 
-function deleteWord(w) {
-  if (!confirm(`¿Eliminar "${w}"?`)) return;
-  customWords = customWords.filter(x => x.word !== w);
-  saveCustomLocal();
-  syncWordsToCloud();
-  renderVocabList();
-  showToast('🗑️ Eliminada');
-}
+function resetProgress(){if(!confirm('¿Resetear progreso?'))return;progress={};saveProgress();showToast('🔄 Progreso reiniciado')}
+function deleteCustomWords(){if(!customWords.length){showToast('No hay palabras');return}if(!confirm(`¿Eliminar ${customWords.length} palabras?`))return;customWords=[];saveCustomLocal();syncWordsToCloud();renderVocabList();showToast('🗑️ Eliminadas')}
+function saveJsonBinConfig(){const i=document.getElementById('jsonbin-id').value.trim(),k=document.getElementById('jsonbin-key').value.trim();if(!i||!k){showToast('Ingresa Bin ID y Master Key');return}JSONBIN_CONFIG.binId=i;JSONBIN_CONFIG.masterKey=k;localStorage.setItem('fs_jsonbin',JSON.stringify(JSONBIN_CONFIG));showToast('☁️ Configuración guardada. Sincronizando...');syncWordsFromCloud()}
+function loadJsonBinConfig(){const s=localStorage.getItem('fs_jsonbin');if(s){try{const c=JSON.parse(s);JSONBIN_CONFIG.binId=c.binId;JSONBIN_CONFIG.masterKey=c.masterKey}catch(e){}}}
 
-function populateFilters() {
-  const c = ['all', ...new Set(getVocab().map(w => w.category))];
-  document.getElementById('filter-chips').innerHTML = c.map(x => `
-    <div class="chip ${x === activeFilter ? 'active' : ''}" onclick="filterBy('${x}')">${x === 'all' ? 'All' : x}</div>
-  `).join('');
-}
-
-function filterBy(c) {
-  activeFilter = c;
-  populateFilters();
-  renderVocabList();
-}
-
-function renderVocabList() {
-  const q = (document.getElementById('search-input')?.value || '').toLowerCase();
-  const ib = document.getElementById('set-include-builtin')?.checked ?? true;
-  let l = ib ? [...BUILT_IN, ...customWords] : [...customWords];
-  if (activeFilter !== 'all') l = l.filter(w => w.category === activeFilter);
-  if (q) l = l.filter(w => w.word.toLowerCase().includes(q) || w.definition.toLowerCase().includes(q));
-
-  const e = document.getElementById('vocab-list');
-  if (!l.length) {
-    e.innerHTML = '<div class="empty-state"><span class="es-big">NONE</span>No words found</div>';
-    return;
-  }
-
-  e.innerHTML = l.map(w => `
-    <div class="vocab-item">
-      <div>
-        <div class="vi-word">${w.word}</div>
-        <div class="vi-phonetic">${w.phonetic || ''}</div>
-        <span class="tag ${w.custom ? 'custom' : 'built-in'}">${w.category}</span>
-        <span class="tag" style="margin-left:4px">${w.difficulty}</span>
-      </div>
-      <div class="vi-def">
-        ${w.definition}<br/>
-        <span style="color:var(--text-faint);font-style:italic;font-size:0.78rem">${w.sentence || ''}</span>
-      </div>
-      <div class="vi-actions">
-        <button class="btn btn-ghost btn-sm speak-btn" onclick="speakText('${w.word.replace(/'/g, "\\'")}')">
-          <svg class="speaker-icon" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-        </button>
-        ${w.custom ? `<button class="btn btn-red btn-sm" onclick="deleteWord('${w.word.replace(/'/g, "\\'")}')">Del</button>` : ''}
-      </div>
-    </div>
-  `).join('');
-}
-
-function populateFcFilter() {
-  const c = ['all', ...new Set(getVocab().map(w => w.category))];
-  document.getElementById('fc-filter').innerHTML = c.map(x => `
-    <option value="${x}">${x === 'all' ? 'All Categories' : x}</option>
-  `).join('');
-}
-
-function initFlashcards() {
-  const f = document.getElementById('fc-filter')?.value || 'all';
-  let d = getVocab();
-  if (f !== 'all') d = d.filter(w => w.category === f);
-  if (!d.length) {
-    showToast('Agrega palabras primero');
-    return;
-  }
-  fcDeck = shuffle(d);
-  fcIndex = 0;
-  fcSessionScore = 0;
-  document.getElementById('fc-score-disp').textContent = 0;
-  document.getElementById('fc-done').style.display = 'none';
-  document.getElementById('flashcard').style.display = 'flex';
-  document.getElementById('fc-actions').style.display = 'none';
-  loadFlashcard();
-}
-
-function loadFlashcard() {
-  if (!fcDeck.length) return;
-  const c = fcDeck[fcIndex];
-  const fc = document.getElementById('flashcard');
-  fc.classList.remove('revealed');
-  document.getElementById('fc-word').textContent = c.word;
-  document.getElementById('fc-word-back').textContent = c.word;
-  document.getElementById('fc-phonetic').textContent = c.phonetic || '';
-  document.getElementById('fc-tag').textContent = c.category;
-  document.getElementById('fc-def').textContent = c.definition;
-  document.getElementById('fc-sentence').textContent = c.sentence || '';
-  document.getElementById('fc-actions').style.display = 'none';
-  updateFcProgress();
-}
-
-function revealCard() {
-  if (document.getElementById('flashcard').classList.contains('revealed')) return;
-  document.getElementById('flashcard').classList.add('revealed');
-  document.getElementById('fc-actions').style.display = 'flex';
-  if (document.getElementById('set-auto-speak')?.checked) speakCard();
-}
-
-function speakCard() {
-  const c = fcDeck[fcIndex];
-  if (c) speakText(c.word + '. ' + c.definition + '. Example: ' + (c.sentence || ''));
-}
-
-function rateCard(r) {
-  const c = fcDeck[fcIndex];
-  progress[c.word] = (progress[c.word] || 0) + r;
-  saveProgress();
-  if (r >= 1) fcSessionScore++;
-  document.getElementById('fc-score-disp').textContent = fcSessionScore;
-  fcIndex++;
-  if (fcIndex >= fcDeck.length) {
-    document.getElementById('flashcard').style.display = 'none';
-    document.getElementById('fc-actions').style.display = 'none';
-    document.getElementById('fc-done').style.display = 'block';
-  } else {
-    loadFlashcard();
-  }
-}
-
-function updateFcProgress() {
-  const t = fcDeck.length;
-  document.getElementById('fc-progress-text').textContent = `Card ${fcIndex + 1} of ${t}`;
-  document.getElementById('fc-progress-bar').style.width = (t ? ((fcIndex / t) * 100).toFixed(0) : 0) + '%';
-}
-
-function populateQuizFilter() {
-  const c = ['all', ...new Set(getVocab().map(w => w.category))];
-  document.getElementById('quiz-filter').innerHTML = c.map(x => `
-    <option value="${x}">${x === 'all' ? 'All Categories' : x}</option>
-  `).join('');
-}
-
-function startQuiz() {
-  const f = document.getElementById('quiz-filter').value;
-  let p = getVocab();
-  if (f !== 'all') p = p.filter(w => w.category === f);
-  if (p.length < 4) {
-    showToast('Necesitas al menos 4 palabras');
-    return;
-  }
-  quizQ = shuffle(p).slice(0, Math.min(p.length, 15));
-  quizIndex = 0;
-  quizScore = 0;
-  document.getElementById('quiz-score-disp').textContent = '0 / ' + quizQ.length;
-  document.getElementById('quiz-next-row').style.display = 'none';
-  renderQuestion();
-}
-
-function renderQuestion() {
-  if (quizIndex >= quizQ.length) {
-    document.getElementById('quiz-card').innerHTML = `
-      <div style="text-align:center;padding:40px 20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--amber);text-transform:uppercase;">${quizScore} / ${quizQ.length}</div>
-        <div style="font-size:0.85rem;color:var(--text-dim);margin:8px 0 20px;">
-          ${quizScore >= quizQ.length * 0.8 ? 'Outstanding performance, engineer.' : quizScore >= quizQ.length * 0.5 ? 'Good effort. Keep drilling.' : 'Keep studying — you will get there.'}
-        </div>
-        <button class="btn btn-amber" onclick="startQuiz()">Retry Quiz</button>
-      </div>
-    `;
-    document.getElementById('quiz-next-row').style.display = 'none';
-    return;
-  }
-  const q = quizQ[quizIndex];
-  const o = getVocab().filter(w => w.word !== q.word);
-  const w = shuffle(o).slice(0, 3).map(x => x.definition);
-  const opts = shuffle([q.definition, ...w]);
-  document.getElementById('quiz-card').innerHTML = `
-    <div class="quiz-question">What is <span>${q.word}</span>?</div>
-    <div class="quiz-options">
-      ${opts.map(x => `
-        <button class="quiz-option" onclick="checkAnswer(this,'${x.replace(/'/g, "\\'")}','${q.definition.replace(/'/g, "\\'")}','${q.word.replace(/'/g, "\\'")}','${(q.sentence || '').replace(/'/g, "\\'")}')">${x}</button>
-      `).join('')}
-    </div>
-    <div class="quiz-feedback" id="quiz-fb"></div>
-  `;
-  document.getElementById('quiz-next-row').style.display = 'none';
-}
-
-function checkAnswer(b, sel, cor, w, s) {
-  document.querySelectorAll('.quiz-option').forEach(x => x.disabled = true);
-  const f = document.getElementById('quiz-fb');
-  if (sel === cor) {
-    b.classList.add('correct');
-    quizScore++;
-    f.className = 'quiz-feedback show correct-fb';
-    f.innerHTML = `Correct!<br/><em>${s}</em>`;
-  } else {
-    b.classList.add('wrong');
-    document.querySelectorAll('.quiz-option').forEach(x => {
-      if (x.textContent === cor) x.classList.add('correct');
-    });
-    f.className = 'quiz-feedback show wrong-fb';
-    f.innerHTML = `Not quite. Correct: <strong>${cor}</strong>`;
-  }
-  quizIndex++;
-  document.getElementById('quiz-score-disp').textContent = quizScore + ' / ' + quizQ.length;
-  document.getElementById('quiz-next-row').style.display = 'block';
-  speakText(w);
-}
-
-function nextQuestion() {
-  document.getElementById('quiz-next-row').style.display = 'none';
-  renderQuestion();
-}
-
-function loadVoices() {
-  const s = document.getElementById('set-voice');
-  const p = () => {
-    const v = speechSynthesis.getVoices().filter(x => x.lang.startsWith('en'));
-    s.innerHTML = v.map((x, i) => `
-      <option value="${i}">${x.name} (${x.lang})</option>
-    `).join('');
-    s.onchange = () => {
-      activeVoice = speechSynthesis.getVoices().filter(x => x.lang.startsWith('en'))[parseInt(s.value)];
-    };
-  };
-  p();
-  speechSynthesis.onvoiceschanged = p;
-}
-
-function setSpeed(r, b) {
-  speechRate = r;
-  document.querySelectorAll('.speed-btn').forEach(x => x.classList.remove('active'));
-  b.classList.add('active');
-}
-
-function speakText(t, slow = false) {
-  if (!window.speechSynthesis) {
-    showToast('Speech not supported');
-    return;
-  }
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(t);
-  u.rate = slow ? 0.6 : speechRate;
-  u.lang = 'en-US';
-  if (activeVoice) u.voice = activeVoice;
-  speechSynthesis.speak(u);
-}
-
-function renderPronunList() {
-  const v = getVocab();
-  document.getElementById('pronun-list').innerHTML = v.map(w => `
-    <div class="pronun-card" style="padding:16px 20px;margin-bottom:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <div style="flex:1;min-width:160px">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--amber);text-transform:uppercase">${w.word}</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint)">${w.phonetic || ''}</div>
-      </div>
-      <div style="flex:2;font-size:0.8rem;color:var(--text-dim);min-width:160px">${w.definition}</div>
-      <div style="display:flex;gap:6px">
-        <button class="speak-btn btn-sm" onclick="speakText('${w.word.replace(/'/g, "\\'")}')">Word</button>
-        <button class="speak-btn btn-sm" onclick="speakText('${(w.sentence || w.definition).replace(/'/g, "\\'")}')">Sentence</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function resetProgress() {
-  if (!confirm('¿Resetear progreso?')) return;
-  progress = {};
-  saveProgress();
-  showToast('🔄 Progreso reiniciado');
-}
-
-function deleteCustomWords() {
-  if (!customWords.length) {
-    showToast('No hay palabras');
-    return;
-  }
-  if (!confirm(`¿Eliminar ${customWords.length} palabras?`)) return;
-  customWords = [];
-  saveCustomLocal();
-  syncWordsToCloud();
-  renderVocabList();
-  showToast('🗑️ Eliminadas');
-}
-
-function saveJsonBinConfig() {
-  const i = document.getElementById('jsonbin-id').value.trim();
-  const k = document.getElementById('jsonbin-key').value.trim();
-  if (!i || !k) {
-    showToast('Ingresa Bin ID y Master Key');
-    return;
-  }
-  JSONBIN_CONFIG.binId = i;
-  JSONBIN_CONFIG.masterKey = k;
-  localStorage.setItem('fs_jsonbin', JSON.stringify(JSONBIN_CONFIG));
-  showToast('☁️ Configuración guardada. Sincronizando...');
-  syncWordsFromCloud();
-}
-
-function loadJsonBinConfig() {
-  const s = localStorage.getItem('fs_jsonbin');
-  if (s) {
-    try {
-      const c = JSON.parse(s);
-      JSONBIN_CONFIG.binId = c.binId;
-      JSONBIN_CONFIG.masterKey = c.masterKey;
-    } catch (e) {}
-  }
-}
-
-// Evento al cargar la página
-window.addEventListener('load', () => {
-  loadJsonBinConfig();
-  document.getElementById('jsonbin-id').value = JSONBIN_CONFIG.binId;
-  document.getElementById('jsonbin-key').value = JSONBIN_CONFIG.masterKey;
-  customWords = JSON.parse(localStorage.getItem('fs_custom') || '[]');
-
-  // Cargar el estado de Play All
-  const savedIndex = parseInt(localStorage.getItem('playAllIndex') || '0');
-  const savedIsPlaying = localStorage.getItem('playAllIsPlaying') === 'true';
-  if (savedIsPlaying) {
-    currentPlayIndex = savedIndex;
-    isPlayingAll = true;
-    document.getElementById('playAllIcon').textContent = '⏸️';
-    document.getElementById('playAllBtn').textContent = ' Pause All';
-    document.getElementById('playbackInfo').textContent = `Paused: ${getVocab()[currentPlayIndex]?.word || 'Unknown'} (${currentPlayIndex + 1}/${getVocab().length})`;
-    document.getElementById('playbackProgress').style.width = `${((currentPlayIndex + 1) / getVocab().length) * 100}%`;
-  }
-
-  if (JSONBIN_CONFIG.binId && JSONBIN_CONFIG.masterKey) syncWordsFromCloud();
-  updateDashboard();
-  renderVocabList();
-  populateFilters();
-  setTimeout(loadVoices, 500);
-  initFlashcards();
-
-  // Liberar wake lock al cerrar la pestaña
-  window.addEventListener('beforeunload', () => {
-    releaseWakeLock();
-  });
-});
-
-// Manejar el evento visibilitychange para pausar si el usuario cambia de pestaña
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden && isPlayingAll) {
-    pausePlayAll();
-    showToast('Playback paused (tab inactive)');
-  }
-});
+window.addEventListener('load',()=>{loadJsonBinConfig();document.getElementById('jsonbin-id').value=JSONBIN_CONFIG.binId;document.getElementById('jsonbin-key').value=JSONBIN_CONFIG.masterKey;customWords=JSON.parse(localStorage.getItem('fs_custom')||'[]');if(JSONBIN_CONFIG.binId&&JSONBIN_CONFIG.masterKey)syncWordsFromCloud();updateDashboard();renderVocabList();populateFilters();setTimeout(loadVoices,500);initFlashcards()})
 </script>
 </body>
 </html>
