@@ -23,8 +23,6 @@
   .vocab-list{display:flex;flex-direction:column;gap:8px}.vocab-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;align-items:flex-start;gap:16px;transition:border-color 0.2s}.vocab-item:hover{border-color:var(--steel2)}.vocab-item .vi-word{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.05em;min-width:180px}.vi-phonetic{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);margin-top:2px}.vocab-item .vi-def{font-size:0.85rem;color:var(--text-dim);flex:1;line-height:1.5}.vocab-item .vi-actions{display:flex;gap:6px;flex-shrink:0}
   .tag{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:var(--bg4);color:var(--text-faint);border:1px solid var(--border);margin-top:4px;display:inline-block}.tag.custom{color:var(--amber-dim);border-color:var(--amber-dim)}.tag.built-in{color:var(--steel);border-color:var(--steel2)}
   .search-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.search-row input{flex:1;min-width:200px}.filter-chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);border-radius:2px;cursor:pointer;background:var(--bg4);color:var(--text-faint);transition:all 0.2s}.chip.active{background:var(--amber-dim);border-color:var(--amber-dim);color:#000}.chip:hover{border-color:var(--steel);color:var(--text)}
-  .flashcard-container{display:flex;flex-direction:column;align-items:center;gap:24px}.flashcard-progress{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);letter-spacing:0.1em;text-transform:uppercase;width:100%;display:flex;justify-content:space-between;align-items:center}.progress-bar{width:100%;height:3px;background:var(--bg4);border-radius:2px;margin:6px 0 0 0}.progress-fill{height:100%;background:var(--amber);border-radius:2px;transition:width 0.4s ease}
-  .flashcard{width:100%;max-width:600px;min-height:320px;background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--amber);border-radius:var(--radius);padding:36px 32px;cursor:pointer;perspective:1000px;position:relative;transition:transform 0.15s,box-shadow 0.2s;user-select:none}.flashcard:hover{box-shadow:0 8px 40px rgba(245,158,11,0.08)}.card-front,.card-back{position:absolute;inset:0;padding:36px 32px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;transition:opacity 0.3s}.card-back{display:none}.flashcard.revealed .card-front{display:none}.flashcard.revealed .card-back{display:flex}.fc-label{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px}.fc-word{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;line-height:1;margin-bottom:10px}.fc-phonetic{font-family:'IBM Plex Mono',monospace;font-size:0.85rem;color:var(--text-faint);margin-bottom:16px}.fc-hint{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);text-align:center;position:absolute;bottom:16px;left:0;right:0;letter-spacing:0.1em}.fc-def{font-size:1rem;color:var(--text);line-height:1.6;margin-bottom:14px}.fc-sentence{background:var(--bg4);border-left:3px solid var(--amber-dim);padding:10px 14px;font-size:0.85rem;color:var(--text-dim);font-style:italic;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:10px}.fc-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .quiz-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:640px;margin:0 auto}.quiz-question{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.4;letter-spacing:0.02em}.quiz-question span{color:var(--amber)}.quiz-options{display:flex;flex-direction:column;gap:10px}.quiz-option{background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;font-size:0.9rem;color:var(--text);cursor:pointer;transition:all 0.2s;text-align:left;font-family:'Barlow',sans-serif}.quiz-option:hover:not(:disabled){border-color:var(--amber-dim);color:var(--amber)}.quiz-option.correct{border-color:var(--green);background:rgba(34,197,94,0.1);color:var(--green)}.quiz-option.wrong{border-color:var(--red);background:rgba(239,68,68,0.1);color:var(--red)}.quiz-option:disabled{cursor:default}.quiz-feedback{margin-top:18px;padding:14px;border-radius:var(--radius);font-size:0.88rem;line-height:1.6;display:none}.quiz-feedback.show{display:block}.quiz-feedback.correct-fb{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:var(--green)}.quiz-feedback.wrong-fb{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:var(--red)}.quiz-score{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase}.quiz-score span{color:var(--amber);font-weight:700;font-size:1.3rem}
   .pronun-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px}.speak-btn{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:var(--radius);padding:10px 18px;cursor:pointer;background:var(--bg4);color:var(--text-dim);border:1px solid var(--border);transition:all 0.2s}.speak-btn:hover{border-color:var(--amber-dim);color:var(--amber)}.speak-btn.playing{border-color:var(--amber);color:var(--amber);animation:pulse 1s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.2)}50%{box-shadow:0 0 0 6px rgba(245,158,11,0)}}.speaker-icon{width:16px;height:16px;fill:currentColor}.speed-selector{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:12px}.speed-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}.speed-btn.active{border-color:var(--amber-dim);color:var(--amber)}.speed-btn:hover{border-color:var(--steel);color:var(--text)}
   
@@ -39,11 +37,73 @@
   .pd-def{font-size:0.95rem;color:var(--text);line-height:1.6;margin-bottom:12px}
   .pd-sentence{background:var(--bg4);border-left:3px solid var(--amber-dim);padding:10px 14px;font-size:0.85rem;color:var(--text-dim);font-style:italic;border-radius:0 var(--radius) var(--radius) 0;margin-top:8px;display:none}
   
+  /* === STUDY TEXTS === */
+  .study-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+  .study-textarea{width:100%;min-height:200px;background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:'Barlow',sans-serif;font-size:0.95rem;padding:14px;outline:none;resize:vertical;line-height:1.6;transition:border-color 0.2s}
+  .study-textarea:focus{border-color:var(--amber-dim)}
+  .study-textarea::placeholder{color:var(--text-faint)}
+  .study-stats{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase}
+  .study-stats span strong{color:var(--amber);font-weight:500}
+  .study-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .study-mode-selector{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .mode-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}
+  .mode-btn.active{background:var(--amber-dim);border-color:var(--amber-dim);color:#000}
+  .mode-btn:hover:not(.active){border-color:var(--steel);color:var(--text)}
+  
+  .study-player{background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--amber);border-radius:var(--radius);padding:24px;margin-bottom:20px;animation:fadeUp 0.3s ease}
+  .study-player-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+  .study-player-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em}
+  .study-player-mode{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;background:var(--bg4);border:1px solid var(--border);border-radius:2px}
+  .study-progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-faint);letter-spacing:0.08em;text-transform:uppercase}
+  .study-progress-bar{width:100%;height:4px;background:var(--bg4);border-radius:2px;overflow:hidden;margin-bottom:20px}
+  .study-progress-fill{height:100%;background:var(--amber);transition:width 0.3s ease;width:0%}
+  
+  .study-text-display{background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:20px;min-height:180px;max-height:400px;overflow-y:auto;line-height:1.9;font-size:1.05rem;color:var(--text-dim);margin-bottom:16px}
+  .study-sentence{display:inline;cursor:pointer;padding:2px 0;border-radius:2px;transition:all 0.2s}
+  .study-sentence:hover{background:rgba(245,158,11,0.05)}
+  .study-sentence.active{background:rgba(245,158,11,0.15);color:var(--amber);font-weight:500}
+  .study-sentence.read{color:var(--text-faint)}
+  .study-word{display:inline;padding:1px 2px;border-radius:2px;transition:all 0.15s}
+  .study-word.current{background:var(--amber);color:#000;font-weight:600}
+  .study-word.oil-term{color:var(--amber2);border-bottom:1px dotted var(--amber-dim);cursor:help;position:relative}
+  .study-word.oil-term:hover{background:rgba(245,158,11,0.1)}
+  
+  .study-main-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .study-ctrl-btn{width:52px;height:52px;border-radius:50%;border:2px solid var(--amber);background:var(--bg4);color:var(--amber);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:1.3rem}
+  .study-ctrl-btn:hover:not(:disabled){background:var(--amber);color:#000}
+  .study-ctrl-btn:disabled{opacity:0.4;cursor:not-allowed}
+  .study-ctrl-btn.play-main{width:64px;height:64px;font-size:1.6rem;background:var(--amber);color:#000}
+  .study-ctrl-btn.play-main:hover{background:var(--amber2)}
+  .study-ctrl-btn.play-main.playing{animation:pulse 1.5s infinite}
+  .study-ctrl-btn.stop-ctrl{border-color:var(--red);color:var(--red)}
+  .study-ctrl-btn.stop-ctrl:hover{background:var(--red);color:#fff}
+  
+  .study-secondary-controls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .study-toggle-btn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:2px;background:var(--bg4);color:var(--text-faint);cursor:pointer;transition:all 0.2s}
+  .study-toggle-btn.active{background:var(--amber-dim);border-color:var(--amber-dim);color:#000}
+  .study-toggle-btn:hover:not(.active){border-color:var(--steel);color:var(--text)}
+  
+  .study-shadowing-prompt{background:rgba(245,158,11,0.08);border:1px solid var(--amber-dim);border-radius:var(--radius);padding:16px;text-align:center;margin:16px 0;display:none;animation:fadeUp 0.3s ease}
+  .study-shadowing-prompt.show{display:block}
+  .study-shadowing-prompt .prompt-text{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px}
+  .study-shadowing-prompt .prompt-sub{font-size:0.85rem;color:var(--text-dim);margin-bottom:14px}
+  
+  .study-search-row{display:flex;gap:8px;margin-bottom:12px}
+  .study-search-row input{flex:1}
+  
+  .oil-term-popup{position:fixed;background:var(--bg3);border:1px solid var(--amber-dim);border-left:3px solid var(--amber);border-radius:var(--radius);padding:14px;max-width:320px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,0.5);display:none}
+  .oil-term-popup.show{display:block;animation:fadeUp 0.2s ease}
+  .oil-term-popup .otp-word{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px}
+  .oil-term-popup .otp-def{font-size:0.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:10px}
+  .oil-term-popup .otp-actions{display:flex;gap:6px}
+  
   .divider{height:1px;background:var(--border);margin:24px 0}.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase}.empty-state .es-big{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--bg3);letter-spacing:0.1em;display:block;margin-bottom:8px}
   #toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--amber-dim);border-left:3px solid var(--amber);border-radius:var(--radius);padding:12px 18px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;z-index:999;transform:translateX(120%);transition:transform 0.3s ease;max-width:280px}#toast.show{transform:translateX(0)}
   .setting-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}.setting-row:last-child{border-bottom:none}.setting-info .s-title{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--text)}.setting-info .s-desc{font-size:0.78rem;color:var(--text-dim);margin-top:2px}
   .toggle{position:relative;width:42px;height:22px;cursor:pointer}.toggle input{display:none}.toggle-track{width:100%;height:100%;background:var(--bg4);border:1px solid var(--border);border-radius:11px;transition:all 0.2s}.toggle input:checked+.toggle-track{background:var(--amber-dim);border-color:var(--amber)}.toggle-thumb{position:absolute;top:3px;left:3px;width:14px;height:14px;background:var(--text-dim);border-radius:50%;transition:all 0.2s}.toggle input:checked~.toggle-thumb{left:23px;background:var(--amber)}
-  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.fc-word{font-size:2.5rem}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}.playback-bar{flex-direction:column;align-items:flex-start}.playback-controls{width:100%;justify-content:center}.pd-word{font-size:2rem}}
+  .kbd{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;padding:2px 6px;background:var(--bg4);border:1px solid var(--border);border-radius:2px;color:var(--text-dim);margin:0 2px;letter-spacing:0.05em}
+  .shortcuts-hint{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.06em;text-align:center;margin-top:12px;line-height:1.8}
+  @media(max-width:600px){.form-grid{grid-template-columns:1fr}.vocab-item{flex-direction:column}.vocab-item .vi-actions{justify-content:flex-start}.stats-grid{grid-template-columns:repeat(2,1fr)}.playback-bar{flex-direction:column;align-items:flex-start}.playback-controls{width:100%;justify-content:center}.pd-word{font-size:2rem}.study-text-display{font-size:0.95rem;padding:14px}.study-ctrl-btn{width:44px;height:44px;font-size:1.1rem}.study-ctrl-btn.play-main{width:56px;height:56px;font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -54,7 +114,7 @@
 <nav>
   <button class="active" onclick="showSection('dashboard')">Dashboard</button>
   <button onclick="showSection('vocabulary')">My Vocabulary</button>
-  <button onclick="showSection('flashcards')">Flashcards</button>
+  <button onclick="showSection('study')">Study Texts</button>
   <button onclick="showSection('quiz')">Quiz</button>
   <button onclick="showSection('pronunciation')">Pronunciation</button>
   <button onclick="showSection('settings')">Settings</button>
@@ -65,7 +125,7 @@
     <div class="stats-grid"><div class="stat-card"><div class="val" id="stat-total">0</div><div class="lbl">Total Words</div></div><div class="stat-card"><div class="val" id="stat-custom">0</div><div class="lbl">Custom Words</div></div><div class="stat-card"><div class="val" id="stat-mastered">0</div><div class="lbl">Mastered</div></div><div class="stat-card"><div class="val" id="stat-streak">0</div><div class="lbl">Day Streak</div></div></div>
     <div class="wod-card" id="wod-container"></div><div class="divider"></div>
     <div class="quick-grid">
-      <button class="quick-btn" onclick="showSection('flashcards')"><div class="qb-icon">FC</div><div class="qb-title">Flashcards</div><div class="qb-desc">Review all your vocabulary with spaced repetition</div></button>
+      <button class="quick-btn" onclick="showSection('study')"><div class="qb-icon">ST</div><div class="qb-title">Study Texts</div><div class="qb-desc">Paste any text and listen to memorize it</div></button>
       <button class="quick-btn" onclick="showSection('quiz')"><div class="qb-icon">QZ</div><div class="qb-title">Quick Quiz</div><div class="qb-desc">Test your knowledge with multiple choice</div></button>
       <button class="quick-btn" onclick="showSection('pronunciation')"><div class="qb-icon">PR</div><div class="qb-title">Pronunciation</div><div class="qb-desc">Listen and practice technical pronunciation</div></button>
       <button class="quick-btn" onclick="showSection('vocabulary')"><div class="qb-icon">+W</div><div class="qb-title">Add Words</div><div class="qb-desc">Input your own field terminology</div></button>
@@ -90,16 +150,109 @@
     <div class="filter-chips" id="filter-chips" style="margin-bottom:16px;"></div>
     <div class="vocab-list" id="vocab-list"></div>
   </section>
-  <section id="sec-flashcards" class="section">
-    <div class="section-title">Flash<span>Cards</span></div><div class="section-sub">Tap card to reveal — rate your confidence</div>
-    <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;"><select id="fc-filter" class="btn btn-ghost" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;" onchange="initFlashcards()"><option value="all">All Categories</option></select><button class="btn btn-outline" onclick="initFlashcards()">Shuffle</button></div>
-    <div class="flashcard-container">
-      <div style="width:100%;max-width:600px;"><div class="flashcard-progress"><span id="fc-progress-text">Card 1 of 1</span><div class="quiz-score">Score: <span id="fc-score-disp">0</span></div></div><div class="progress-bar"><div class="progress-fill" id="fc-progress-bar" style="width:0%"></div></div></div>
-      <div class="flashcard" id="flashcard" onclick="revealCard()"><div class="card-front"><div class="fc-label">Tap to reveal definition</div><div class="fc-word" id="fc-word">---</div><div class="fc-phonetic" id="fc-phonetic"></div><div class="tag" id="fc-tag" style="margin-top:8px;"></div><div class="fc-hint">[ TAP TO REVEAL ]</div></div><div class="card-back"><div class="fc-label">Definition</div><div class="fc-word" id="fc-word-back" style="font-size:1.8rem;margin-bottom:10px;"></div><div class="fc-def" id="fc-def"></div><div class="fc-sentence" id="fc-sentence"></div><div style="margin-top:4px;"><button class="speak-btn btn-sm" id="speak-card-btn" onclick="event.stopPropagation();speakCard()"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen</button></div></div></div>
-      <div class="fc-actions" id="fc-actions" style="display:none;"><button class="btn btn-red" onclick="rateCard(0)">Hard</button><button class="btn btn-ghost" onclick="rateCard(1)">OK</button><button class="btn btn-green" onclick="rateCard(2)">Easy</button></div>
-      <div id="fc-done" style="display:none;text-align:center;"><div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Session Complete</div><div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;">Great work, engineer. Keep pushing.</div><button class="btn btn-amber" onclick="initFlashcards()">New Session</button></div>
+
+  <!-- ============ STUDY TEXTS SECTION ============ -->
+  <section id="sec-study" class="section">
+    <div class="section-title">Study <span>Texts</span></div><div class="section-sub">Paste any text — listen, repeat, memorize</div>
+
+    <!-- Input Card -->
+    <div class="study-card">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:14px;">📋 Paste Your Text</div>
+      <textarea id="study-input" class="study-textarea" placeholder="Paste here any text: articles, field notes, emails, technical reports, dialogues...&#10;&#10;The system will split it into sentences and read it aloud. Oilfield terms from your vocabulary will be highlighted automatically."></textarea>
+      <div class="study-stats" id="study-stats">
+        <span>Words: <strong id="st-words">0</strong></span>
+        <span>Sentences: <strong id="st-sentences">0</strong></span>
+        <span>Oil Terms: <strong id="st-oilterms">0</strong></span>
+        <span>Est. Time: <strong id="st-time">0:00</strong></span>
+      </div>
+      <div class="study-controls">
+        <button class="btn btn-amber" onclick="prepareStudy()">⚙ Prepare Text</button>
+        <button class="btn btn-ghost" onclick="cleanStudyText()">🧹 Clean Text</button>
+        <button class="btn btn-ghost" onclick="clearStudyInput()">🗑 Clear</button>
+        <button class="btn btn-ghost" onclick="loadSampleText()">📖 Sample</button>
+      </div>
+      <div class="study-search-row" style="margin-top:14px;">
+        <input type="text" id="study-search" placeholder="Search inside text..." oninput="searchInStudyText()" />
+      </div>
+    </div>
+
+    <!-- Player (hidden until text is prepared) -->
+    <div id="study-player-wrapper" style="display:none;">
+      <!-- Mode selector -->
+      <div class="study-card">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:10px;">🎯 Study Mode</div>
+        <div class="study-mode-selector">
+          <button class="mode-btn active" data-mode="reading" onclick="setStudyMode('reading',this)">📖 Reading</button>
+          <button class="mode-btn" data-mode="shadowing" onclick="setStudyMode('shadowing',this)">🎤 Shadowing</button>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.5;" id="mode-description">
+          Fluently reads the entire text. Ideal for comprehension and listening practice.
+        </div>
+      </div>
+
+      <!-- Player -->
+      <div class="study-player">
+        <div class="study-player-header">
+          <div class="study-player-title">🔊 Text Player</div>
+          <div class="study-player-mode" id="player-mode-label">Reading Mode</div>
+        </div>
+
+        <div class="study-progress-info">
+          <span id="study-counter">Sentence 0 of 0</span>
+          <span id="study-status">Ready</span>
+        </div>
+        <div class="study-progress-bar"><div class="study-progress-fill" id="study-progress-fill"></div></div>
+
+        <div class="study-text-display" id="study-text-display">
+          <div class="empty-state" style="padding:30px 10px;"><span class="es-big" style="font-size:2.5rem;">—</span>Prepare a text to begin</div>
+        </div>
+
+        <!-- Shadowing prompt -->
+        <div class="study-shadowing-prompt" id="shadowing-prompt">
+          <div class="prompt-text">🎤 Your Turn — Repeat Aloud</div>
+          <div class="prompt-sub" id="shadowing-sentence-preview">...</div>
+          <button class="btn btn-amber" onclick="continueShadowing()">✓ Continue ▶</button>
+        </div>
+
+        <!-- Main controls -->
+        <div class="study-main-controls">
+          <button class="study-ctrl-btn" id="study-btn-prev" onclick="studyPrev()" title="Previous (←)">⏮</button>
+          <button class="study-ctrl-btn play-main" id="study-btn-play" onclick="studyTogglePlay()" title="Play/Pause (Space)">▶</button>
+          <button class="study-ctrl-btn" id="study-btn-next" onclick="studyNext()" title="Next (→)">⏭</button>
+          <button class="study-ctrl-btn stop-ctrl" id="study-btn-stop" onclick="studyStop()" title="Stop">⏹</button>
+        </div>
+
+        <!-- Secondary controls -->
+        <div class="study-secondary-controls">
+          <button class="study-toggle-btn" id="study-btn-repeat" onclick="studyRepeatSentence()" title="Repeat current sentence">🔂 Repeat</button>
+          <button class="study-toggle-btn" id="study-btn-loop" onclick="studyToggleLoop()" title="Loop (L)">🔁 Loop</button>
+          <div style="display:flex;gap:4px;align-items:center;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase;">Speed:</span>
+            <button class="study-toggle-btn" onclick="setStudySpeed(0.6,this)">0.6x</button>
+            <button class="study-toggle-btn" onclick="setStudySpeed(0.8,this)">0.8x</button>
+            <button class="study-toggle-btn active" onclick="setStudySpeed(1.0,this)">1.0x</button>
+            <button class="study-toggle-btn" onclick="setStudySpeed(1.25,this)">1.25x</button>
+            <button class="study-toggle-btn" onclick="setStudySpeed(1.5,this)">1.5x</button>
+          </div>
+        </div>
+
+        <div class="shortcuts-hint">
+          <span class="kbd">Space</span> Play/Pause &nbsp; <span class="kbd">←</span> Prev &nbsp; <span class="kbd">→</span> Next &nbsp; <span class="kbd">L</span> Loop &nbsp; <span class="kbd">R</span> Repeat
+        </div>
+      </div>
+    </div>
+
+    <!-- Oil term popup -->
+    <div class="oil-term-popup" id="oil-term-popup">
+      <div class="otp-word" id="otp-word">—</div>
+      <div class="otp-def" id="otp-def">—</div>
+      <div class="otp-actions">
+        <button class="btn btn-amber btn-sm" id="otp-speak-btn">🔊 Hear</button>
+        <button class="btn btn-ghost btn-sm" id="otp-close-btn">Close</button>
+      </div>
     </div>
   </section>
+
   <section id="sec-quiz" class="section">
     <div class="section-title">Knowledge <span>Quiz</span></div><div class="section-sub">Multiple choice — petroleum & wireline terminology</div>
     <div style="display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;align-items:center;"><select id="quiz-filter" style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px;background:var(--bg4);border:1px solid var(--border);color:var(--text);outline:none;"><option value="all">All Categories</option></select><button class="btn btn-amber" onclick="startQuiz()">Start New Quiz</button><div class="quiz-score" style="margin-left:auto;">Score: <span id="quiz-score-disp">0 / 0</span></div></div>
@@ -110,7 +263,6 @@
     <div class="section-title">Pro<span>nunciation</span></div><div class="section-sub">Listen and repeat — field engineering terms</div>
     <div class="pronun-card"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:14px;">Speak Any Text</div><textarea id="pronun-input" placeholder="Type any word or sentence to hear it pronounced..." style="margin-bottom:12px;"></textarea><div class="speed-selector"><span style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-faint);letter-spacing:0.08em;text-transform:uppercase;">Speed:</span><button class="speed-btn" onclick="setSpeed(0.6,this)">0.6x</button><button class="speed-btn active" onclick="setSpeed(0.9,this)">0.9x</button><button class="speed-btn" onclick="setSpeed(1.0,this)">1.0x</button><button class="speed-btn" onclick="setSpeed(1.2,this)">1.2x</button></div><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;"><button class="speak-btn" id="main-speak-btn" onclick="speakText(document.getElementById('pronun-input').value)"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen</button><button class="speak-btn" onclick="speakText(document.getElementById('pronun-input').value, true)"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Listen Slow (0.6x)</button></div></div>
     
-    <!-- === Playback Control Bar === -->
     <div class="playback-bar" id="playback-bar" style="display:none;">
       <div class="playback-info">
         <div class="playback-title">🔊 Reproduciendo Vocabulario</div>
@@ -125,7 +277,6 @@
       <div class="playback-progress"><div class="playback-progress-fill" id="playback-progress" style="width:0%"></div></div>
     </div>
     
-    <!-- === Playback Display (Lectura Sincronizada) === -->
     <div id="playback-display" class="playback-display" style="display:none;">
       <div class="pd-word" id="pd-word">---</div>
       <div class="pd-phonetic" id="pd-phonetic"></div>
@@ -186,7 +337,7 @@ const BUILT_IN = [
   {word:"Trip Speed",phonetic:"/trɪp spiːd/",category:"Wireline",difficulty:"Intermediate",definition:"The rate at which the wireline tool string is run into or pulled out of the wellbore, measured in feet or meters per minute.",sentence:"We reduced trip speed to 100 ft/min through the casing shoe to avoid mechanical damage to the logging sensors.",custom:false},
   {word:"Log Quality Control",phonetic:"/lɒɡ ˈkwɒl.ɪ.ti kənˈtroʊl/",category:"Wireline",difficulty:"Advanced",definition:"The systematic process of verifying that acquired log data meets specified quality criteria before delivery to the client.",sentence:"LQC procedures were applied to all raw log data prior to depth shifting and merging with the final composite log.",custom:false}
 ];
-let customWords = [], progress = JSON.parse(localStorage.getItem('fs_progress')||'{}'), streak = parseInt(localStorage.getItem('fs_streak')||'0'), lastDate = localStorage.getItem('fs_lastdate')||'', speechRate = 0.9, activeVoice = null, fcDeck = [], fcIndex = 0, fcSessionScore = 0, quizQ = [], quizIndex = 0, quizScore = 0, activeFilter = 'all', isSyncing = false, isFetching = false;
+let customWords = [], progress = JSON.parse(localStorage.getItem('fs_progress')||'{}'), streak = parseInt(localStorage.getItem('fs_streak')||'0'), lastDate = localStorage.getItem('fs_lastdate')||'', speechRate = 0.9, activeVoice = null, quizQ = [], quizIndex = 0, quizScore = 0, activeFilter = 'all', isSyncing = false, isFetching = false;
 
 /* ===== VOCABULARY PLAYBACK SYSTEM ===== */
 let playback = {
@@ -315,6 +466,685 @@ document.addEventListener('visibilitychange', async () => {
   else if (document.visibilityState === 'visible' && playback.isPlaying && 'wakeLock' in navigator) await requestWakeLock();
 });
 
+/* ============================================================ */
+/* ============ STUDY TEXTS SYSTEM ============================= */
+/* ============================================================ */
+let study = {
+  rawText: '',
+  sentences: [],          // array of {text, charStart, charEnd, oilTerms:[{word,start,end,termData}]}
+  currentIndex: 0,
+  isPlaying: false,
+  isPaused: false,
+  mode: 'reading',        // 'reading' | 'shadowing'
+  speed: 1.0,
+  loop: false,
+  wakeLock: null,
+  utterance: null,
+  currentWordRange: null  // {start, end} inside current sentence
+};
+
+function cleanStudyText() {
+  const ta = document.getElementById('study-input');
+  let t = ta.value;
+  // Normalize whitespace
+  t = t.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  // Remove excessive blank lines (keep max 1)
+  t = t.replace(/\n{3,}/g, '\n\n');
+  // Remove weird characters but keep basic punctuation
+  t = t.replace(/[\u200B-\u200D\uFEFF]/g, '');
+  // Normalize quotes
+  t = t.replace(/[""]/g, '"').replace(/['']/g, "'");
+  // Normalize dashes
+  t = t.replace(/—/g, ' - ').replace(/–/g, ' - ');
+  // Collapse multiple spaces
+  t = t.replace(/[ \t]+/g, ' ');
+  // Clean spaces around newlines
+  t = t.replace(/ *\n */g, '\n');
+  ta.value = t.trim();
+  updateStudyStats();
+  showToast('🧹 Texto limpiado');
+}
+
+function clearStudyInput() {
+  if (study.isPlaying) { studyStop(); }
+  document.getElementById('study-input').value = '';
+  document.getElementById('study-player-wrapper').style.display = 'none';
+  study.sentences = [];
+  study.rawText = '';
+  study.currentIndex = 0;
+  updateStudyStats();
+}
+
+function loadSampleText() {
+  const sample = `The wireline crew arrived on location at 0600 hours to run a complete formation evaluation suite. After rigging up the unit and pressure-testing the lubricator, the tool string was lowered into the wellbore at a controlled trip speed of 600 feet per minute.
+
+The gamma ray log clearly identified the top of the reservoir at 8,450 feet, showing a sharp decrease in radioactivity as the tool entered the clean sandstone interval. The reservoir pressure was measured at 4,200 psi, which is significantly above the bubble point, indicating an undersaturated crude with strong aquifer support.
+
+Before perforating, the casing bond log confirmed excellent cement integrity across the target zone. The perforating gun was then positioned using the casing collar locator for precise depth control, and fired at 0930 hours to establish communication between the wellbore and the pay zone.
+
+After the well was opened to production, the tubing head pressure stabilized at 2,800 psi, confirming good wellbore integrity and an effective completion design.`;
+  document.getElementById('study-input').value = sample;
+  updateStudyStats();
+  showToast('📖 Texto de ejemplo cargado');
+}
+
+function updateStudyStats() {
+  const text = document.getElementById('study-input').value.trim();
+  const words = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+  const sentences = text ? (text.match(/[.!?]+(\s|$)/g) || []).length : 0;
+  
+  // Count oil terms
+  let oilCount = 0;
+  if (text) {
+    const lowerText = text.toLowerCase();
+    BUILT_IN.forEach(term => {
+      const regex = new RegExp('\\b' + escapeRegex(term.word) + '\\b', 'gi');
+      const matches = lowerText.match(regex);
+      if (matches) oilCount += matches.length;
+    });
+  }
+  
+  // Estimated time (avg 150 words per minute at 1x speed)
+  const minutes = words / 150;
+  const mins = Math.floor(minutes);
+  const secs = Math.round((minutes - mins) * 60);
+  
+  document.getElementById('st-words').textContent = words;
+  document.getElementById('st-sentences').textContent = sentences || (text ? 1 : 0);
+  document.getElementById('st-oilterms').textContent = oilCount;
+  document.getElementById('st-time').textContent = `${mins}:${secs.toString().padStart(2,'0')}`;
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function splitIntoSentences(text) {
+  // Split on sentence-ending punctuation followed by space or end
+  // Keep the punctuation attached to the sentence
+  const raw = text.match(/[^.!?]+[.!?]+[\])"'»’”]?|[^.!?]+$/g) || [text];
+  return raw.map(s => s.trim()).filter(s => s.length > 0);
+}
+
+function findOilTermsInSentence(sentenceText) {
+  const terms = [];
+  const lower = sentenceText.toLowerCase();
+  // Sort by length desc to match longer phrases first
+  const sorted = [...BUILT_IN].sort((a,b) => b.word.length - a.word.length);
+  const used = new Set(); // track char positions already matched
+  
+  for (const term of sorted) {
+    const regex = new RegExp('\\b' + escapeRegex(term.word) + '\\b', 'gi');
+    let match;
+    while ((match = regex.exec(sentenceText)) !== null) {
+      const start = match.index;
+      const end = start + match[0].length;
+      // Check overlap
+      let overlap = false;
+      for (let i = start; i < end; i++) {
+        if (used.has(i)) { overlap = true; break; }
+      }
+      if (!overlap) {
+        terms.push({
+          word: match[0],
+          start: start,
+          end: end,
+          termData: term
+        });
+        for (let i = start; i < end; i++) used.add(i);
+      }
+    }
+  }
+  return terms.sort((a,b) => a.start - b.start);
+}
+
+function prepareStudy() {
+  const text = document.getElementById('study-input').value.trim();
+  if (!text) { showToast('⚠️ Pega un texto primero'); return; }
+  
+  study.rawText = text;
+  const rawSentences = splitIntoSentences(text);
+  study.sentences = rawSentences.map(s => ({
+    text: s,
+    oilTerms: findOilTermsInSentence(s)
+  }));
+  
+  if (study.sentences.length === 0) {
+    showToast('⚠️ No se pudo dividir el texto');
+    return;
+  }
+  
+  study.currentIndex = 0;
+  study.isPlaying = false;
+  study.isPaused = false;
+  
+  document.getElementById('study-player-wrapper').style.display = 'block';
+  renderStudyText();
+  updateStudyPlayerUI();
+  showToast(`✅ ${study.sentences.length} oraciones listas`);
+  
+  // Scroll to player
+  setTimeout(() => {
+    document.getElementById('study-player-wrapper').scrollIntoView({behavior:'smooth',block:'start'});
+  }, 100);
+}
+
+function renderStudyText() {
+  const display = document.getElementById('study-text-display');
+  if (!study.sentences.length) {
+    display.innerHTML = '<div class="empty-state" style="padding:30px 10px;"><span class="es-big" style="font-size:2.5rem;">—</span>Prepare a text to begin</div>';
+    return;
+  }
+  
+  let html = '';
+  study.sentences.forEach((sent, idx) => {
+    const classes = ['study-sentence'];
+    if (idx === study.currentIndex) classes.push('active');
+    else if (idx < study.currentIndex) classes.push('read');
+    
+    // Build sentence with highlighted oil terms and word spans
+    let sentHtml = '';
+    let lastIdx = 0;
+    const words = sent.text.split(/(\s+)/); // split keeping whitespace
+    let charPos = 0;
+    
+    // Build word-by-word with oil term detection
+    // Simpler: iterate chars, build word tokens
+    const tokens = tokenizeSentence(sent.text, sent.oilTerms);
+    tokens.forEach(tok => {
+      if (tok.type === 'oil') {
+        sentHtml += `<span class="study-word oil-term" data-term="${escapeHtml(tok.termData.word)}" data-def="${escapeHtml(tok.termData.definition)}" data-idx="${idx}" data-start="${tok.start}" data-end="${tok.end}">${escapeHtml(tok.text)}</span>`;
+      } else if (tok.type === 'word') {
+        sentHtml += `<span class="study-word" data-idx="${idx}" data-start="${tok.start}" data-end="${tok.end}">${escapeHtml(tok.text)}</span>`;
+      } else {
+        sentHtml += escapeHtml(tok.text);
+      }
+    });
+    
+    html += `<span class="${classes.join(' ')}" data-idx="${idx}" onclick="jumpToSentence(${idx})">${sentHtml}</span> `;
+  });
+  
+  display.innerHTML = html;
+  
+  // Attach click handlers to oil terms
+  display.querySelectorAll('.oil-term').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showOilTermPopup(el);
+    });
+  });
+}
+
+function tokenizeSentence(text, oilTerms) {
+  // Build list of tokens: words, oil terms, whitespace
+  const tokens = [];
+  let pos = 0;
+  
+  // Create events: start/end of oil terms
+  const events = [];
+  oilTerms.forEach(t => {
+    events.push({pos: t.start, type: 'oil-start', data: t});
+    events.push({pos: t.end, type: 'oil-end', data: t});
+  });
+  events.sort((a,b) => a.pos - b.pos);
+  
+  let eventIdx = 0;
+  let inOil = false;
+  let currentOilData = null;
+  let wordBuffer = '';
+  let wordStart = 0;
+  
+  while (pos <= text.length) {
+    // Process any events at this position
+    while (eventIdx < events.length && events[eventIdx].pos === pos) {
+      const ev = events[eventIdx];
+      if (ev.type === 'oil-start') {
+        // Flush word buffer
+        if (wordBuffer) {
+          tokens.push({type:'word', text:wordBuffer, start:wordStart, end:wordStart+wordBuffer.length});
+          wordBuffer = '';
+        }
+        inOil = true;
+        currentOilData = ev.data;
+      } else if (ev.type === 'oil-end') {
+        // Flush word buffer (shouldn't have any inside oil term normally)
+        if (wordBuffer) {
+          tokens.push({type:'word', text:wordBuffer, start:wordStart, end:wordStart+wordBuffer.length});
+          wordBuffer = '';
+        }
+        // Push oil term token
+        tokens.push({
+          type:'oil',
+          text: text.substring(ev.data.start, ev.data.end),
+          start: ev.data.start,
+          end: ev.data.end,
+          termData: ev.data.termData
+        });
+        inOil = false;
+        currentOilData = null;
+      }
+      eventIdx++;
+    }
+    
+    if (pos >= text.length) break;
+    
+    const ch = text[pos];
+    const isWordChar = /[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ'’\-]/.test(ch);
+    
+    if (isWordChar) {
+      if (!wordBuffer) wordStart = pos;
+      wordBuffer += ch;
+    } else {
+      if (wordBuffer) {
+        if (inOil) {
+          // Inside oil term, don't push as separate word — will be included in oil token
+          // Actually we need to handle this: oil term may contain spaces/hyphens
+          wordBuffer += ch; // keep building
+          pos++;
+          continue;
+        } else {
+          tokens.push({type:'word', text:wordBuffer, start:wordStart, end:wordStart+wordBuffer.length});
+          wordBuffer = '';
+        }
+      }
+      tokens.push({type:'space', text:ch, start:pos, end:pos+1});
+    }
+    pos++;
+  }
+  
+  if (wordBuffer) {
+    if (inOil) {
+      // Push as oil token
+      tokens.push({
+        type:'oil',
+        text: wordBuffer,
+        start: wordStart,
+        end: wordStart + wordBuffer.length,
+        termData: currentOilData ? currentOilData.termData : null
+      });
+    } else {
+      tokens.push({type:'word', text:wordBuffer, start:wordStart, end:wordStart+wordBuffer.length});
+    }
+  }
+  
+  return tokens;
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function showOilTermPopup(el) {
+  const popup = document.getElementById('oil-term-popup');
+  const word = el.dataset.term;
+  const def = el.dataset.def;
+  document.getElementById('otp-word').textContent = word;
+  document.getElementById('otp-def').textContent = def;
+  document.getElementById('otp-speak-btn').onclick = () => speakText(word);
+  document.getElementById('otp-close-btn').onclick = () => popup.classList.remove('show');
+  
+  // Position near element
+  const rect = el.getBoundingClientRect();
+  popup.style.left = Math.min(rect.left, window.innerWidth - 340) + 'px';
+  popup.style.top = (rect.bottom + 8 + window.scrollY) + 'px';
+  popup.classList.add('show');
+  
+  // Close on outside click
+  setTimeout(() => {
+    const closeHandler = (e) => {
+      if (!popup.contains(e.target) && e.target !== el) {
+        popup.classList.remove('show');
+        document.removeEventListener('click', closeHandler);
+      }
+    };
+    document.addEventListener('click', closeHandler);
+  }, 10);
+}
+
+function jumpToSentence(idx) {
+  if (idx < 0 || idx >= study.sentences.length) return;
+  speechSynthesis.cancel();
+  study.currentIndex = idx;
+  study.isPaused = false;
+  renderStudyText();
+  updateStudyPlayerUI();
+  if (study.isPlaying) {
+    speakCurrentSentence();
+  }
+}
+
+function setStudyMode(mode, btn) {
+  study.mode = mode;
+  document.querySelectorAll('.study-mode-selector .mode-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const desc = document.getElementById('mode-description');
+  const label = document.getElementById('player-mode-label');
+  if (mode === 'reading') {
+    desc.textContent = 'Fluently reads the entire text. Ideal for comprehension and listening practice.';
+    label.textContent = 'Reading Mode';
+  } else {
+    desc.textContent = 'Reads one sentence, then pauses so you can repeat aloud. Press Continue to advance. Perfect for pronunciation training.';
+    label.textContent = 'Shadowing Mode';
+  }
+}
+
+function setStudySpeed(rate, btn) {
+  study.speed = rate;
+  const parent = btn.parentElement;
+  parent.querySelectorAll('.study-toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // If currently playing, restart current sentence with new speed
+  if (study.isPlaying && !study.isPaused) {
+    speechSynthesis.cancel();
+    speakCurrentSentence();
+  }
+}
+
+function studyToggleLoop() {
+  study.loop = !study.loop;
+  document.getElementById('study-btn-loop').classList.toggle('active', study.loop);
+  showToast(study.loop ? '🔁 Loop activado' : '🔁 Loop desactivado');
+}
+
+async function studyTogglePlay() {
+  if (!study.sentences.length) { showToast('⚠️ Prepara un texto primero'); return; }
+  
+  if (study.isPlaying && !study.isPaused) {
+    // Pause
+    study.isPaused = true;
+    speechSynthesis.pause();
+    if (study.wakeLock) { try { await study.wakeLock.release(); } catch(e){} study.wakeLock = null; }
+    updateStudyPlayerUI();
+    return;
+  }
+  
+  if (study.isPaused) {
+    // Resume
+    study.isPaused = false;
+    speechSynthesis.resume();
+    if ('wakeLock' in navigator) {
+      try { study.wakeLock = await navigator.wakeLock.request('screen'); } catch(e){}
+    }
+    updateStudyPlayerUI();
+    return;
+  }
+  
+  // Start fresh
+  study.isPlaying = true;
+  study.isPaused = false;
+  if ('wakeLock' in navigator) {
+    try { study.wakeLock = await navigator.wakeLock.request('screen'); } catch(e){}
+  }
+  updateStudyPlayerUI();
+  speakCurrentSentence();
+}
+
+function studyStop() {
+  study.isPlaying = false;
+  study.isPaused = false;
+  speechSynthesis.cancel();
+  if (study.wakeLock) { try { study.wakeLock.release(); } catch(e){} study.wakeLock = null; }
+  document.getElementById('shadowing-prompt').classList.remove('show');
+  updateStudyPlayerUI();
+}
+
+function studyNext() {
+  if (!study.sentences.length) return;
+  speechSynthesis.cancel();
+  if (study.currentIndex < study.sentences.length - 1) {
+    study.currentIndex++;
+  } else if (study.loop) {
+    study.currentIndex = 0;
+  }
+  document.getElementById('shadowing-prompt').classList.remove('show');
+  renderStudyText();
+  updateStudyPlayerUI();
+  scrollToActiveSentence();
+  if (study.isPlaying && !study.isPaused) speakCurrentSentence();
+}
+
+function studyPrev() {
+  if (!study.sentences.length) return;
+  speechSynthesis.cancel();
+  if (study.currentIndex > 0) study.currentIndex--;
+  document.getElementById('shadowing-prompt').classList.remove('show');
+  renderStudyText();
+  updateStudyPlayerUI();
+  scrollToActiveSentence();
+  if (study.isPlaying && !study.isPaused) speakCurrentSentence();
+}
+
+function studyRepeatSentence() {
+  if (!study.sentences.length) return;
+  speechSynthesis.cancel();
+  if (study.isPlaying) speakCurrentSentence();
+  else speakText(study.sentences[study.currentIndex].text);
+}
+
+function continueShadowing() {
+  document.getElementById('shadowing-prompt').classList.remove('show');
+  if (study.currentIndex < study.sentences.length - 1) {
+    study.currentIndex++;
+    renderStudyText();
+    updateStudyPlayerUI();
+    scrollToActiveSentence();
+    speakCurrentSentence();
+  } else if (study.loop) {
+    study.currentIndex = 0;
+    renderStudyText();
+    updateStudyPlayerUI();
+    scrollToActiveSentence();
+    speakCurrentSentence();
+  } else {
+    handleStudyComplete();
+  }
+}
+
+function speakCurrentSentence() {
+  if (!study.isPlaying || study.isPaused) return;
+  if (study.currentIndex >= study.sentences.length) {
+    if (study.loop) {
+      study.currentIndex = 0;
+      renderStudyText();
+      updateStudyPlayerUI();
+    } else {
+      handleStudyComplete();
+      return;
+    }
+  }
+  
+  const sent = study.sentences[study.currentIndex];
+  const utter = new SpeechSynthesisUtterance(sent.text);
+  utter.rate = study.speed;
+  utter.lang = 'en-US';
+  if (activeVoice) utter.voice = activeVoice;
+  study.utterance = utter;
+  
+  // Karaoke-style word highlight via onboundary
+  utter.onboundary = (event) => {
+    if (event.name === 'word' || event.name === 'sentence') {
+      highlightWordAt(event.charIndex, event.charLength || 0, study.currentIndex);
+    }
+  };
+  
+  utter.onend = () => {
+    clearWordHighlights();
+    if (!study.isPlaying) return;
+    
+    if (study.mode === 'shadowing') {
+      // Show shadowing prompt
+      showShadowingPrompt(sent.text);
+    } else {
+      // Reading mode: auto advance
+      study.currentIndex++;
+      renderStudyText();
+      updateStudyPlayerUI();
+      scrollToActiveSentence();
+      setTimeout(() => speakCurrentSentence(), 200);
+    }
+  };
+  
+  utter.onerror = (e) => {
+    console.warn('Speech error:', e);
+    clearWordHighlights();
+    if (study.isPlaying) {
+      study.currentIndex++;
+      renderStudyText();
+      updateStudyPlayerUI();
+      setTimeout(() => speakCurrentSentence(), 300);
+    }
+  };
+  
+  renderStudyText();
+  updateStudyPlayerUI();
+  speechSynthesis.speak(utter);
+}
+
+function highlightWordAt(charIndex, charLength, sentIdx) {
+  if (sentIdx !== study.currentIndex) return;
+  const display = document.getElementById('study-text-display');
+  const sentenceEl = display.querySelector(`.study-sentence[data-idx="${sentIdx}"]`);
+  if (!sentenceEl) return;
+  
+  // Clear previous word highlights
+  sentenceEl.querySelectorAll('.study-word.current').forEach(el => el.classList.remove('current'));
+  
+  // Find word span containing this charIndex
+  const wordEls = sentenceEl.querySelectorAll('.study-word');
+  for (const el of wordEls) {
+    const start = parseInt(el.dataset.start);
+    const end = parseInt(el.dataset.end);
+    if (charIndex >= start && charIndex < end) {
+      el.classList.add('current');
+      break;
+    }
+  }
+}
+
+function clearWordHighlights() {
+  document.querySelectorAll('.study-word.current').forEach(el => el.classList.remove('current'));
+}
+
+function showShadowingPrompt(sentenceText) {
+  const prompt = document.getElementById('shadowing-prompt');
+  document.getElementById('shadowing-sentence-preview').textContent = sentenceText;
+  prompt.classList.add('show');
+  updateStudyPlayerUI();
+}
+
+function handleStudyComplete() {
+  study.isPlaying = false;
+  study.isPaused = false;
+  if (study.wakeLock) { try { study.wakeLock.release(); } catch(e){} study.wakeLock = null; }
+  document.getElementById('shadowing-prompt').classList.remove('show');
+  updateStudyPlayerUI();
+  showToast('✅ Texto completado');
+}
+
+function scrollToActiveSentence() {
+  const display = document.getElementById('study-text-display');
+  const active = display.querySelector('.study-sentence.active');
+  if (active) {
+    active.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function updateStudyPlayerUI() {
+  const playBtn = document.getElementById('study-btn-play');
+  const status = document.getElementById('study-status');
+  const counter = document.getElementById('study-counter');
+  const progressFill = document.getElementById('study-progress-fill');
+  
+  if (study.isPlaying && !study.isPaused) {
+    playBtn.textContent = '⏸';
+    playBtn.classList.add('playing');
+    playBtn.title = 'Pause (Space)';
+    status.textContent = '▶ Playing';
+  } else if (study.isPaused) {
+    playBtn.textContent = '▶';
+    playBtn.classList.remove('playing');
+    playBtn.title = 'Resume (Space)';
+    status.textContent = '⏸ Paused';
+  } else {
+    playBtn.textContent = '▶';
+    playBtn.classList.remove('playing');
+    playBtn.title = 'Play (Space)';
+    status.textContent = 'Ready';
+  }
+  
+  const total = study.sentences.length;
+  const current = total > 0 ? study.currentIndex + 1 : 0;
+  counter.textContent = `Sentence ${current} of ${total}`;
+  const pct = total > 0 ? ((study.currentIndex) / total) * 100 : 0;
+  progressFill.style.width = pct + '%';
+  
+  // Disable prev/next if no sentences
+  document.getElementById('study-btn-prev').disabled = total === 0;
+  document.getElementById('study-btn-next').disabled = total === 0;
+}
+
+function searchInStudyText() {
+  const query = document.getElementById('study-search').value.trim().toLowerCase();
+  if (!query || !study.sentences.length) {
+    renderStudyText();
+    return;
+  }
+  // Highlight matches by re-rendering with search highlight
+  const display = document.getElementById('study-text-display');
+  let html = '';
+  study.sentences.forEach((sent, idx) => {
+    const classes = ['study-sentence'];
+    if (idx === study.currentIndex) classes.push('active');
+    else if (idx < study.currentIndex) classes.push('read');
+    
+    // Highlight matches in sentence
+    const escapedQuery = escapeRegex(query);
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    const highlighted = escapeHtml(sent.text).replace(regex, '<mark style="background:var(--amber);color:#000;padding:0 2px;border-radius:2px;">$1</mark>');
+    
+    html += `<span class="${classes.join(' ')}" data-idx="${idx}" onclick="jumpToSentence(${idx})">${highlighted}</span> `;
+  });
+  display.innerHTML = html;
+}
+
+document.addEventListener('keydown', (e) => {
+  // Only handle shortcuts when study section is active
+  const studySection = document.getElementById('sec-study');
+  if (!studySection.classList.contains('active')) return;
+  // Don't capture if typing in input/textarea
+  if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) return;
+  
+  if (!study.sentences.length) return;
+  
+  if (e.code === 'Space') {
+    e.preventDefault();
+    studyTogglePlay();
+  } else if (e.code === 'ArrowRight') {
+    e.preventDefault();
+    studyNext();
+  } else if (e.code === 'ArrowLeft') {
+    e.preventDefault();
+    studyPrev();
+  } else if (e.key === 'l' || e.key === 'L') {
+    e.preventDefault();
+    studyToggleLoop();
+  } else if (e.key === 'r' || e.key === 'R') {
+    e.preventDefault();
+    studyRepeatSentence();
+  }
+});
+
+// Update stats as user types
+document.addEventListener('DOMContentLoaded', () => {
+  const ta = document.getElementById('study-input');
+  if (ta) {
+    ta.addEventListener('input', updateStudyStats);
+  }
+});
+
+/* ============================================================ */
+
 async function syncWordsFromCloud() { if(isSyncing)return; isSyncing=true; try{ const r=await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`,{headers:{'X-Master-Key':JSONBIN_CONFIG.masterKey}}); if(r.ok){ const d=await r.json(); const cw=d.record.customWords||[]; const lm=new Map(customWords.map(w=>[w.word.toLowerCase(),w])); for(const w of cw) if(!lm.has(w.word.toLowerCase())) customWords.push({...w,custom:true}); saveCustomLocal(); showToast('☁️ Palabras sincronizadas'); } }catch(e){console.warn(e)} finally{isSyncing=false} }
 async function syncWordsToCloud() { if(isSyncing)return; isSyncing=true; try{ await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.binId}`,{method:'PUT',headers:{'X-Master-Key':JSONBIN_CONFIG.masterKey,'Content-Type':'application/json'},body:JSON.stringify({customWords,lastSync:new Date().toISOString()})}); showToast('✅ Guardado en la nube'); }catch(e){console.warn(e);showToast('⚠️ Error al sincronizar')} finally{isSyncing=false} }
 function saveCustomLocal(){localStorage.setItem('fs_custom',JSON.stringify(customWords))} function saveProgress(){localStorage.setItem('fs_progress',JSON.stringify(progress))}
@@ -351,7 +1181,7 @@ async function fetchWordData(word) {
     }
     if (!definition) { console.log(`⚠️ No definition found for "${word}", using fallback`); definition = `See more at: ${entry.sourceUrls?.[0] || 'dictionaryapi.dev'}`; }
     let category = 'General';
-    const oilKeywords = ['well','drill','pipe','casing','pressure','reservoir','formation','log','wireline','perforat','tubing','cement','mud','pump','valve','flow','production','completion','fractur','oil','gas','wellbore','bop','packer','choke','manifold','separator','blowout','kick','annulus','drillstring','bit','reamer','collar','sub','crossover','landing','nipple','profile','mandrel','sleeve','port','jet','nozzle','erosion','corrosion','scale','paraffin','asphaltene','emulsion','demulsifier','surfactant','inhibitor','scavenger','biocide','hydrate','wax','gel','fluid','brine','workover','intervention','slickline','coiled','snubbing','hydraulic','jacking','rig','derrick','mast','drawworks','kelly','topdrive','rotary','tricone','PDC','stabilizer','jar','accelerator','shock','absorber','subs','adapter','flange','hub','clamp','union','hammer','wing','nut','bolt','gasket','seal','o-ring','backup','ring','thread','compound','dope','torque','tension','compression','bending','fatigue','yield','ultimate','elongation','hardness','toughness','ductility','brittleness','fracture','crack','propagation','arrest','leak','seepage','migration','containment','barrier','primary','secondary','tertiary','cementing','squeezing','perforating','acidizing','stimulation','matrix','acid','diverting','temporary','permanent','isolation','plug','bridge','retainer','no-go','restrictor','orifice','bean','positive','adjustable','surface','subsurface','safety','valve','SSSV','SCSSV','DHSV','fail-safe','spring','loaded','pneumatic','electric','solenoid','actuator','positioner','transmitter','sensor','gauge','temperature','level','density','viscosity','conductivity','resistivity','gamma','neutron','sonic','caliper','image','microresistivity','dipole','monopole','array','spectral','photoelectric','capture','sigma','porosity','permeability','saturation','water','two-phase','three-phase','relative','absolute','effective','endpoint','hysteresis','capillary','threshold','entry','displacement','imbibition','drainage','wettability','contact','angle','interfacial','tension','polymer','foam','nitrogen','CO2','steam','hot','cyclic','continuous','injection','inflow','outflow','deliverability','productivity','index','PI','performance','relationship','IPR','VLP','TPR','nodal','analysis','system','optimization','artificial','lift','ESP','GL','rod','PCP','piston','plunger','gradient','traverse','correlation','holdup','slippage','regime','pattern','bubble','slug','churn','annular','mist','transition','map','Baker','Taitel','Dukler','Mukherjee','Brill','Beggs','Hagedorn','Brown','Poettmann','Carpenter','Fancher','Duns','Ros','Orkiszewski','Aziz','Govier','Fogarasi','Schmidt','Doty','vertical','horizontal','deviated','directional','extended','reach','multilateral','fishbone','pinnate','radial','lateral','toe','heel','upstream','midstream','downstream','gathering','processing','treatment','sweetening','dehydration','sweet','sour','H2S','mercury','nitrogen','helium','BTU','Wobbe','index','heating','value','calorific','LNG','LPG','NGL','C1','C2','C3','C4','C5+','methane','ethane','propane','butane','pentane','hexane','heptane','octane','nonane','decane','aromatics','benzene','toluene','xylene','BTX','naphtha','kerosene','diesel','jet','fuel','residual','asphalt','bitumen','heavy','extra','sands','shale','tight','unconventional','resource','play','basin','province','block','lease','concession','farm','farmout','farmee','operator','working','interest','WI','net','revenue','interest','NRI','royalty','overriding','ORRI','payment','carried','back','sharing','PSC','service','contract','risk','exploration','appraisal','development','abandonment','decommissioning','P&A','mechanical','cast','iron','composite','drillable','millable','dissolvable','magnesium','aluminum','activated','delayed','instant','setting','tool','e-line','work','string','test','logging','perforating','frac','cleanout','scale','removal','sand','cleanout','fish','recovery','junk','mill','overshot','spear','tap','die','repair','insert','restore','chase','clean','inspect','gauge','ring','plug','master','calibrate','certify','traceable','NIST','ISO','API','ANSI','ASME','ASTM','NACE','15156','MR0175','partial','ppH2S','pH','chloride','stress','cracking','SCC','sulfide','SSC','hydrogen','induced','HIC','stepwise','SWC','blistering','HB','SOHIC','oriented','galvanic','crevice','pitting','uniform','intergranular','dealloying','selective','leaching','dezincification','graphitization','embrittlement','HE','attack','HA','high','temperature','HTHA','Nelson','curve','941','material','selection','carbon','steel','low','alloy','stainless','duplex','super','nickel','alloy','inconel','monel','hastelloy','titanium','zirconium','clad','lined','coated','fusion','bonded','epoxy','FBE','polyurethane','polyethylene','PE','polypropylene','PP','PTFE','PFA','FEP','PVDF','ECTFE','ETFE','PCTFE'];
+    const oilKeywords = ['well','drill','pipe','casing','pressure','reservoir','formation','log','wireline','perforat','tubing','cement','mud','pump','valve','flow','production','completion','fractur','oil','gas','wellbore','bop','packer','choke','manifold','separator'];
     const textToCheck = (word + ' ' + definition + ' ' + (example||'')).toLowerCase();
     if (oilKeywords.some(k => textToCheck.includes(k))) { category = 'Wireline'; }
     return { success: true, data: { word: entry.word || word, phonetic: phonetic, category: category, difficulty: 'Advanced', definition: definition, sentence: example ? `"${example}"` : '', custom: true, source: 'dictionary-api' } };
@@ -361,7 +1191,19 @@ async function fetchWordData(word) {
   }
 }
 
-function showSection(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));document.getElementById('sec-'+id).classList.add('active');const i=['dashboard','vocabulary','flashcards','quiz','pronunciation','settings'].indexOf(id);if(i>=0)document.querySelectorAll('nav button')[i].classList.add('active');if(id==='dashboard')updateDashboard();if(id==='vocabulary'){renderVocabList();populateFilters()}if(id==='flashcards'){populateFcFilter();initFlashcards()}if(id==='quiz')populateQuizFilter();if(id==='pronunciation')renderPronunList();if(id==='settings')loadVoices()}
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  const i=['dashboard','vocabulary','study','quiz','pronunciation','settings'].indexOf(id);
+  if(i>=0)document.querySelectorAll('nav button')[i].classList.add('active');
+  if(id==='dashboard')updateDashboard();
+  if(id==='vocabulary'){renderVocabList();populateFilters()}
+  if(id==='quiz')populateQuizFilter();
+  if(id==='pronunciation')renderPronunList();
+  if(id==='settings')loadVoices();
+  if(id==='study')updateStudyStats();
+}
 function updateDashboard(){const v=getVocab();document.getElementById('stat-total').textContent=v.length;document.getElementById('stat-custom').textContent=customWords.length;document.getElementById('stat-mastered').textContent=Object.values(progress).filter(x=>x>=3).length;const t=new Date().toDateString();if(lastDate!==t){streak=lastDate===new Date(Date.now()-864e5).toDateString()?streak+1:1;lastDate=t;localStorage.setItem('fs_streak',streak);localStorage.setItem('fs_lastdate',t)}document.getElementById('stat-streak').textContent=streak;const w=v[Math.floor(new Date().getDate()%v.length)];document.getElementById('wod-container').innerHTML=`<div class="wod-word">${w.word}</div><div class="wod-phonetic">${w.phonetic||''}</div><div class="wod-def">${w.definition}</div><div class="wod-sentence">${w.sentence||''}</div><div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="speak-btn" onclick="speakText('${w.word.replace(/'/g,"\\'")}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Word</button><button class="speak-btn" onclick="speakText('${(w.sentence||w.definition).replace(/'/g,"\\'").replace(/"/g,'&quot;')}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Sentence</button><span class="tag ${w.custom?'custom':'built-in'}">${w.category}</span></div>`}
 
 async function addWord(){const w=document.getElementById('inp-word').value.trim();if(!w){showToast('Ingresa una palabra');return}if(getVocab().some(x=>x.word.toLowerCase()===w.toLowerCase())){showToast('Ya existe');return}const b=document.getElementById('btn-search');b.disabled=true;b.textContent='⏳ Buscando...';try{const r=await fetchWordData(w);if(r.success){document.getElementById('inp-phonetic').value=r.data.phonetic;document.getElementById('inp-def').value=r.data.definition;document.getElementById('inp-sentence').value=r.data.sentence;document.getElementById('inp-category').value=r.data.category;showToast('🔍 Datos encontrados. Revisa y confirma.')}else{clearForm();document.getElementById('inp-word').value=w;showToast('⚠️ '+r.message)}}catch(e){showToast('Error de conexión')}finally{b.disabled=false;b.textContent='🔍 Search'}}
@@ -371,14 +1213,6 @@ function deleteWord(w){if(!confirm(`¿Eliminar "${w}"?`))return;customWords=cust
 function populateFilters(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('filter-chips').innerHTML=c.map(x=>`<div class="chip ${x===activeFilter?'active':''}" onclick="filterBy('${x}')">${x==='all'?'All':x}</div>`).join('')}
 function filterBy(c){activeFilter=c;populateFilters();renderVocabList()}
 function renderVocabList(){const q=(document.getElementById('search-input')?.value||'').toLowerCase(),ib=document.getElementById('set-include-builtin')?.checked??true;let l=ib?[...BUILT_IN,...customWords]:[...customWords];if(activeFilter!=='all')l=l.filter(w=>w.category===activeFilter);if(q)l=l.filter(w=>w.word.toLowerCase().includes(q)||w.definition.toLowerCase().includes(q));const e=document.getElementById('vocab-list');if(!l.length){e.innerHTML='<div class="empty-state"><span class="es-big">NONE</span>No words found</div>';return}e.innerHTML=l.map(w=>`<div class="vocab-item"><div><div class="vi-word">${w.word}</div><div class="vi-phonetic">${w.phonetic||''}</div><span class="tag ${w.custom?'custom':'built-in'}">${w.category}</span><span class="tag" style="margin-left:4px">${w.difficulty}</span></div><div class="vi-def">${w.definition}<br/><span style="color:var(--text-faint);font-style:italic;font-size:0.78rem">${w.sentence||''}</span></div><div class="vi-actions"><button class="btn btn-ghost btn-sm speak-btn" onclick="speakText('${w.word.replace(/'/g,"\\'")}')"><svg class="speaker-icon" viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>${w.custom?`<button class="btn btn-red btn-sm" onclick="deleteWord('${w.word.replace(/'/g,"\\'")}')">Del</button>`:''}</div></div>`).join('')}
-
-function populateFcFilter(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('fc-filter').innerHTML=c.map(x=>`<option value="${x}">${x==='all'?'All Categories':x}</option>`).join('')}
-function initFlashcards(){const f=document.getElementById('fc-filter')?.value||'all';let d=getVocab();if(f!=='all')d=d.filter(w=>w.category===f);if(!d.length){showToast('Agrega palabras primero');return}fcDeck=shuffle(d);fcIndex=0;fcSessionScore=0;document.getElementById('fc-score-disp').textContent=0;document.getElementById('fc-done').style.display='none';document.getElementById('flashcard').style.display='flex';document.getElementById('fc-actions').style.display='none';loadFlashcard()}
-function loadFlashcard(){if(!fcDeck.length)return;const c=fcDeck[fcIndex],fc=document.getElementById('flashcard');fc.classList.remove('revealed');document.getElementById('fc-word').textContent=c.word;document.getElementById('fc-word-back').textContent=c.word;document.getElementById('fc-phonetic').textContent=c.phonetic||'';document.getElementById('fc-tag').textContent=c.category;document.getElementById('fc-def').textContent=c.definition;document.getElementById('fc-sentence').textContent=c.sentence||'';document.getElementById('fc-actions').style.display='none';updateFcProgress()}
-function revealCard(){if(document.getElementById('flashcard').classList.contains('revealed'))return;document.getElementById('flashcard').classList.add('revealed');document.getElementById('fc-actions').style.display='flex';if(document.getElementById('set-auto-speak')?.checked)speakCard()}
-function speakCard(){const c=fcDeck[fcIndex];if(c)speakText(c.word+'. '+c.definition+'. Example: '+(c.sentence||''))}
-function rateCard(r){const c=fcDeck[fcIndex];progress[c.word]=(progress[c.word]||0)+r;saveProgress();if(r>=1)fcSessionScore++;document.getElementById('fc-score-disp').textContent=fcSessionScore;fcIndex++;if(fcIndex>=fcDeck.length){document.getElementById('flashcard').style.display='none';document.getElementById('fc-actions').style.display='none';document.getElementById('fc-done').style.display='block'}else loadFlashcard()}
-function updateFcProgress(){const t=fcDeck.length;document.getElementById('fc-progress-text').textContent=`Card ${fcIndex+1} of ${t}`;document.getElementById('fc-progress-bar').style.width=(t?((fcIndex/t)*100).toFixed(0):0)+'%'}
 
 function populateQuizFilter(){const c=['all',...new Set(getVocab().map(w=>w.category))];document.getElementById('quiz-filter').innerHTML=c.map(x=>`<option value="${x}">${x==='all'?'All Categories':x}</option>`).join('')}
 function startQuiz(){const f=document.getElementById('quiz-filter').value;let p=getVocab();if(f!=='all')p=p.filter(w=>w.category===f);if(p.length<4){showToast('Necesitas al menos 4 palabras');return}quizQ=shuffle(p).slice(0,Math.min(p.length,15));quizIndex=0;quizScore=0;document.getElementById('quiz-score-disp').textContent='0 / '+quizQ.length;document.getElementById('quiz-next-row').style.display='none';renderQuestion()}
@@ -396,7 +1230,8 @@ function deleteCustomWords(){if(!customWords.length){showToast('No hay palabras'
 function saveJsonBinConfig(){const i=document.getElementById('jsonbin-id').value.trim(),k=document.getElementById('jsonbin-key').value.trim();if(!i||!k){showToast('Ingresa Bin ID y Master Key');return}JSONBIN_CONFIG.binId=i;JSONBIN_CONFIG.masterKey=k;localStorage.setItem('fs_jsonbin',JSON.stringify(JSONBIN_CONFIG));showToast('☁️ Configuración guardada. Sincronizando...');syncWordsFromCloud()}
 function loadJsonBinConfig(){const s=localStorage.getItem('fs_jsonbin');if(s){try{const c=JSON.parse(s);JSONBIN_CONFIG.binId=c.binId;JSONBIN_CONFIG.masterKey=c.masterKey}catch(e){}}}
 
-window.addEventListener('load',()=>{loadJsonBinConfig();document.getElementById('jsonbin-id').value=JSONBIN_CONFIG.binId;document.getElementById('jsonbin-key').value=JSONBIN_CONFIG.masterKey;customWords=JSON.parse(localStorage.getItem('fs_custom')||'[]');if(JSONBIN_CONFIG.binId&&JSONBIN_CONFIG.masterKey)syncWordsFromCloud();updateDashboard();renderVocabList();populateFilters();setTimeout(loadVoices,500);initFlashcards()})
+// Remove old flashcards init from load
+window.addEventListener('load',()=>{loadJsonBinConfig();document.getElementById('jsonbin-id').value=JSONBIN_CONFIG.binId;document.getElementById('jsonbin-key').value=JSONBIN_CONFIG.masterKey;customWords=JSON.parse(localStorage.getItem('fs_custom')||'[]');if(JSONBIN_CONFIG.binId&&JSONBIN_CONFIG.masterKey)syncWordsFromCloud();updateDashboard();renderVocabList();populateFilters();setTimeout(loadVoices,500);updateStudyStats()})
 </script>
 </body>
 </html>
