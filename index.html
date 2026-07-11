@@ -99,7 +99,7 @@
   .oil-term-popup .otp-actions{display:flex;gap:6px}
   
   /* === WORD TRANSLATION TOOLTIP === */
-  .word-translation-tooltip{position:fixed;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border:1px solid var(--blue);border-left:4px solid var(--blue);border-radius:var(--radius);padding:14px 16px;max-width:340px;z-index:250;box-shadow:0 8px 32px rgba(56,189,248,0.3),0 4px 16px rgba(0,0,0,0.5);display:none;animation:fadeUp 0.2s ease}
+  .word-translation-tooltip{position:fixed;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border:1px solid var(--blue);border-left:4px solid var(--blue);border-radius:var(--radius);padding:14px 16px;max-width:340px;z-index:9999;box-shadow:0 8px 32px rgba(56,189,248,0.3),0 4px 16px rgba(0,0,0,0.5);display:none;animation:fadeUp 0.2s ease}
   .word-translation-tooltip.show{display:block}
   .word-translation-tooltip .wtt-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
   .word-translation-tooltip .wtt-flag{font-size:1rem}
@@ -339,6 +339,13 @@
       <button class="btn btn-amber" onclick="saveJsonBinConfig()">Save & Sync</button>
       <div style="margin-top:10px;font-size:0.65rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">Tus palabras se guardarán en la nube y se sincronizarán en todos tus dispositivos.</div>
     </div>
+    <div class="divider"></div>
+    <div class="form-card">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:16px;">🤖 Cohere API Configuration</div>
+      <div class="form-group" style="margin-bottom:12px;"><label>API Key</label><input type="password" id="cohere-api-key" placeholder="Enter your Cohere API key" /></div>
+      <button class="btn btn-amber" onclick="saveCohereConfig()">Save API Key</button>
+      <div style="margin-top:10px;font-size:0.65rem;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;">Obtén tu API key gratis en <a href="https://dashboard.cohere.com" target="_blank" style="color:var(--blue);">dashboard.cohere.com</a></div>
+    </div>
   </section>
 </main>
 <div id="toast"></div>
@@ -370,8 +377,20 @@ const BUILT_IN = [
 ];
 let customWords = [], progress = JSON.parse(localStorage.getItem('fs_progress')||'{}'), streak = parseInt(localStorage.getItem('fs_streak')||'0'), lastDate = localStorage.getItem('fs_lastdate')||'', speechRate = 0.9, activeVoice = null, quizQ = [], quizIndex = 0, quizScore = 0, activeFilter = 'all', isSyncing = false, isFetching = false;
 
-/* ===== TRANSLATION SYSTEM ===== */
+/* ===== COHERE TRANSLATION SYSTEM ===== */
 const translationCache = {};
+let cohereApiKey = localStorage.getItem('cohere_api_key') || '';
+
+function saveCohereConfig() {
+  const key = document.getElementById('cohere-api-key').value.trim();
+  if (!key) {
+    showToast('⚠️ Ingresa tu API key de Cohere');
+    return;
+  }
+  cohereApiKey = key;
+  localStorage.setItem('cohere_api_key', key);
+  showToast('✅ API key guardada');
+}
 
 async function translateWord(word) {
   const cleanWord = word.toLowerCase().trim().replace(/[^\w\s'-]/g, '');
@@ -382,20 +401,57 @@ async function translateWord(word) {
     return translationCache[cleanWord];
   }
   
+  if (!cohereApiKey) {
+    return '(configura tu API key en Settings)';
+  }
+  
   try {
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanWord)}&langpair=en|es`;
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Translation failed');
+    const response = await fetch('https://api.cohere.ai/v2/chat', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${cohereApiKey}`,
+        'Content-Type': 'application/json',
+        'X-Client-Name': 'FieldSpeak-Translation'
+      },
+      body: JSON.stringify({
+        model: 'command-r-08-2024',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a translator. Translate the given English word or phrase to Spanish. Only output the translation, nothing else. If the word is a technical oilfield/petroleum term, provide the most accurate technical translation.'
+          },
+          {
+            role: 'user',
+            content: `Translate to Spanish: "${cleanWord}"`
+          }
+        ],
+        max_tokens: 50,
+        temperature: 0.3
+      })
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `HTTP ${response.status}`);
+    }
     
     const data = await response.json();
-    const translation = data.responseData?.translate || cleanWord;
+    let translation = data.message?.content?.[0]?.text?.trim() || '';
+    
+    // Clean up translation (remove quotes if present)
+    translation = translation.replace(/^["']|["']$/g, '');
+    
+    // If translation is empty or same as input, show message
+    if (!translation || translation.toLowerCase() === cleanWord) {
+      translation = '(no translation found)';
+    }
     
     // Cache the result
     translationCache[cleanWord] = translation;
     return translation;
   } catch (error) {
     console.warn('Translation error:', error);
-    return '(translation unavailable)';
+    return `(error: ${error.message})`;
   }
 }
 
@@ -409,26 +465,33 @@ function showTranslationTooltip(el, word) {
   wordEl.textContent = word;
   
   // Show loading state
-  translationEl.innerHTML = '<span class="wtt-loading">Translating...</span>';
+  translationEl.innerHTML = '<span class="wtt-loading">Translating with Cohere AI...</span>';
   
-  // Position tooltip near the word
+  // Position tooltip near the word (CORREGIDO para position: fixed)
   const rect = el.getBoundingClientRect();
   const tooltipWidth = 340;
   const tooltipHeight = 150;
   
-  let left = rect.left + window.scrollX;
-  let top = rect.bottom + window.scrollY + 8;
+  // Con position: fixed, las coordenadas son relativas al viewport
+  let left = rect.left;
+  let top = rect.bottom + 8;
   
-  // Adjust if tooltip goes off-screen
-  if (left + tooltipWidth > window.innerWidth) {
+  // Adjust if tooltip goes off-screen right
+  if (left + tooltipWidth > window.innerWidth - 20) {
     left = window.innerWidth - tooltipWidth - 20;
   }
-  if (top + tooltipHeight > window.innerHeight + window.scrollY) {
-    top = rect.top + window.scrollY - tooltipHeight - 8;
+  
+  // Adjust if tooltip goes off-screen bottom - show above the word
+  if (top + tooltipHeight > window.innerHeight - 20) {
+    top = rect.top - tooltipHeight - 8;
   }
   
-  tooltip.style.left = Math.max(10, left) + 'px';
-  tooltip.style.top = Math.max(10, top) + 'px';
+  // Ensure minimum margins
+  left = Math.max(10, left);
+  top = Math.max(10, top);
+  
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
   tooltip.classList.add('show');
   
   // Set up speak button
@@ -678,7 +741,7 @@ function escapeRegex(str) {
 function splitIntoSentences(text) {
   // Split on sentence-ending punctuation followed by space or end
   // Keep the punctuation attached to the sentence
-  const raw = text.match(/[^.!?]+[.!?]+[\])"'»’”]?|[^.!?]+$/g) || [text];
+  const raw = text.match(/[^.!?]+[.!?]+[\])"'»'"]?|[^.!?]+$/g) || [text];
   return raw.map(s => s.trim()).filter(s => s.length > 0);
 }
 
@@ -856,7 +919,7 @@ function tokenizeSentence(text, oilTerms) {
     if (pos >= text.length) break;
     
     const ch = text[pos];
-    const isWordChar = /[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ'’\-]/.test(ch);
+    const isWordChar = /[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ''\-]/.test(ch);
     
     if (isWordChar) {
       if (!wordBuffer) wordStart = pos;
@@ -1328,7 +1391,7 @@ function showSection(id){
   if(id==='vocabulary'){renderVocabList();populateFilters()}
   if(id==='quiz')populateQuizFilter();
   if(id==='pronunciation')renderPronunList();
-  if(id==='settings')loadVoices();
+  if(id==='settings'){loadVoices();loadCohereConfig();}
   if(id==='study')updateStudyStats();
 }
 function updateDashboard(){const v=getVocab();document.getElementById('stat-total').textContent=v.length;document.getElementById('stat-custom').textContent=customWords.length;document.getElementById('stat-mastered').textContent=Object.values(progress).filter(x=>x>=3).length;const t=new Date().toDateString();if(lastDate!==t){streak=lastDate===new Date(Date.now()-864e5).toDateString()?streak+1:1;lastDate=t;localStorage.setItem('fs_streak',streak);localStorage.setItem('fs_lastdate',t)}document.getElementById('stat-streak').textContent=streak;const w=v[Math.floor(new Date().getDate()%v.length)];document.getElementById('wod-container').innerHTML=`<div class="wod-word">${w.word}</div><div class="wod-phonetic">${w.phonetic||''}</div><div class="wod-def">${w.definition}</div><div class="wod-sentence">${w.sentence||''}</div><div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="speak-btn" onclick="speakText('${w.word.replace(/'/g,"\\'")}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Word</button><button class="speak-btn" onclick="speakText('${(w.sentence||w.definition).replace(/'/g,"\\'").replace(/"/g,'&quot;')}')"><svg class="speaker-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>Hear Sentence</button><span class="tag ${w.custom?'custom':'built-in'}">${w.category}</span></div>`}
@@ -1357,8 +1420,13 @@ function deleteCustomWords(){if(!customWords.length){showToast('No hay palabras'
 function saveJsonBinConfig(){const i=document.getElementById('jsonbin-id').value.trim(),k=document.getElementById('jsonbin-key').value.trim();if(!i||!k){showToast('Ingresa Bin ID y Master Key');return}JSONBIN_CONFIG.binId=i;JSONBIN_CONFIG.masterKey=k;localStorage.setItem('fs_jsonbin',JSON.stringify(JSONBIN_CONFIG));showToast('☁️ Configuración guardada. Sincronizando...');syncWordsFromCloud()}
 function loadJsonBinConfig(){const s=localStorage.getItem('fs_jsonbin');if(s){try{const c=JSON.parse(s);JSONBIN_CONFIG.binId=c.binId;JSONBIN_CONFIG.masterKey=c.masterKey}catch(e){}}}
 
+function loadCohereConfig() {
+  const key = localStorage.getItem('cohere_api_key') || '';
+  document.getElementById('cohere-api-key').value = key;
+}
+
 // Remove old flashcards init from load
-window.addEventListener('load',()=>{loadJsonBinConfig();document.getElementById('jsonbin-id').value=JSONBIN_CONFIG.binId;document.getElementById('jsonbin-key').value=JSONBIN_CONFIG.masterKey;customWords=JSON.parse(localStorage.getItem('fs_custom')||'[]');if(JSONBIN_CONFIG.binId&&JSONBIN_CONFIG.masterKey)syncWordsFromCloud();updateDashboard();renderVocabList();populateFilters();setTimeout(loadVoices,500);updateStudyStats()})
+window.addEventListener('load',()=>{loadJsonBinConfig();document.getElementById('jsonbin-id').value=JSONBIN_CONFIG.binId;document.getElementById('jsonbin-key').value=JSONBIN_CONFIG.masterKey;customWords=JSON.parse(localStorage.getItem('fs_custom')||'[]');if(JSONBIN_CONFIG.binId&&JSONBIN_CONFIG.masterKey)syncWordsFromCloud();updateDashboard();renderVocabList();populateFilters();setTimeout(loadVoices,500);updateStudyStats();loadCohereConfig()})
 </script>
 </body>
 </html>
