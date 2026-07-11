@@ -63,10 +63,11 @@
   .study-sentence:hover{background:rgba(245,158,11,0.05)}
   .study-sentence.active{background:rgba(245,158,11,0.15);color:var(--amber);font-weight:500}
   .study-sentence.read{color:var(--text-faint)}
-  .study-word{display:inline;padding:1px 2px;border-radius:2px;transition:all 0.15s}
+  .study-word{display:inline;padding:1px 2px;border-radius:2px;transition:all 0.15s;cursor:pointer}
+  .study-word:hover{background:rgba(56,189,248,0.15);color:var(--blue)}
   .study-word.current{background:var(--amber);color:#000;font-weight:600}
   .study-word.oil-term{color:var(--amber2);border-bottom:1px dotted var(--amber-dim);cursor:help;position:relative}
-  .study-word.oil-term:hover{background:rgba(245,158,11,0.1)}
+  .study-word.oil-term:hover{background:rgba(245,158,11,0.1);color:var(--amber2)}
   
   .study-main-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
   .study-ctrl-btn{width:52px;height:52px;border-radius:50%;border:2px solid var(--amber);background:var(--bg4);color:var(--amber);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:1.3rem}
@@ -96,6 +97,19 @@
   .oil-term-popup .otp-word{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px}
   .oil-term-popup .otp-def{font-size:0.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:10px}
   .oil-term-popup .otp-actions{display:flex;gap:6px}
+  
+  /* === WORD TRANSLATION TOOLTIP === */
+  .word-translation-tooltip{position:fixed;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border:1px solid var(--blue);border-left:4px solid var(--blue);border-radius:var(--radius);padding:14px 16px;max-width:340px;z-index:250;box-shadow:0 8px 32px rgba(56,189,248,0.3),0 4px 16px rgba(0,0,0,0.5);display:none;animation:fadeUp 0.2s ease}
+  .word-translation-tooltip.show{display:block}
+  .word-translation-tooltip .wtt-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .word-translation-tooltip .wtt-flag{font-size:1rem}
+  .word-translation-tooltip .wtt-word{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.04em}
+  .word-translation-tooltip .wtt-arrow{color:var(--text-faint);font-size:0.9rem;margin:0 4px}
+  .word-translation-tooltip .wtt-translation{font-family:'Barlow',sans-serif;font-size:1rem;color:var(--text);line-height:1.5;margin-bottom:8px;padding:8px 10px;background:rgba(56,189,248,0.08);border-radius:var(--radius);border:1px solid rgba(56,189,248,0.2)}
+  .word-translation-tooltip .wtt-loading{color:var(--text-dim);font-style:italic;font-size:0.85rem}
+  .word-translation-tooltip .wtt-actions{display:flex;gap:6px;margin-top:8px}
+  .word-translation-tooltip .wtt-close{position:absolute;top:6px;right:8px;background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:0.9rem;padding:2px 6px;border-radius:2px}
+  .word-translation-tooltip .wtt-close:hover{color:var(--text);background:var(--bg4)}
   
   .divider{height:1px;background:var(--border);margin:24px 0}.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase}.empty-state .es-big{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--bg3);letter-spacing:0.1em;display:block;margin-bottom:8px}
   #toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--amber-dim);border-left:3px solid var(--amber);border-radius:var(--radius);padding:12px 18px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;z-index:999;transform:translateX(120%);transition:transform 0.3s ease;max-width:280px}#toast.show{transform:translateX(0)}
@@ -251,6 +265,23 @@
         <button class="btn btn-ghost btn-sm" id="otp-close-btn">Close</button>
       </div>
     </div>
+
+    <!-- Word translation tooltip -->
+    <div class="word-translation-tooltip" id="word-translation-tooltip">
+      <button class="wtt-close" onclick="closeTranslationTooltip()">✕</button>
+      <div class="wtt-header">
+        <span class="wtt-flag">🇬🇧</span>
+        <span class="wtt-word" id="wtt-word">—</span>
+        <span class="wtt-arrow">→</span>
+        <span class="wtt-flag">🇪🇸</span>
+      </div>
+      <div class="wtt-translation" id="wtt-translation">
+        <span class="wtt-loading">Translating...</span>
+      </div>
+      <div class="wtt-actions">
+        <button class="btn btn-ghost btn-sm" id="wtt-speak-btn">🔊 Hear</button>
+      </div>
+    </div>
   </section>
 
   <section id="sec-quiz" class="section">
@@ -338,6 +369,91 @@ const BUILT_IN = [
   {word:"Log Quality Control",phonetic:"/lɒɡ ˈkwɒl.ɪ.ti kənˈtroʊl/",category:"Wireline",difficulty:"Advanced",definition:"The systematic process of verifying that acquired log data meets specified quality criteria before delivery to the client.",sentence:"LQC procedures were applied to all raw log data prior to depth shifting and merging with the final composite log.",custom:false}
 ];
 let customWords = [], progress = JSON.parse(localStorage.getItem('fs_progress')||'{}'), streak = parseInt(localStorage.getItem('fs_streak')||'0'), lastDate = localStorage.getItem('fs_lastdate')||'', speechRate = 0.9, activeVoice = null, quizQ = [], quizIndex = 0, quizScore = 0, activeFilter = 'all', isSyncing = false, isFetching = false;
+
+/* ===== TRANSLATION SYSTEM ===== */
+const translationCache = {};
+
+async function translateWord(word) {
+  const cleanWord = word.toLowerCase().trim().replace(/[^\w\s'-]/g, '');
+  if (!cleanWord) return '';
+  
+  // Check cache first
+  if (translationCache[cleanWord]) {
+    return translationCache[cleanWord];
+  }
+  
+  try {
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanWord)}&langpair=en|es`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Translation failed');
+    
+    const data = await response.json();
+    const translation = data.responseData?.translate || cleanWord;
+    
+    // Cache the result
+    translationCache[cleanWord] = translation;
+    return translation;
+  } catch (error) {
+    console.warn('Translation error:', error);
+    return '(translation unavailable)';
+  }
+}
+
+function showTranslationTooltip(el, word) {
+  const tooltip = document.getElementById('word-translation-tooltip');
+  const translationEl = document.getElementById('wtt-translation');
+  const wordEl = document.getElementById('wtt-word');
+  const speakBtn = document.getElementById('wtt-speak-btn');
+  
+  // Set word
+  wordEl.textContent = word;
+  
+  // Show loading state
+  translationEl.innerHTML = '<span class="wtt-loading">Translating...</span>';
+  
+  // Position tooltip near the word
+  const rect = el.getBoundingClientRect();
+  const tooltipWidth = 340;
+  const tooltipHeight = 150;
+  
+  let left = rect.left + window.scrollX;
+  let top = rect.bottom + window.scrollY + 8;
+  
+  // Adjust if tooltip goes off-screen
+  if (left + tooltipWidth > window.innerWidth) {
+    left = window.innerWidth - tooltipWidth - 20;
+  }
+  if (top + tooltipHeight > window.innerHeight + window.scrollY) {
+    top = rect.top + window.scrollY - tooltipHeight - 8;
+  }
+  
+  tooltip.style.left = Math.max(10, left) + 'px';
+  tooltip.style.top = Math.max(10, top) + 'px';
+  tooltip.classList.add('show');
+  
+  // Set up speak button
+  speakBtn.onclick = () => speakText(word);
+  
+  // Fetch translation
+  translateWord(word).then(translation => {
+    translationEl.textContent = translation;
+  });
+  
+  // Close on outside click
+  setTimeout(() => {
+    const closeHandler = (e) => {
+      if (!tooltip.contains(e.target) && e.target !== el) {
+        tooltip.classList.remove('show');
+        document.removeEventListener('click', closeHandler);
+      }
+    };
+    document.addEventListener('click', closeHandler);
+  }, 10);
+}
+
+function closeTranslationTooltip() {
+  document.getElementById('word-translation-tooltip').classList.remove('show');
+}
 
 /* ===== VOCABULARY PLAYBACK SYSTEM ===== */
 let playback = {
@@ -655,7 +771,7 @@ function renderStudyText() {
       if (tok.type === 'oil') {
         sentHtml += `<span class="study-word oil-term" data-term="${escapeHtml(tok.termData.word)}" data-def="${escapeHtml(tok.termData.definition)}" data-idx="${idx}" data-start="${tok.start}" data-end="${tok.end}">${escapeHtml(tok.text)}</span>`;
       } else if (tok.type === 'word') {
-        sentHtml += `<span class="study-word" data-idx="${idx}" data-start="${tok.start}" data-end="${tok.end}">${escapeHtml(tok.text)}</span>`;
+        sentHtml += `<span class="study-word" data-word="${escapeHtml(tok.text)}" data-idx="${idx}" data-start="${tok.start}" data-end="${tok.end}">${escapeHtml(tok.text)}</span>`;
       } else {
         sentHtml += escapeHtml(tok.text);
       }
@@ -671,6 +787,17 @@ function renderStudyText() {
     el.addEventListener('click', (e) => {
       e.stopPropagation();
       showOilTermPopup(el);
+    });
+  });
+  
+  // Attach click handlers to regular words for translation
+  display.querySelectorAll('.study-word:not(.oil-term)').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const word = el.dataset.word;
+      if (word) {
+        showTranslationTooltip(el, word);
+      }
     });
   });
 }
